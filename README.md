@@ -22,3 +22,9 @@ Frontend Overview:
 
 Backend Overview:
 ---
+
+Relational Database Model:
+---
+
+The database schema:
+[db-schema](https://github.com/dev-kagant/python-genius-group2/blob/main/db-shema.png)
