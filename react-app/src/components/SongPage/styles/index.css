@@ -1,0 +1,24 @@
+.songpage_container {
+    background-color: rgb(235, 235, 235);
+    width: 100%;
+}
+
+.songpage_main {
+    display: flex;
+    width: 100%;
+    max-width: 970px;
+    min-height: 100vh;
+    background-color: #fff;
+    margin: 0 auto;
+    padding-top: 16px;
+}
+
+.songpage-main_left {
+    width: 58%;
+    padding: 0 16px;
+}
+
+.songpage-main_right {
+    width: 42%;
+    padding-right: 16px;
+}

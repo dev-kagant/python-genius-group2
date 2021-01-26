@@ -9,6 +9,8 @@ import User from "./components/User";
 import Song from "./components/SongPage";
 import { authenticate } from "./services/auth";
 
+import SongPageContextProvider from "./components/SongPage/context/SongPageContext";
+
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -50,7 +52,9 @@ function App() {
           <h1>My Home Page</h1>
         </ProtectedRoute>
         <Route path="/songs/:songId" exact={true}>
-          <Song />
+          <SongPageContextProvider>
+            <Song />
+          </SongPageContextProvider>
         </Route>
       </Switch>
     </BrowserRouter>

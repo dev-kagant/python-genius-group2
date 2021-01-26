@@ -1,35 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
+
+import SongPageContext from "./context/SongPageContext";
+
+import SongHeader from "./SongHeader";
+import SongLyrics from "./SongLyrics";
+import SongFacts from "./SongFacts";
+import SongBio from "./SongBio";
+import SongVideo from "./SongVideo";
+import SongComments from "./SongComments";
+import SongPlayer from "./SongPlayer";
+
+import "./styles/index.css"
 
 const Song = () => {
+
+    const { songId } = useParams();
+    const { currentSong, setCurrentSong } = useContext(SongPageContext);
+
     return (
         <div className="songpage_container">
-            <div className="songpage_header">
-                <div className="songpage-header_overlay">
-                    <div className="songpage-header_details">
-                        <div className="">Album Artwork
-                            <img />
-                        </div>
-                        <div className="">
-                            <p>Song Title</p>
-                            <p>Artist</p>
-                            <p>Album</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <SongHeader />
             <div className="songpage_main">
                 <div className="songpage-main_left">
-                    <button>Edit Lyrics</button>
-                    <button>Edit Song Facts</button>
-                    <p>Lyrics</p>
+                    <SongLyrics />
+                    <SongComments />
                 </div>
                 <div className="songpage-main_right">
-                    <div>Song Facts</div>
-                    <div>Song Bio</div>
-                    <div>Video Url</div>
+                    <SongFacts />
+                    <SongBio />
+                    <SongVideo />
                 </div>  
-                <div>Song Player</div>              
             </div>
+            <SongPlayer />
         </div>
     )
 }
