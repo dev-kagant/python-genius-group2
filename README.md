@@ -1,5 +1,5 @@
-# Cheonjae
-*by [Ashley Gant](https://github.com/dev-kagant/) [Safiya Cain]() [Kimi Zou]() [Damien Darko]()*
+# 천재 Cheonjae - A [Genius](https://genius.com/) Clone for K-Pop.
+*by [Ashley Gant](https://github.com/dev-kagant/) [Safiya Cain](https://github.com/scain3) [Kimi Zou](https://github.com/Kimi-Zou) [Damien Darko](https://github.com/djangothesolarboy)*
 
 Table Of Contents:
 ---
