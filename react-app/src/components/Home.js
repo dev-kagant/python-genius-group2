@@ -1,4 +1,5 @@
 import './styles/navbar.css';
+import React from 'react';
 
 const HomePage = () => {
     return(
