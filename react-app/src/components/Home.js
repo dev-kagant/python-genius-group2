@@ -8,6 +8,9 @@ const HomePage = () => {
             <div className="chart-headings">
                 <h1 className="charts-title"> CHARTS </h1>
                 <h3> TRENDING ON CHEONJAE</h3>
+                <form>
+                    
+                </form>
             </div>
         </div>
     )

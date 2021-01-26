@@ -40,10 +40,10 @@ const NavBar = ({ setAuthenticated }) => {
       </div>
       <div className='navbar-inner-container2'>
         <NavLink to="/charts" className="second-nav-links" exact={true} activeClassName="active">
-          Charts
+          CHARTS
         </NavLink>
         <NavLink to="/add-a-song" className="second-nav-links" exact={true} setAuthenticated={setAuthenticated}>
-          Add A Song
+          ADD A SONG
         </NavLink>
       </div>
     </nav>
