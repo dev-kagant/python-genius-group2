@@ -24,14 +24,14 @@ const Song = () => {
   
 
     // Load Song
-    useEffect(() => {
-        dispatch(songActions.getSong(songId));
+    // useEffect(() => {
+    //     dispatch(songActions.getSong(songId));
 
-    }, [dispatch, songId])
+    // }, [dispatch, songId])
 
-    if (!loaded) {
-        return null;
-    }
+    // if (!loaded) {
+    //     return null;
+    // }
 
     return (
         <div className="songpage_container">

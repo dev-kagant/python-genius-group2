@@ -3,7 +3,6 @@ from app.models.user import Song, User
 
 
 def seed_songs():
-
     user2 = User.query.filter_by(username='Demo').first()
 
     demoSong = Song(
