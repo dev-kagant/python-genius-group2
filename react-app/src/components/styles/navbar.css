@@ -4,14 +4,26 @@ ul {
 
 .navbar-container {
     display: flex;
+    /* position: absolute;
+    width: 1440px;
+    height: 192px;
+    left: 0px;
+    top: 0px;  */
 }
 
 .navbar-inner-container1 {
+    /* display: flex; */
+    /* justify-content: space-around; */
+    /* position: absolute; */
+    /* width: 1440px; */
+    /* height: 192px;
+    top: 0px; */
     display: flex;
-    justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .navbar-inner-container2 {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
 }
