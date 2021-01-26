@@ -18,20 +18,21 @@ const Song = () => {
     const dispatch = useDispatch();
 
     const { songId } = useParams();
-
+ 
     // States
     const [loaded, setLoaded] = useState(false);
   
 
     // Load Song
-    // useEffect(() => {
-    //     dispatch(songActions.getSong(songId));
+    useEffect(() => {
+        dispatch(songActions.getSong(songId))
+        .then(() => setLoaded(true))
+        .catch(err => console.log(err))
+    }, [dispatch, songId])
 
-    // }, [dispatch, songId])
-
-    // if (!loaded) {
-    //     return null;
-    // }
+    if (!loaded) {
+        return null;
+    }
 
     return (
         <div className="songpage_container">

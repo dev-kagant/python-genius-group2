@@ -10,18 +10,18 @@ const SongHeader = () => {
         <div className="songpage_header">
             <img 
                 className="songpage-header_background" 
-                src="https://cdn.shopify.com/s/files/1/0273/8923/1139/collections/blackpink-banner-ice-cream-1600x400.jpg?v=1601367701"
+                src={currentSong.song_background_image}
             />
             <div className="songpage-header_overlay" />
             <div className="songpage-header_details">
                 <img 
                     className="songpage-header_artwork"
-                    src="https://m.media-amazon.com/images/I/61Ewmjvup6L._AC_SL1000_.jpg"
+                    src={currentSong.song_icon}
                 />
                 <div className="songpage-header_info">
                     <div className="songpage-header_title">{currentSong.title}</div>
-                    <div className="songpage-header_artist">Artist</div>
-                    <div className="songpage-header_album">Album</div>
+                    <div className="songpage-header_artist">{currentSong.artist}}</div>
+                    <div className="songpage-header_album">{currentSong.album}</div>
                 </div>
             </div>
         </div>

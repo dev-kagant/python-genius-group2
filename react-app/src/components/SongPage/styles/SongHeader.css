@@ -12,6 +12,7 @@
     width: 100%;
     height: 100%;
     opacity: 70%;
+    object-fit: cover;
 }
 
 .songpage-header_overlay {
@@ -38,6 +39,7 @@
     width: 220px;
     height: 220px;
     margin-right: 15px;
+    object-fit: cover;
 }
 
 .songpage-header_title {
