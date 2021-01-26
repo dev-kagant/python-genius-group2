@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-import SongPageContext from "./context/SongPageContext";
+import * as songActions from "../../store/song";
 
 import SongHeader from "./SongHeader";
 import SongLyrics from "./SongLyrics";
@@ -14,9 +15,23 @@ import SongPlayer from "./SongPlayer";
 import "./styles/index.css"
 
 const Song = () => {
+    const dispatch = useDispatch();
 
     const { songId } = useParams();
-    const { currentSong, setCurrentSong } = useContext(SongPageContext);
+
+    // States
+    const [loaded, setLoaded] = useState(false);
+  
+
+    // Load Song
+    useEffect(() => {
+        dispatch(songActions.getSong(songId));
+
+    }, [dispatch, songId])
+
+    if (!loaded) {
+        return null;
+    }
 
     return (
         <div className="songpage_container">

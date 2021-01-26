@@ -1,8 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import "./styles/SongHeader.css"
 
 const SongHeader = () => {
+    const currentSong = useSelector(state => state.song.currentSong);
+
     return (
         <div className="songpage_header">
             <img 
@@ -16,7 +19,7 @@ const SongHeader = () => {
                     src="https://m.media-amazon.com/images/I/61Ewmjvup6L._AC_SL1000_.jpg"
                 />
                 <div className="songpage-header_info">
-                    <div className="songpage-header_title">Song Title</div>
+                    <div className="songpage-header_title">{currentSong.title}</div>
                     <div className="songpage-header_artist">Artist</div>
                     <div className="songpage-header_album">Album</div>
                 </div>

@@ -6,9 +6,8 @@ import NavBar from "./components/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
+import Song from "./components/SongPage";
 import { authenticate } from "./services/auth";
-
-import SongPageContextProvider from "./components/SongPage/context/SongPageContext";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -51,9 +50,7 @@ function App() {
           <h1>My Home Page</h1>
         </ProtectedRoute>
         <Route path="/songs/:songId" exact={true}>
-          <SongPageContextProvider>
-            <Song />
-          </SongPageContextProvider>
+          <Song />
         </Route>
       </Switch>
     </BrowserRouter>
