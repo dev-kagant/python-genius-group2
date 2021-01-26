@@ -1,8 +1,17 @@
-il {
+ul {
     list-style-type: none;
 }
 
 .navbar-container {
     display: flex;
-    flex-direction: row;
+}
+
+.navbar-inner-container1 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar-inner-container2 {
+    display: flex;
+    justify-content: space-around;
 }
