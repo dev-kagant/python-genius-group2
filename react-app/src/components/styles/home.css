@@ -1,0 +1,21 @@
+.song-charts {
+    /* display: block;
+    margin: 0 auto; */
+    background-color:#F7E6A0;
+    /* left: 500px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+
+}
+
+.chart-headings{
+    /* margin: 0 auto; */
+    /* left: 500px; */
+}
+
+.charts-title{
+    font-size: 100px;
+}
