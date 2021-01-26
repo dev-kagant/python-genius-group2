@@ -7,4 +7,4 @@ song_routes = Blueprint("songs", __name__)
 @song_routes.route("/<int:id>")
 def song(id):
     song = Song.query.get(id)
-    return jsonify(song)
+    return song.to_dict()

@@ -40,5 +40,5 @@ def seed_songs():
 
 
 def undo_songs():
-    db.session.execute('TRUNCATE songs;')
+    db.session.execute('TRUNCATE songs CASCADE;')
     db.session.commit()
