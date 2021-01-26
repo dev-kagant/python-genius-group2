@@ -9,11 +9,11 @@ const NavBar = ({ setAuthenticated }) => {
       <div >
         <ul className='navbar-inner-container1'>
           <li>
-            <input type="search" />
+            <input type="search" placeholder="Search bar" />
           </li>
           <li>
             <NavLink to="/" exact={true} activeClassName="active" className="home-link">
-              천재 Cheonjae
+              천재 
             </NavLink>
           </li>
           <div>

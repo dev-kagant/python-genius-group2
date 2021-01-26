@@ -22,17 +22,25 @@ ul {
     display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: #E1FFC4;
 }
 
 .navbar-inner-container2 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
     /* justify-content: space-around; */
 }
 
 .home-link{
     font-family: 'Single Day', cursive;
-    line-style-type: None;
-    font-size: large;
+    text-decoration: none;
+    font-size: 125px;
+    color: #E1FFC4;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+body{
+    background-color: #ffffff;
 }
