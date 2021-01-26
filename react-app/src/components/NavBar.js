@@ -13,7 +13,7 @@ const NavBar = ({ setAuthenticated }) => {
           </li>
           <li>
             <NavLink to="/" exact={true} activeClassName="active" className="home-link">
-              천재 
+              천재
             </NavLink>
           </li>
           <div>
@@ -39,10 +39,10 @@ const NavBar = ({ setAuthenticated }) => {
         </ul>
       </div>
       <div className='navbar-inner-container2'>
-        <NavLink to="/charts" exact={true} activeClassName="active">
+        <NavLink to="/charts" className="second-nav-links" exact={true} activeClassName="active">
           Charts
         </NavLink>
-        <NavLink to="/add-a-song" exact={true} setAuthenticated={setAuthenticated}>
+        <NavLink to="/add-a-song" className="second-nav-links" exact={true} setAuthenticated={setAuthenticated}>
           Add A Song
         </NavLink>
       </div>

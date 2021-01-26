@@ -8,8 +8,10 @@ ul {
     /* position: absolute;
     width: 1440px;
     height: 192px;
-    left: 0px;
-    top: 0px;  */
+    left: 0px; */
+    /* top: 50px; */
+    border-top: 20px;
+    border-bottom: 20px;
 }
 
 .navbar-inner-container1 {
@@ -17,28 +19,38 @@ ul {
     /* justify-content: space-around; */
     /* position: absolute; */
     /* width: 1440px; */
-    /* height: 192px;
-    top: 0px; */
+    /* height: 192px; */
+    top: 100px;
     display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: #E1FFC4;
+  height: -50px;
 }
 
 .navbar-inner-container2 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    background-color: #000000;
 
-    /* justify-content: space-around; */
+
 }
 
 .home-link{
     font-family: 'Single Day', cursive;
     text-decoration: none;
-    font-size: 125px;
+    font-size: 50px;
     color: #E1FFC4;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    /* line-height: -50px; */
+    top: -50px;
+}
+
+.second-nav-links{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 25px;
 }
 
 body{
