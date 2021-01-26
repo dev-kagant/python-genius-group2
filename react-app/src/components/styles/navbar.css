@@ -4,6 +4,7 @@ ul {
 
 .navbar-container {
     display: flex;
+    flex-direction: column;
     /* position: absolute;
     width: 1440px;
     height: 192px;
@@ -25,5 +26,13 @@ ul {
 
 .navbar-inner-container2 {
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     /* justify-content: space-around; */
+}
+
+.home-link{
+    font-family: 'Single Day', cursive;
+    line-style-type: None;
+    font-size: large;
 }

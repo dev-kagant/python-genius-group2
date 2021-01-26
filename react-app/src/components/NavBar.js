@@ -6,31 +6,36 @@ import './styles/navbar.css';
 const NavBar = ({ setAuthenticated }) => {
   return (
     <nav className='navbar-container'>
-      <div className='navbar-inner-container1'>
-        <ul>
+      <div >
+        <ul className='navbar-inner-container1'>
           <li>
-            <NavLink to="/" exact={true} activeClassName="active">
+            <input type="search" />
+          </li>
+          <li>
+            <NavLink to="/" exact={true} activeClassName="active" className="home-link">
               천재 Cheonjae
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/login" exact={true} activeClassName="active">
-              Login
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/sign-up" exact={true} activeClassName="active">
-              Sign Up
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/users" exact={true} activeClassName="active">
-              Users
-            </NavLink>
-          </li>
-          <li>
-            <LogoutButton setAuthenticated={setAuthenticated} />
-          </li>
+          <div>
+            <li>
+              <NavLink to="/login" exact={true} activeClassName="active" className="login-link">
+                Login
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/sign-up" exact={true} activeClassName="active" className="signup-link">
+                Sign Up
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/users" exact={true} activeClassName="active" className="users-link">
+                Users
+              </NavLink>
+            </li>
+            <li>
+              <LogoutButton setAuthenticated={setAuthenticated} />
+            </li>
+          </div>
         </ul>
       </div>
       <div className='navbar-inner-container2'>
