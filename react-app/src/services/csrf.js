@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 
 //-----------------------------------------------------
 // Define fetch function
-export const fetch = async (url, options={}) => {
+export const csrffetch = async (url, options={}) => {
   // Set default as "GET" method
   options.method = options.method || 'GET';
   options.headers = options.headers || {};
