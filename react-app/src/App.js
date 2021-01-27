@@ -7,7 +7,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import Song from "./components/SongPage";
-import HomePage from "./components/Home";
+import HomePage from "./components/HomePage/Home";
 
 import { authenticate } from "./services/auth";
 
@@ -44,7 +44,7 @@ function App() {
         </Route>
         <ProtectedRoute path="/users" exact={true} authenticated={authenticated}>
           <UsersList/>
-        </ProtectedRoute> 
+        </ProtectedRoute>
         <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
           <User />
         </ProtectedRoute>
