@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from "react-redux";
+import parse from "html-react-parser";
 
 import SongEditForm from "./SongEditForm";
 import { Modal } from "../Modal/Modal";
@@ -23,7 +24,7 @@ const SongLyrics = () => {
                     </Modal>
                 )}
             </div>
-            <div className="songpage-lyrics_lyrics"><pre>{currentSong.lyrics}</pre></div>
+            <div className="songpage-lyrics_lyrics">{parse(currentSong.lyrics)}</div>
         </div>
     )
 }

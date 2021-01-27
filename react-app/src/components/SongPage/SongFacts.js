@@ -1,4 +1,5 @@
 import React from "react";
+import { format } from "date-fns";
 import { useSelector } from "react-redux";
 
 import "./styles/SongFacts.css"
@@ -19,7 +20,7 @@ const SongFacts = () => {
             </div>
             <div className="songpage-songfacts_items">
                 <div className="songfacts-item_label">Released Date</div>
-                <div className="songfacts-item_content">{currentSong.release_date}</div>
+                <div className="songfacts-item_content">{format(new Date(currentSong.release_date), "yyyy-MM-dd")}</div> 
             </div>
         </div>
     )

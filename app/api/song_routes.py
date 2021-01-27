@@ -1,5 +1,6 @@
-from flask import Blueprint, jsonify
-from app.models import Song
+from flask import Blueprint
+from flask_login import current_user
+from app.models import db, Song
 
 song_routes = Blueprint("songs", __name__)
 
@@ -18,14 +19,11 @@ def songs():
 
 @song_routes.route("/new_song", methods=['POST'])
 def add_song():
-    form = AddSong()                #need actual form name
-    if form.validate_on_submit():
-        song = Song()
-        form.populate_obj(song)
-        Song.add(song)
-        Song.commit()
-        return song.id          #need to render the song page
-    return "Bad Data"      #need to be changed to validator response
+    song = Song(user_Id=current_user.id, **request.json)
+    db.session.add(song)
+    db.session.commit()
+    return song.to_dict()
+
 
 
 @song_routes.route("/edit/<int:id>", methods=['GET', 'POST'])
@@ -34,7 +32,6 @@ def get_song():
     return AddSong(song)                       #need to test this route
 
 def edit_song():
-    form = AddSong()       #need actual form name may be a different form than add
     song = Song.query.get(id)
     if form.validate_on_submit():
         song_update = Song()
@@ -53,7 +50,7 @@ def edit_song():
         song.release_date = song_update.release_date
         Song.commit()
         return song.id          #need to render the song page
-    return "Bad Data"      #need to be changed to validator response
+    # return "Bad Data"      #need to be changed to validator response
 
 
 @song_routes.route("/delete/<int:id>", methods=['DELETE'])

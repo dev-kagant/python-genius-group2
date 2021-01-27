@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { format } from "date-fns";
 import { useSelector } from "react-redux";
 
 import "./styles/SongEditForm.css";
@@ -61,7 +62,7 @@ const SongEditForm = ({ setShowModal }) => {
           <label className="song-edit_label">RELEASE DATE</label>
           <input 
             className="song-edit_input-box"
-            value={currentSong.release_date}
+            value={format(new Date(currentSong.release_date), "yyyy-MM-dd")}
             type="date"
           />
         </div>

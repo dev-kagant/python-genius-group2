@@ -39,8 +39,54 @@ export const fetchAllSongs = () => async(dispatch) => {
 //GET SONG BY ID
 export const getSong = (id) => async dispatch => {
     const res = await fetch(`/api/songs/${id}`);
-    dispatch(setCurrentSong(res.data));
-    return res.data;
+    if (res.ok) {
+        const data = await res.json();
+        dispatch(setCurrentSong(data));
+    }
+    // return res.data;
+}
+
+export const postSong = (song) => async dispatch => {
+    const { 
+        artist, 
+        title, 
+        album, 
+        song_url, 
+        lyrics, 
+        written_by, 
+        label, 
+        release_date,  
+        media_url,
+        song_icon,
+        song_background_image,
+        song_bio
+    } = song;
+
+    const response = await fetch("/api/songs/new_song", {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json"
+        }, 
+        body: JSON.stringify({
+            artist, 
+            title, 
+            album, 
+            song_url, 
+            lyrics, 
+            written_by, 
+            label, 
+            release_date,  
+            media_url,
+            song_icon,
+            song_background_image,
+            song_bio
+        })
+    });
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(setCurrentSong(data))
+        return data.id
+    }
 }
 
 
