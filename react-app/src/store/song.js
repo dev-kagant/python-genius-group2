@@ -3,7 +3,8 @@ import { fetch } from "../services/csrf";
 
 // State
 const initialState = {
-    currentSong: {}
+    currentSong: {},
+    byId: {}
 }
 
 // Action types
@@ -46,12 +47,15 @@ export const getSong = (id) => async dispatch => {
 const songReducer = (state=initialState, action) => {
     switch (action.type) {
         case GET_ALL_SONGS:
-            // const newSongs = {};
-            // action.payload.forEach((song) => {
-            //     newSongs[song.id] = song
-            // })
-            // return newSongs;
-            return state;
+            const newSongs = {};
+            action.payload.forEach((song) => {
+                newSongs[song.id] = song
+            })
+            return {
+                ...state,
+                byId: newSongs
+            };
+            // return state;
         case SET_CURRENT_SONG:
             return {
                 ...state,
