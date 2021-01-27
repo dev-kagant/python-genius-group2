@@ -11,16 +11,7 @@ const SongPlayer = () => {
         <div className="songpage-player_container">
             <div className="songpage-player_player">
                 <ReactPlayer 
-                    url="https://soundcloud.com/laila-blox/blackpink-how-you-like-that-2"
-                    config={{
-                        soundcloud: {
-                            options: {
-                                show_artwork: false,
-                                show_playcount: false,
-                                show_user: false,
-                            }
-                        }    
-                    }}
+                    url={currentSong.song_url}
                     width='100%'
                     height='100%' 
                 />

@@ -13,80 +13,81 @@ def seed_songs():
         written_by='J.Y. Park',
         label='JYP',
         song_bio='''
-                    Not Shy was released as the lead single
-                    from the album on August 17, 2020.
-                    With total of 5 wins, 1 win on The Show
-                    and Music Bank, and 3 in the MCountdown,
-                    joining Blackpink as the girl group with
-                    most Music Show wins (13 wins) and Triple
-                    Crowns (3) in 2020. "Not Shy" also reached
-                    the top-ten in South Korea, Singapore and
-                    Malaysia. Itzy also became with Blackpink
-                    the first and only girl groups to chart both
-                    on Billboard Global 200 and Billboard Global
-                    Excl. US Chart peaking at number 124 and 70
-                    respectively.
+                <p>Not Shy was released as the lead single 
+                from the album on August 17, 2020. 
+                With total of 5 wins, 1 win on The Show 
+                and Music Bank, and 3 in the MCountdown,
+                joining Blackpink as the girl group with
+                most Music Show wins (13 wins) and Triple
+                Crowns (3) in 2020. "Not Shy" also reached
+                the top-ten in South Korea, Singapore and
+                Malaysia. Itzy also became with Blackpink
+                the first and only girl groups to chart both
+                on Billboard Global 200 and Billboard Global
+                Excl. US Chart peaking at number 124 and 70
+                respectively.</p>
+                <p>HEY</p>
                 ''',
         lyrics= '''
-                Not shy, not me (ITZY)
+                <p>Not shy, not me (ITZY)
                 난 다 원해 다다 (Yeah)
-                Not shy, not me
+                Not shy, not me</p>
 
-                난 빨리빨리 원하는 걸 말해
+                <p>난 빨리빨리 원하는 걸 말해
                 못 가지면 어때 괜히
                 망설이다 시간만 가니
                 Yeah 다 말할래 'cause I like it, 'cause I like it, like it
                 기다려 왜? 기다려서 뭐해?
                 내가 내 맘을 왜 (왜) 말하면 안 돼 yeah
                 그냥 탁 그냥 탁탁탁탁탁
-                Not shy to say I want you
+                Not shy to say I want you</p>
 
-                Hey there, hey there
+                <p>Hey there, hey there
                 우리는 great pair, great pair
                 네 맘이 뭔지 모르지만 ah 내 생각이
                 맞아 그러니까 ah yeah yeah
                 내 맘은 내 거 그러니까
                 좋아한다고 자유니까
                 네 맘은 네 거 맞으니까
-                말해봐 다 어서 다 'cause I'm not shy
+                말해봐 다 어서 다 'cause I'm not shy</p>
 
-                Not shy, not me (ITZY)
+                <p>Not shy, not me (ITZY)
                 난 다 원해 다다 (Not shy)
                 Not shy, not me
                 Give me 다 다다다 다다 다다
                 Not shy, not me (ITZY)
                 난 다 원해 다다 (Not shy)
                 Not shy, not me
-                너를 원해 뭐 어때 'cause I'm not shy
+                너를 원해 뭐 어때 'cause I'm not shy</p>
 
-                넌 빨리빨리 대답할 필욘 없어
+                <p>넌 빨리빨리 대답할 필욘 없어
                 어차피 내 거니까 woo
                 날 보고 있기만 하면 돼
                 Yeah you will like it, 'cause you like it, 'cause you like it, like it
                 내가 미워 아니라면 비워
                 다른 건 다 지워 내가 네 only one, yeah
                 그냥 싹 지워 싹싹싹싹싹
-                Not shy to say I want you
+                Not shy to say I want you</p>
 
-                Hey there, hey there
+                <p>Hey there, hey there
                 우리는 great pair, great pair
                 네 맘이 뭔지 모르지만 ah 내 생각이
                 맞아 그러니까 ah yeah yeah
                 내 맘은 내 거 그러니까
                 좋아한다고 자유니까
                 네 맘은 네 거 맞으니까
-                말해봐 다 어서 다 'cause I'm not shy
+                말해봐 다 어서 다 'cause I'm not shy</p>
 
-                Not shy, not me (ITZY)
+                <p>Not shy, not me (ITZY)
                 난 다 원해 다다 (Not shy)
                 Not shy, not me
                 Give me 다 다다다 다다 다다
                 Not shy, not me (ITZY)
                 난 다 원해 다다 (Not shy)
                 Not shy, not me
-                너를 원해 뭐 어때 'cause I'm not shy
+                너를 원해 뭐 어때 'cause I'm not shy</p>
 
-                후회하긴 싫으니까
+                <p>후회하긴 싫으니까
                 엔딩 상관없으니까
                 Go go go 모두 쏟아내
                 No yes no 뭐든지 어때
@@ -94,14 +95,14 @@ def seed_songs():
                 어차피 안 될 거 빼고 다 돼
                 Let's just be who we are
                 Do what we do 네 맘대로 해
-                Let the beat drop
+                Let the beat drop</p>
 
-                Not shy, not me (ITZY)
+                <p>Not shy, not me (ITZY)
                 난 다 원해 다다 (Not shy)
                 Not shy, not me
-                말해봐 다 어서 다 'cause I'm not shy
+                말해봐 다 어서 다 'cause I'm not shy</p>
 
-                Not shy, not me (ITZY)
+                <p>Not shy, not me (ITZY)
                 난 다 원해 다다 (Not shy)
                 Not shy, not me
                 Give me 다 다다다 다다 다다
@@ -109,7 +110,7 @@ def seed_songs():
                 난 다 원해 다다 (Not shy)
                 Not shy, not me
                 너를 원해 뭐 어때 'cause I'm not shy
-                Not shy, not me
+                Not shy, not me</p>
                 ''',
         song_url='https://soundcloud.com/wiktoria-filipowska-879194668/itzy-not-shy',
         media_url='https://www.youtube.com/watch?v=wTowEKjDGkU',

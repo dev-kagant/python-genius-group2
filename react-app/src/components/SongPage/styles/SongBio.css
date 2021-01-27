@@ -8,3 +8,8 @@
     font-size: 14px;
     padding-bottom: 20px;
 }
+
+.songpage-bio_bio p{
+    margin-bottom: 20px;
+    line-height: 1.25em;
+}

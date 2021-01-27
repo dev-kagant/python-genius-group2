@@ -45,10 +45,10 @@ const Song = () => {
                 <div className="songpage-main_right">
                     <SongFacts />
                     <SongBio />
+                    <SongPlayer />
                     <SongVideo />
                 </div>  
             </div>
-            <SongPlayer />
         </div>
     )
 }

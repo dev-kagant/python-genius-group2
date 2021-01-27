@@ -8,6 +8,7 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import Song from "./components/SongPage";
 import HomePage from "./components/Home";
+import SongAddForm from "./components/SongPage/SongAddForm";
 
 import { authenticate } from "./services/auth";
 
@@ -53,6 +54,9 @@ function App() {
         </Route>
         <Route path="/songs/:songId" exact={true}>
           <Song />
+        </Route>
+        <Route path="/add-a-song" exact={true}>
+          <SongAddForm />
         </Route>
       </Switch>
     </BrowserRouter>

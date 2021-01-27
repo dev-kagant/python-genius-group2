@@ -26,4 +26,10 @@
 /* --------- lyrics ------- */
 .songpage-lyrics_lyrics {
     margin-top: 24px;
+    width: 60%;
+}
+
+.songpage-lyrics_lyrics p {
+    margin-bottom: 20px;
+    line-height: 1.25em;
 }

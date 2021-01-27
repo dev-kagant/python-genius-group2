@@ -1,0 +1,95 @@
+/* --------- containers ---------- */
+.song-add_container {
+    display: flex;
+    flex-direction: column;
+    width: 970px;
+    margin: 50px auto;
+}
+
+.song-add_main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.song-add_left {
+    width: 48%;
+}
+
+.song-add_right {
+    width: 48%;
+}
+
+/* --------- page heading ---------- */
+.song-add_heading {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* --------- left heading ---------- */
+.song-add_primary-heading-container,
+.song-add_additional-heading-container {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px #999 solid;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* --------- input container ---------- */
+.song-add_input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/* --------- input box ---------- */
+.song-add_input-box {
+    height: 25px;
+    padding: 2px 5px;
+}
+
+/* --------- textarea ---------- */
+.song-add_textarea-lyrics {
+    height: 400px;
+    overflow: scroll;
+}
+
+.song-add_textarea-bio {
+    height: 200px;
+    overflow: scroll;
+}
+
+/* --------- buttons ---------- */
+.song-add_buttons {
+    margin-top: 35px;
+    font-size: 24px;
+}
+
+.song-add_save {
+    background-color: white;
+    border-style: none;
+    border: 2.4px black solid;
+    padding: 4px 8px;
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.song-add_cancel {
+    border-style: none;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.song-add_save:hover {
+    background-color: black;
+    color: white;
+}
+
+.song-add_delete:hover {
+    background-color: rgb(255, 59, 59);
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}
