@@ -60,6 +60,22 @@ class Song(db.Model):
   comments = db.relationship('Comment', backref='song', lazy=True)
   votes = db.relationship('Vote', backref='song', lazy=True)
 
+  def to_dict(self):
+    return {
+      "id": self.id,
+      "artist": self.artist,
+      "title": self.title,
+      "album": self.album,
+      "written_by": self.written_by,
+      "label": self.label,
+      "lyrics": self.lyrics,
+      "song_url": self.song_url,
+      "media_url": self.media_url,
+      "song_icon": self.song_icon,
+      "song_background_image": self.song_background_image,
+      "release_date": self.release_date
+    }
+
 
 class Annotation(db.Model):
   __tablename__ = "annotations"

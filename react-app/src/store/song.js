@@ -16,9 +16,9 @@ const setCurrentSong = (song) => ({
 
 // Thunk Actions
 export const getSong = (id) => async dispatch => {
-    const res = await fetch(`/songs/${id}`);
-    dispatch(setCurrentSong(res.data.song));
-    return res.data.song;
+    const res = await fetch(`/api/songs/${id}`);
+    dispatch(setCurrentSong(res.data));
+    return res.data;
 }
 
 

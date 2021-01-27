@@ -1,0 +1,19 @@
+/* --------- container ------- */
+.songpage-video_container {
+    border: 2.4px solid rgb(247, 247, 247);
+    margin-left: -14px;
+    padding: 12px;
+}
+
+/* --------- heading ------- */
+.songpage-video_heading {
+    font-size: 14px;
+    padding-bottom: 12px;
+}
+
+/* --------- player ------- */
+.songpage-video_player-container {
+    width: 100%;
+    height: 225px;
+    background-color: #999;
+}
