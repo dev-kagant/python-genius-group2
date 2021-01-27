@@ -1,7 +1,17 @@
+.sign-in-div{
+    display: flex;
+    margin: 10px 750px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 25px;
+}
+
 .form-container{
     display: flex;
     flex-direction: column;
-    background-color: #F7E6A0;
+    background-color: #EFCC41;
+    width: 300px;
+    height: 150px;
+    margin: 10px auto;
 }
 
 .form-inputs{
