@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";	
-import { BrowserRouter, Route, Switch } from "react-router-dom";	
-import LoginForm from "./components/auth/LoginForm";	
-import SignUpForm from "./components/auth/SignUpForm";	
-import NavBar from "./components/NavBar";	
-import ProtectedRoute from "./components/auth/ProtectedRoute";	
-import UsersList from "./components/UsersList";	
-import User from "./components/User";	
-import { authenticate } from "./services/auth";	
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import LoginForm from "./components/auth/LoginForm";
+import SignUpForm from "./components/auth/SignUpForm";
+import NavBar from "./components/NavBar";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
+import UsersList from "./components/UsersList";
+import User from "./components/User";
+import { authenticate } from "./services/auth";
+import HomePage from "./components/Home";
 
 // import SongPageContextProvider from "./components/SongPage/context/SongPageContext";	
 
@@ -24,40 +25,40 @@ function App() {
     })();	
   }, []);	
 
-  if (!loaded) {	
-    return null;	
+  if (!loaded) {
+    return null;
   }	
 
-  return (	
-    <BrowserRouter>	
-      <NavBar setAuthenticated={setAuthenticated} />	
-      <Switch>	
-        <Route path="/login" exact={true}>	
-          <LoginForm	
-            authenticated={authenticated}	
-            setAuthenticated={setAuthenticated}	
-          />	
-        </Route>	
-        <Route path="/sign-up" exact={true}>	
-          <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />	
-        </Route>	
-        <ProtectedRoute path="/users" exact={true} authenticated={authenticated}>	
-          <UsersList/>	
-        </ProtectedRoute>	
-        <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>	
-          <User />	
-        </ProtectedRoute>	
-        <ProtectedRoute path="/" exact={true} authenticated={authenticated}>	
-          <h1>My Home Page</h1>	
-        </ProtectedRoute>	
+  return (
+    <BrowserRouter>
+      <NavBar setAuthenticated={setAuthenticated} />
+      <Switch>
+        <Route path="/login" exact={true}>
+          <LoginForm
+            authenticated={authenticated}
+            setAuthenticated={setAuthenticated}
+          />
+        </Route>
+        <Route path="/sign-up" exact={true}>
+          <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
+        </Route>
+        <ProtectedRoute path="/users" exact={true} authenticated={authenticated}>
+          <UsersList/>
+        </ProtectedRoute> 
+        <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
+          <User />
+        </ProtectedRoute>
+        <Route path="/" exact={true} authenticated={authenticated}>
+          <HomePage />
+        </Route>
         {/* <Route path="/songs/:songId" exact={true}>	
           <SongPageContextProvider>	
             <Song />	
           </SongPageContextProvider>	
         </Route>	 */}
-      </Switch>	
-    </BrowserRouter>	
-  );	
-}	
+      </Switch>
+    </BrowserRouter>
+  );
+}
 
 export default App;
