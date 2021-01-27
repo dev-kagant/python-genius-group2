@@ -2,5 +2,6 @@
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
     "python.linting.pycodestyleEnabled": false,
-    "python.linting.pydocstyleEnabled": false
+    "python.linting.pydocstyleEnabled": false,
+    "python.pythonPath": "C:\\Users\\KERRI\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"
 }

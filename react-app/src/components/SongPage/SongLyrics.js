@@ -12,7 +12,7 @@ const SongLyrics = () => {
                 <button className="songpage-lyrics_buttons">Edit Lyrics</button>
                 <button className="songpage-lyrics_buttons">Edit Song Facts</button>
             </div>
-            <div className="songpage-lyrics_lyrics">{currentSong.lyrics}</div>
+            <div className="songpage-lyrics_lyrics"><pre>{currentSong.lyrics}</pre></div>
         </div>
     )
 }
