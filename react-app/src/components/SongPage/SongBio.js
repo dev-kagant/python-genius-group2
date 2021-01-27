@@ -9,7 +9,7 @@ const SongBio = () => {
     return (
         <div className="songpage-bio_container">
             <div className="songpage-bio_heading">About Song</div>
-            <div className="songpage-bio_bio">Bio goes here.</div>
+            <div className="songpage-bio_bio"><pre>{currentSong.song_bio}</pre></div>
         </div>
     )
 }
