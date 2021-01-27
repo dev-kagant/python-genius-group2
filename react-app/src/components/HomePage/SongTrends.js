@@ -16,11 +16,12 @@ function SongTrends(){
         <div className="main-page_container">
             <ul className="main-page_center">
 
-                {songs && songs.map((song) =>
+                {songs && songs.map((song, index = 1) =>
                 <div className="song-data" key={song.title}>
-                <li><img className="song-img" src={song.song_icon} alt={song.title}/></li>
-                <div className="song-title"><li>{song.title}</li></div>
-                <div className="song-artist"><li>{song.artist}</li></div>
+                    <div className="song-index">{index + 1}</div>
+                    <li><img className="song-img" src={song.song_icon} alt={song.title}/></li>
+                    <div className="song-title"><li>{song.title}</li></div>
+                    <div className="song-artist"><li>{song.artist}</li></div>
 
                 </div>
             )}

@@ -1,5 +1,5 @@
 import { signUp } from "../services/auth";
-import { fetch } from "../services/csrf";
+import { csrffetch } from "../services/csrf";
 
 // State
 const initialState = {
@@ -30,7 +30,8 @@ const setCurrentSong = (song) => ({
 
 //GET ALL OF THE SONGS
 export const fetchAllSongs = () => async(dispatch) => {
-    const res = await fetch("/api/songs");
+    const res = await csrffetch("/api/songs");
+    console.log(res.data);
     dispatch(getAllSongs(res.data.songs));
 }
 
