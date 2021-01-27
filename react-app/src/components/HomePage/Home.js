@@ -1,6 +1,7 @@
-import './styles/navbar.css';
-import './styles/home.css';
+import '../styles/navbar.css';
+import '../styles/home.css';
 import React from 'react';
+import SongTrends from './SongTrends.js';
 
 const HomePage = () => {
     return(
@@ -8,9 +9,7 @@ const HomePage = () => {
             <div className="chart-headings">
                 <h1 className="charts-title"> CHARTS </h1>
                 <h3> TRENDING ON CHEONJAE</h3>
-                <form>
-                    
-                </form>
+                <SongTrends />
             </div>
         </div>
     )
