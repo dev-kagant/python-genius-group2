@@ -23,7 +23,7 @@ const SongLyrics = () => {
                     </Modal>
                 )}
             </div>
-            <div className="songpage-lyrics_lyrics">{currentSong.lyrics}</div>
+            <div className="songpage-lyrics_lyrics"><pre>{currentSong.lyrics}</pre></div>
         </div>
     )
 }
