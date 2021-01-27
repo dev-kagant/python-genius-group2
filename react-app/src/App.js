@@ -7,6 +7,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import Song from "./components/SongPage";
+import HomePage from "./components/Home";
 
 import { authenticate } from "./services/auth";
 
@@ -43,13 +44,13 @@ function App() {
         </Route>
         <ProtectedRoute path="/users" exact={true} authenticated={authenticated}>
           <UsersList/>
-        </ProtectedRoute>
+        </ProtectedRoute> 
         <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
-          <h1>My Home Page</h1>
-        </ProtectedRoute>
+        <Route path="/" exact={true} authenticated={authenticated}>
+          <HomePage />
+        </Route>
         <Route path="/songs/:songId" exact={true}>
           <Song />
         </Route>

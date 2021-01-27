@@ -1,5 +1,6 @@
 import React from "react";
 import { logout } from "../../services/auth";
+import '../styles/navbar.css';
 
 const LogoutButton = ({setAuthenticated}) => {
   const onLogout = async (e) => {
@@ -7,7 +8,7 @@ const LogoutButton = ({setAuthenticated}) => {
     setAuthenticated(false);
   };
 
-  return <button onClick={onLogout}>Logout</button>;
+  return <button className='logout' onClick={onLogout}>Logout</button>;
 };
 
 export default LogoutButton;
