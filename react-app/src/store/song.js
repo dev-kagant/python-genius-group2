@@ -12,12 +12,13 @@ const GET_ALL_SONGS = "song/GET_ALL_SONGS";
 const SET_CURRENT_SONG = "song/SET_CURRENT_SONG";
 
 // POJO Actions
-const getAllSongs = (songs) => {
-    return{
-        type: GET_ALL_SONGS,
-        payload: songs
-    }
-}
+const getAllSongs = (songs) => ({
+    type: GET_ALL_SONGS,
+    payload: songs
+})
+
+
+
 
 const setCurrentSong = (song) => ({
     type: SET_CURRENT_SONG,
@@ -29,7 +30,7 @@ const setCurrentSong = (song) => ({
 //GET ALL OF THE SONGS
 export const fetchAllSongs = () => async(dispatch) => {
     const res = await fetch("/api/songs");
-    dispatch(getAllSongs(res.data.song));
+    dispatch(getAllSongs(res.data.songs));
 }
 
 
@@ -45,10 +46,12 @@ export const getSong = (id) => async dispatch => {
 const songReducer = (state=initialState, action) => {
     switch (action.type) {
         case GET_ALL_SONGS:
-            const newSongs = {};
-            action.payload.forEach((song) => {
-                newSongs[song.id] = song
-            })
+            // const newSongs = {};
+            // action.payload.forEach((song) => {
+            //     newSongs[song.id] = song
+            // })
+            // return newSongs;
+            return state;
         case SET_CURRENT_SONG:
             return {
                 ...state,

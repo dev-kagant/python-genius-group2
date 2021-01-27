@@ -1,18 +1,25 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import getSong from '../../store/song.js';
+import { fetchAllSongs } from '../../store/song.js';
 
 function SongTrends(){
-    const songs = useSelector(state => state.song);
+    const songs = useSelector(state => state.songs);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getSong());
+        dispatch(fetchAllSongs());
     }, [dispatch]);
 
     return(
-        <h1>Hello World</h1>
+        <div>
+            <ul>{songs && songs.map((song) =>
+            <>
+                <li>Hello World</li>
+                <li className="title">{song.title}</li>
+            </>
+            )}</ul>
+        </div>
     )
 
 }
