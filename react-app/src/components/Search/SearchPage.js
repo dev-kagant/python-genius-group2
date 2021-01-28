@@ -7,21 +7,17 @@ function SearchPage(){
     const artistInfo = useSelector(state => state.search.artist);
     const lyricsInfo = useSelector(state => state.search.lyrics);
 
-    // const songArr = Object.values(songInfo);
-    // const artistArr = Object.values(artistInfo);
-    // const lyricsArr = Object.values(lyricsInfo);
-
     return(
-        <div>
-            <div className="songInfo"> Songs {
+        <div className="search-page_container">
+            <ul className="search-page_songInfo"> Songs {
                 songInfo && songInfo.map((song)=>(
-                    <div key={song.title}>
-                        <img src={song.song_icon} />
+                    <div className="search-song_data" key={song.title}>
+                        <li><img className="song-img" src={song.song_icon} /></li>
                         <h1>{song.title}</h1>
                         <h1>{song.artist}</h1>
                     </div>
                 ))
-            }</div>
+            }</ul>
             <div className="artistInfo"> Artists {
                 artistInfo && artistInfo.map((artist)=> (
                     <div key={artist.artist}>
