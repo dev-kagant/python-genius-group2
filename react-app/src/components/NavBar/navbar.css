@@ -1,0 +1,132 @@
+/* ----------- gloabl -------------- */
+.navbar_links {
+    text-decoration: none;
+}
+
+/* ----------- containers ---------- */
+.navbar-container {
+    display: flex;
+    flex-direction: column;
+    border-top: 20px;
+    border-bottom: 20px;
+    background-color: #E1FFC4;
+}
+
+.navbar_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E1FFC4;
+    padding: 10px 35px;
+}
+
+.navbar_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #000000;
+}
+
+/* ------------------  Search   ----------------- */
+.navbar_search-container {
+    width: 25%;
+    padding: 2px 10px 2px;
+}
+  
+.nav-search__form {
+    display: flex;
+    position: relative;
+}
+  
+.nav-search__input {
+    color: #666;
+    outline: 0;
+    border: 0;
+    padding: 5px 7px;
+    height: 28px;
+    width: 100%;
+    border-radius: 4px;
+    font-weight: 300;
+}
+  
+.nav-search__input::placeholder {
+    color: #666;
+    font-weight: 300;
+}
+  
+.nav-search__submit {
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: white;
+}
+
+/* ----------- logo ---------- */
+.navbar_logo-container {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.home-link {
+    font-family: 'Single Day', cursive;
+    font-size: 50px;
+    color: #E1FFC4;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    padding-left: 20px;
+}
+
+.navbar_bottom-links {
+    color: #ffffff;
+    font-size: 22px;
+}
+
+/* ----------- top links ---------- */
+.navbar_buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 25%;
+}
+
+.login-link, 
+.signup-link, 
+.users-link {
+    padding: 5px;
+    color: black;
+}
+
+.logout {
+    border-radius: 5px;
+    border: 0;
+    background-color: #F7E6A0;
+    padding: 3px;
+    margin-top: -5px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.login-link:hover, 
+.signup-link:hover, 
+.users-link:hover,
+.home-link:hover {
+    color: #4b5b2f;
+}
+
+.logout:hover {
+    border: 2px solid #91918f;
+}
+
+/* ----------- bottom links ---------- */
+.navbar-add-a-song:hover,
+.navbar-charts:hover {
+    color: #efcc41;
+}
+
+.navbar-charts,
+.navbar-add-a-song {
+    padding: 10px;
+    padding-top: 15px;
+}

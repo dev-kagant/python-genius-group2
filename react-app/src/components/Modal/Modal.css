@@ -17,13 +17,14 @@
     left: 0;
     bottom: 0;
     background-color: black;
-    opacity: 85%;
+    opacity: 88%;
   }
   
   #modal-content {
     position: absolute;
     background-color: #F7E6A0;
     width: 600px;
+    min-height: 300px;
     padding: 30px 30px;
     display: flex;
     justify-content: center;
