@@ -17,5 +17,5 @@ def search():
 
     return {
         "song_artist": [song_artist.to_dict() for song_artist in song_artists],
-        "search_song": [song_title.to_dict for song_title in song_titles],
+        "search_song": [song_title.to_dict() for song_title in song_titles],
         "song_lyric": [song_lyric.to_dict() for song_lyric in song_lyrics]}
