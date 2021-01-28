@@ -89,6 +89,45 @@ export const postSong = (song) => async dispatch => {
     }
 }
 
+//EDIT A SONG
+export const editSong = (song) => async (dispatch) => {
+    const {
+        id,
+        artist,
+        title,
+        album,
+        song_url,
+        written_by,
+        label,
+        release_date,
+        media_url,
+        song_icon,
+        song_background_image,
+    } = song;
+    const response = await fetch(`/api/songs/edit`, {
+        method: "PATCH",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+            id,
+            artist,
+            title,
+            album,
+            song_url,
+            written_by,
+            label,
+            release_date,
+            media_url,
+            song_icon,
+            song_background_image
+        })
+    })
+    if (response.ok) {
+        const data = await response.json()
+        return dispatch(setCurrentSong(data))
+    }
+}
 
 // DELETE A SINGLE SONG
 export const deleteSong = (song) => async (dispatch) => {
