@@ -1,9 +1,8 @@
-import '../NavBar/navbar.css';
-import './styles/home.css';
+import '../HomePage/styles/home.css';
 import React from 'react';
-import SongTrends from './SongTrends.js';
+import SongTrends from '../HomePage/SongTrends.js';
 
-const HomePage = () => {
+const Charts = () => {
     return(
         <div className="song-charts">
             <div className="chart-headings">
@@ -15,4 +14,4 @@ const HomePage = () => {
     )
 }
 
-export default HomePage;
+export default Charts;
