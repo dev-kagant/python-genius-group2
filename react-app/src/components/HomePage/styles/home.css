@@ -30,6 +30,7 @@
     flex-direction: row;
     border-bottom: 1px solid #DBD8CF;
     box-shadow: inset 0px -26px 50px -30px rgba(247,230,160,0.67);
+    cursor: pointer;
     /* justify-content: space-between; */
     /* justify-content: row; */
     /* justify-content: column; */
