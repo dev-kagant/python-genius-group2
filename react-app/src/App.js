@@ -12,6 +12,7 @@ import HomePage from "./components/HomePage/Home";
 
 import { authenticate } from "./services/auth";
 import SongTrends from "./components/HomePage/SongTrends";
+import Charts from "./components/Charts/Charts";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -60,7 +61,7 @@ function App() {
           <SongAddForm />
         </Route>
         <Route path="/charts">
-          <SongTrends />
+          <Charts />
         </Route>
       </Switch>
     </BrowserRouter>
