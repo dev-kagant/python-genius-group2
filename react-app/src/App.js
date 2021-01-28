@@ -11,6 +11,7 @@ import SongAddForm from "./components/SongPage/SongAddForm";
 import HomePage from "./components/HomePage/Home";
 
 import { authenticate } from "./services/auth";
+import SongTrends from "./components/HomePage/SongTrends";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -57,6 +58,9 @@ function App() {
         </Route>
         <Route path="/add-a-song" exact={true}>
           <SongAddForm />
+        </Route>
+        <Route path="/charts">
+          <SongTrends />
         </Route>
       </Switch>
     </BrowserRouter>
