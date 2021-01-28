@@ -13,6 +13,8 @@ import Song from "./components/SongPage";
 import SongAddForm from "./components/SongPage/SongAddForm";
 
 import { authenticate } from "./store/user";
+import SongTrends from "./components/HomePage/SongTrends";
+import Charts from "./components/Charts/Charts";
 
 function App() {
   const dispatch = useDispatch();
@@ -50,8 +52,8 @@ function App() {
         <Route path="/" exact={true} >
           <HomePage />
         </Route>
-        <Route path="/charts" exact={true}>
-          <HomePage />
+        <Route path="/charts">
+          <Charts />
         </Route>
         <Route path="/songs/:songId" exact={true}>
           <Song />
