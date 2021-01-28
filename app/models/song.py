@@ -1,3 +1,4 @@
+
 from .db import db
 
 class Song(db.Model):
