@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import LoginForm from "./components/auth/LoginForm";
-import SignUpForm from "./components/auth/SignUpForm";
-import NavBar from "./components/NavBar";
+import { useDispatch } from 'react-redux';
+
 import ProtectedRoute from "./components/auth/ProtectedRoute";
+import HomePage from "./components/HomePage/Home";
+import NavBar from "./components/NavBar/NavBar";
+import LoginModal from "./components/auth/LoginModal/LoginModal";
+import SignUpModal from "./components/auth/SignUpModal/SingUpModal";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import Song from "./components/SongPage";
 import SongAddForm from "./components/SongPage/SongAddForm";
-import HomePage from "./components/HomePage/Home";
 
-import { authenticate } from "./services/auth";
+import { authenticate } from "./store/user";
 
 function App() {
-  const [authenticated, setAuthenticated] = useState(false);
+  const dispatch = useDispatch();
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     (async() => {
-      const user = await authenticate();
-      if (!user.errors) {
-        setAuthenticated(true);
-      }
+      await dispatch(authenticate());
       setLoaded(true);
     })();
   }, []);
@@ -32,32 +31,34 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar setAuthenticated={setAuthenticated} />
+      <NavBar />
       <Switch>
         <Route path="/login" exact={true}>
-          <LoginForm
-            authenticated={authenticated}
-            setAuthenticated={setAuthenticated}
-          />
+          <HomePage />
+          <LoginModal />
         </Route>
         <Route path="/sign-up" exact={true}>
-          <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
+          <HomePage />
+          <SignUpModal />
         </Route>
-        <ProtectedRoute path="/users" exact={true} authenticated={authenticated}>
+        <ProtectedRoute path="/users" exact={true} >
           <UsersList/>
         </ProtectedRoute>
-        <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
+        <ProtectedRoute path="/users/:userId" exact={true} >
           <User />
         </ProtectedRoute>
-        <Route path="/" exact={true} authenticated={authenticated}>
+        <Route path="/" exact={true} >
+          <HomePage />
+        </Route>
+        <Route path="/charts" exact={true}>
           <HomePage />
         </Route>
         <Route path="/songs/:songId" exact={true}>
           <Song />
         </Route>
-        <Route path="/add-a-song" exact={true}>
+        <ProtectedRoute path="/add-a-song" exact={true} >
           <SongAddForm />
-        </Route>
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );

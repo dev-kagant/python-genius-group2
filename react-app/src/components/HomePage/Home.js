@@ -1,4 +1,4 @@
-import '../styles/navbar.css';
+import '../NavBar/navbar.css';
 import './styles/home.css';
 import React from 'react';
 import SongTrends from './SongTrends.js';
