@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+
 import { login } from "../../../store/user";
+import "./LoginForm.css"
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -33,14 +35,16 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={onLogin}>
+      <div className="login-form_heading">LOGIN TO CHEONJAE GENIUS</div>
       <div>
         {errors.map((error) => (
           <div>{error}</div>
         ))}
       </div>
-      <div>
-        <label htmlFor="email">Email</label>
+      <div className="login-form_input-container">
+        <label htmlFor="email" className="login-form_input-label">Email</label>
         <input
+          className="login-form_input-box"
           name="email"
           type="text"
           placeholder="Email"
@@ -48,17 +52,19 @@ const LoginForm = () => {
           onChange={updateEmail}
         />
       </div>
-      <div>
-        <label htmlFor="password">Password</label>
+      <div className="login-form_input-container">
+        <label htmlFor="password" className="login-form_input-label">Password</label>
         <input
+          className="login-form_input-box"
           name="password"
           type="password"
           placeholder="Password"
           value={password}
           onChange={updatePassword}
         />
-        <button type="submit">Login</button>
       </div>
+      <button type="submit" className="login-form_submit">Log In</button>
+      <Link to="/sign-up" className="login-form_redirect">CREATE AN ACCOUNT</Link>
     </form>
   );
 };

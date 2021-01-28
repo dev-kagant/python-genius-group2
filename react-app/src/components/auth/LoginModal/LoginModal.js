@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Modal } from "../../Modal/Modal";
 import LoginForm from "./LoginForm";
+import "./LoginForm.css"
 
 const LoginModal = () => {
     const history = useHistory();
