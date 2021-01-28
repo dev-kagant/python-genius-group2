@@ -29,7 +29,7 @@ const setCurrentSong = (song) => ({
 // Thunk Actions
 
 //GET ALL OF THE SONGS
-export const fetchAllSongs = () => async(dispatch) => {
+export const fetchAllSongs = () => async (dispatch) => {
     const res = await csrffetch("/api/songs");
     console.log(res.data);
     dispatch(getAllSongs(res.data.songs));
@@ -47,15 +47,15 @@ export const getSong = (id) => async dispatch => {
 }
 
 export const postSong = (song) => async dispatch => {
-    const { 
-        artist, 
-        title, 
-        album, 
-        song_url, 
-        lyrics, 
-        written_by, 
-        label, 
-        release_date,  
+    const {
+        artist,
+        title,
+        album,
+        song_url,
+        lyrics,
+        written_by,
+        label,
+        release_date,
         media_url,
         song_icon,
         song_background_image,
@@ -66,16 +66,16 @@ export const postSong = (song) => async dispatch => {
         method: "POST",
         headers: {
             "Content-type": "application/json"
-        }, 
+        },
         body: JSON.stringify({
-            artist, 
-            title, 
-            album, 
-            song_url, 
-            lyrics, 
-            written_by, 
-            label, 
-            release_date,  
+            artist,
+            title,
+            album,
+            song_url,
+            lyrics,
+            written_by,
+            label,
+            release_date,
             media_url,
             song_icon,
             song_background_image,
@@ -89,9 +89,18 @@ export const postSong = (song) => async dispatch => {
     }
 }
 
+export const deleteSong = async (song) => {
+    await fetch("/api/songs/delete_song", {
+        method: "DELETE",
+        body: JSON.stringify({
+            song
+        })
+    });
+    setCurrentSong({})
+}
 
 // Reducer
-const songReducer = (state=initialState, action) => {
+const songReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_ALL_SONGS:
             const newSongs = {};
@@ -102,7 +111,7 @@ const songReducer = (state=initialState, action) => {
                 ...state,
                 byId: newSongs
             };
-            // return state;
+        // return state;
         case SET_CURRENT_SONG:
             return {
                 ...state,
