@@ -3,7 +3,6 @@ import { useParams, useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import * as songActions from "../../store/song";
-import { deleteSong } from "../../store/song";
 
 import SongHeader from "./SongHeader";
 import SongLyrics from "./SongLyrics";
@@ -35,12 +34,6 @@ const Song = () => {
         return null;
     }
 
-    const deleteSong = async () => {
-        setErrors([]);
-        await dispatch(deleteSong(songId))
-        return history.push(`/songs`)
-    }
-
     return (
         <div className="songpage_container">
             <SongHeader />
@@ -54,7 +47,6 @@ const Song = () => {
                     <SongBio />
                     <SongPlayer />
                     <SongVideo />
-                    <button className="songpage-delete" onClick={deleteSong}>Delete This Song</button>
                 </div>
             </div>
         </div>

@@ -52,6 +52,7 @@
 .song-add_textarea-lyrics {
     height: 400px;
     overflow: scroll;
+    white-space: pre-line;
 }
 
 .song-add_textarea-bio {

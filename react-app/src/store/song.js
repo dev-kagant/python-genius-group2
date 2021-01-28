@@ -96,7 +96,7 @@ export const deleteSong = async (song) => {
             song
         })
     });
-    setCurrentSong({})
+    // dispatch(setCurrentSong({}))
 }
 
 // Reducer

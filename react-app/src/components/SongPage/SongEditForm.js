@@ -1,18 +1,30 @@
 import React, { useEffect } from "react";
 import { format } from "date-fns";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useParams, useHistory } from "react-router-dom"
+import { deleteSong } from "../../store/song";
 
 import "./styles/SongEditForm.css";
 
 const SongEditForm = ({ setShowModal }) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const { songId } = useParams();
+
   const currentSong = useSelector(state => state.song.currentSong);
 
+  // const deleteThisSong = async () => {
+  //   setErrors([]);
+  //   await dispatch(deleteSong(songId))
+  //   return history.push(`/songs`)
+  // }
+
   return (
-    <form className="song-edit_form"> 
+    <form className="song-edit_form">
       <div className="song-edit_row">
         <div className="song-edit_input-container">
           <label className="song-edit_label">TITLE</label>
-          <input 
+          <input
             className="song-edit_input-box"
             type="text"
             value={currentSong.title}
@@ -22,7 +34,7 @@ const SongEditForm = ({ setShowModal }) => {
         </div>
         <div className="song-edit_input-container">
           <label className="song-edit_label">ARTIST</label>
-          <input 
+          <input
             className="song-edit_input-box"
             type="text"
             value={currentSong.artist}
@@ -33,7 +45,7 @@ const SongEditForm = ({ setShowModal }) => {
       <div className="song-edit_row">
         <div className="song-edit_input-container">
           <label className="song-edit_label">ALBUM</label>
-          <input 
+          <input
             className="song-edit_input-box"
             type="text"
             value={currentSong.album}
@@ -42,7 +54,7 @@ const SongEditForm = ({ setShowModal }) => {
         </div>
         <div className="song-edit_input-container">
           <label className="song-edit_label">LABEL</label>
-          <input 
+          <input
             className="song-edit_input-box"
             value={currentSong.label}
             type="text"
@@ -52,7 +64,7 @@ const SongEditForm = ({ setShowModal }) => {
       <div className="song-edit_row">
         <div className="song-edit_input-container">
           <label className="song-edit_label">WRITTEN BY</label>
-          <input 
+          <input
             className="song-edit_input-box"
             value={currentSong.written_by}
             type="text"
@@ -60,7 +72,7 @@ const SongEditForm = ({ setShowModal }) => {
         </div>
         <div className="song-edit_input-container">
           <label className="song-edit_label">RELEASE DATE</label>
-          <input 
+          <input
             className="song-edit_input-box"
             value={format(new Date(currentSong.release_date), "yyyy-MM-dd")}
             type="date"
@@ -70,7 +82,7 @@ const SongEditForm = ({ setShowModal }) => {
       <div className="song-edit_row">
         <div className="song-edit_input-container--full-row">
           <label className="song-edit_label">SONG ART URL</label>
-          <input 
+          <input
             className="song-edit_input-box"
             value={currentSong.song_icon}
             type="text"
@@ -80,7 +92,7 @@ const SongEditForm = ({ setShowModal }) => {
       <div className="song-edit_row">
         <div className="song-edit_input-container--full-row">
           <label className="song-edit_label">BANNER IMAGE URL</label>
-          <input 
+          <input
             className="song-edit_input-box"
             value={currentSong.song_background_image}
             type="text"
@@ -90,7 +102,7 @@ const SongEditForm = ({ setShowModal }) => {
       <div className="song-edit_row">
         <div className="song-edit_input-container--full-row">
           <label className="song-edit_label">AUDIO URL</label>
-          <input 
+          <input
             className="song-edit_input-box"
             value={currentSong.song_url}
             type="text"
@@ -100,7 +112,7 @@ const SongEditForm = ({ setShowModal }) => {
       <div className="song-edit_row">
         <div className="song-edit_input-container--full-row">
           <label className="song-edit_label">VIDEO URL</label>
-          <input 
+          <input
             className="song-edit_input-box"
             value={currentSong.media_url}
             type="text"
@@ -110,13 +122,13 @@ const SongEditForm = ({ setShowModal }) => {
       <div className="song-edit_buttons">
         <div className="song-edit_buttons-left">
           <button type="submit" className="song-edit_save">Save</button>
-          <button 
-            type="button" 
+          <button
+            type="button"
             className="song-edit_cancel"
             onClick={() => setShowModal(false)}
           >Cancel</button>
         </div>
-        <button type="button" className="song-edit_delete">Delete</button>
+        <button type="button" className="song-edit_delete" >Delete</button>
       </div>
 
       {/* <ul>

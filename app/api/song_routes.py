@@ -54,8 +54,8 @@ def edit_song():
 
 
 @song_routes.route("/delete/<int:id>", methods=['DELETE'])
-def delete_song():
-    song = Song.query.get(id)
+def delete_song(song):
+    song = Song.query.get(song)
     Song.delete(song)
     Song.commit()
     return redirect("/songs")
