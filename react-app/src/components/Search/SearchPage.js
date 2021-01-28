@@ -28,7 +28,7 @@ function SearchPage(){
             }</ul>
             <ul className="search-page_lyricsInfo"> Lyric Matches{
                 lyricsInfo && lyricsInfo.map((lyrics)=>(
-                    <div key={lyrics.lyrics}>
+                    <div className="search-lyrics_data" key={lyrics.lyrics}>
                         <li><img className="song-img" src={lyrics.song_icon} /></li>
                         <div className="song-title"><li>{lyrics.title}</li></div>
                         <div className="song-lyrics"><li>{lyrics.artist}</li></div>
