@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, request
 from flask_login import current_user
 from app.models import db, Song
 
@@ -53,9 +53,9 @@ def edit_song():
     # return "Bad Data"      #need to be changed to validator response
 
 
-@song_routes.route("/delete/<int:id>", methods=['DELETE'])
-def delete_song(song):
-    song = Song.query.get(song)
-    Song.delete(song)
-    Song.commit()
-    return redirect("/songs")
+@song_routes.route("/delete", methods=['DELETE'])
+def delete_song():
+    songId = request.json["song"]
+    song = Song.query.get(int(songId))
+    db.session.delete(song)
+    db.session.commit()

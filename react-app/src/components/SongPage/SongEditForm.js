@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { format } from "date-fns";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useHistory } from "react-router-dom"
@@ -10,14 +10,18 @@ const SongEditForm = ({ setShowModal }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { songId } = useParams();
+  const [errors, setErrors] = useState([]);
 
   const currentSong = useSelector(state => state.song.currentSong);
 
-  // const deleteThisSong = async () => {
-  //   setErrors([]);
-  //   await dispatch(deleteSong(songId))
-  //   return history.push(`/songs`)
-  // }
+  const deleteThisSong = async () => {
+    setErrors([]);
+    return dispatch(deleteSong(songId))
+      .then(() => { history.push(`/`) })
+      .catch((res) => {
+        if (res.data && res.data.errors) setErrors(res.data.errors);
+      })
+  }
 
   return (
     <form className="song-edit_form">
@@ -128,7 +132,7 @@ const SongEditForm = ({ setShowModal }) => {
             onClick={() => setShowModal(false)}
           >Cancel</button>
         </div>
-        <button type="button" className="song-edit_delete" >Delete</button>
+        <button type="button" className="song-edit_delete" onClick={deleteThisSong} >Delete</button>
       </div>
 
       {/* <ul>

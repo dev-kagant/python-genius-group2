@@ -1,18 +1,22 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
-import { login } from "../../services/auth";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, Redirect } from "react-router-dom";
 
-const LoginForm = ({ authenticated, setAuthenticated }) => {
+import { login } from "../../../store/user";
+import "./LoginForm.css"
+
+const LoginForm = () => {
+  const dispatch = useDispatch();
+  const authenticated = useSelector(state => state.user.authenticated);
+
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const onLogin = async (e) => {
     e.preventDefault();
-    const user = await login(email, password);
-    if (!user.errors) {
-      setAuthenticated(true);
-    } else {
+    const user = await dispatch(login(email, password));
+    if (user.errors) {
       setErrors(user.errors);
     }
   };
@@ -31,14 +35,16 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
 
   return (
     <form onSubmit={onLogin}>
+      <div className="login-form_heading">LOGIN TO CHEONJAE GENIUS</div>
       <div>
         {errors.map((error) => (
           <div>{error}</div>
         ))}
       </div>
-      <div>
-        <label htmlFor="email">Email</label>
+      <div className="login-form_input-container">
+        <label htmlFor="email" className="login-form_input-label">Email</label>
         <input
+          className="login-form_input-box"
           name="email"
           type="text"
           placeholder="Email"
@@ -46,17 +52,19 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
           onChange={updateEmail}
         />
       </div>
-      <div>
-        <label htmlFor="password">Password</label>
+      <div className="login-form_input-container">
+        <label htmlFor="password" className="login-form_input-label">Password</label>
         <input
+          className="login-form_input-box"
           name="password"
           type="password"
           placeholder="Password"
           value={password}
           onChange={updatePassword}
         />
-        <button type="submit">Login</button>
       </div>
+      <button type="submit" className="login-form_submit">Log In</button>
+      <Link to="/sign-up" className="login-form_redirect">CREATE AN ACCOUNT</Link>
     </form>
   );
 };

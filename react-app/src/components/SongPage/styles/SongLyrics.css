@@ -27,6 +27,7 @@
 .songpage-lyrics_lyrics {
     margin-top: 24px;
     width: 90%;
+    white-space: pre-line;
 }
 
 .songpage-lyrics_lyrics p {

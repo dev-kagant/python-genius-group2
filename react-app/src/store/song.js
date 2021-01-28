@@ -89,14 +89,21 @@ export const postSong = (song) => async dispatch => {
     }
 }
 
-export const deleteSong = async (song) => {
-    await fetch("/api/songs/delete_song", {
+
+// DELETE A SINGLE SONG
+export const deleteSong = (song) => async (dispatch) => {
+    const response = await fetch("/api/songs/delete", {
         method: "DELETE",
+        headers: {
+            "Content-type": "application/json"
+        },
         body: JSON.stringify({
             song
         })
     });
-    // dispatch(setCurrentSong({}))
+    if (response.ok) {
+        return dispatch(setCurrentSong({}))
+    }
 }
 
 // Reducer
