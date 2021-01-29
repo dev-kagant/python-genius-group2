@@ -33,7 +33,6 @@ const SongEditForm = ({ setShowModal }) => {
 
   const editThisSong = (e) => {
     e.preventDefault();
-    console.log("We made it")
     setErrors([]);
     return dispatch(editSong({
       id: songId,
