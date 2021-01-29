@@ -60,12 +60,13 @@
     height: 75%; */
     display: block;
     justify-items: column;
-    width: 50%;
+    /* width: 50%; */
     /* margin-right: 0px; */
     margin-left: 450px;
     margin-top: 40px;
     /* margin-bottom: 80px; */
-
+    width: 42%;
+    /* padding-right: 16px; */
     /* width: 100%; */
     /* max-width: 970px;
     min-height: 100vh; */
@@ -116,7 +117,7 @@
     background-color: white;
     /* margin: 0 auto;
     padding-top: 16px; */
-    position: relative;
+    /* position: relative; */
 
 }
 
@@ -133,13 +134,18 @@
     font-weight: bold;
 }
 
-.song-lyrics{
-
-}
 
 .album-name{
     margin-left: 30px;
     font-weight: bold;
+}
+
+.lyrics{
+    /* text-overflow: ellipsis; */
+    /* white-space: nowrap; */
+    overflow: scroll;
+    /* height: 100px;
+    width: 100px; */
 }
 
 /* input:focus {
