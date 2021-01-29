@@ -1,31 +1,64 @@
 import React, { useState } from 'react';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import parse from "html-react-parser";
+// import { useParams, useHistory } from "react-router-dom"
 
 import SongEditForm from "./SongEditForm";
 import { Modal } from "../Modal/Modal";
 import "./styles/SongLyrics.css";
 
 const SongLyrics = () => {
+    // const dispatch = useDispatch();
+    // const history = useHistory();
+
     const currentSong = useSelector(state => state.song.currentSong);
+
+    // const { songId } = useParams();
+    const [lyrics, setLyrics] = useState(currentSong.lyrics);
     const [showModal, setShowModal] = useState(false);
+    const [hideLyrics, setHideLyrics] = useState(true)
+
+    const hidePageLyrics = () => {
+        setHideLyrics(false)
+    }
+
+    const hideEditLyrics = (e) => {
+        setHideLyrics(true)
+    }
 
     return (
-        <div className="songpage-lyrics_container">
-            <div className="songpage-lyrics_buttons-container">
-                <button className="songpage-lyrics_buttons">Edit Lyrics</button>
-                <button 
-                    className="songpage-lyrics_buttons"
-                    onClick={() => {setShowModal(true)}}
-                >Edit Song Facts</button>
-                {showModal && (
-                    <Modal onClose={() => setShowModal(false)}>
-                        <SongEditForm setShowModal={setShowModal} />
-                    </Modal>
-                )}
-            </div>
-            <div className="songpage-lyrics_lyrics">{parse(currentSong.lyrics)}</div>
-        </div>
+        <>
+            {(hideLyrics) ? (<div className="songpage-lyrics_container">
+                <div className="songpage-lyrics_buttons-container">
+                    <button className="songpage-lyrics_buttons" onClick={hidePageLyrics}>Edit Lyrics</button>
+                    <button
+                        className="songpage-lyrics_buttons"
+                        onClick={() => { setShowModal(true) }}
+                    >Edit Song Facts</button>
+                    {showModal && (
+                        <Modal onClose={() => setShowModal(false)}>
+                            <SongEditForm setShowModal={setShowModal} />
+                        </Modal>
+                    )}
+                </div>
+                <div className="songpage-lyrics_lyrics">{parse(currentSong.lyrics)}</div>
+            </div>) : (
+                    <div className="song-lyrics_edit-container" id="Testing">
+                        <div>
+                            <button type="submit" className="song-lyric_save" onClick={hideEditLyrics}>Save</button>
+                            <button type="button" className="song-lyric_cancel" onClick={hideEditLyrics}>Cancel</button>
+                        </div>
+                        <form>
+                            <input
+                                className="song-lyric_edit-box"
+                                value={lyrics}
+                                onChange={(e) => setLyrics(e.target.value)}
+                                type="text"
+                            />
+                        </form>
+                    </div>)}
+        </>
+
     )
 }
 

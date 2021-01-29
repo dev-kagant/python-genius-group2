@@ -17,7 +17,6 @@ const SongEditForm = ({ setShowModal }) => {
   const [title, setTitle] = useState(currentSong.title);
   const [album, setAlbum] = useState(currentSong.album);
   const [song_url, setSong_url] = useState(currentSong.song_url);
-  // const [lyrics, setLyrics] = useState("");
   const [written_by, setWritten_by] = useState(currentSong.written_by);
   const [label, setLabel] = useState(currentSong.label);
   const [release_date, setRelease_date] = useState(currentSong.release_date);
