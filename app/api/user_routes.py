@@ -47,7 +47,8 @@ def update_user():
             user.username = form.data['username'],
             user.email = form.data['email'],
             if form.data['password']:
-                user.hashed_password = generate_password_hash(form.data['password']),
+                user.hashed_password =
+                generate_password_hash(form.data['password']),
             user.user_avatar = form.data['avatar'],
             user.user_background = form.data['background'],
             user.user_bio = form.data['bio']
