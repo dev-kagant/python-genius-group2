@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { format } from "date-fns";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams, useHistory } from "react-router-dom"
+import { render } from 'react-dom'
+import { useParams, useHistory, useRouteMatch } from "react-router-dom"
 import { deleteSong, editSong } from "../../store/song";
+import SongFacts from "./SongFacts"
+import SongHeader from "./SongHeader"
 
 import "./styles/SongEditForm.css";
+
 
 const SongEditForm = ({ setShowModal }) => {
   const dispatch = useDispatch();
   const history = useHistory();
+
+  const [errors, setErrors] = useState([]);
 
   const currentSong = useSelector(state => state.song.currentSong);
 
@@ -23,16 +29,11 @@ const SongEditForm = ({ setShowModal }) => {
   const [media_url, setMedia_url] = useState(currentSong.media_url);
   const [song_icon, setSong_icon] = useState(currentSong.song_icon);
   const [song_background_image, setSong_background_image] = useState(currentSong.song_background_image);
-  // const [song_bio, setSong_bio] = useState(currentSong.song_bio);
 
-  const [errors, setErrors] = useState([]);
-
-
-  console.log(title)
-  console.log(artist)
 
   const editThisSong = (e) => {
     e.preventDefault();
+    console.log("We made it")
     setErrors([]);
     return dispatch(editSong({
       id: songId,
@@ -47,7 +48,8 @@ const SongEditForm = ({ setShowModal }) => {
       song_icon,
       song_background_image
     }))
-      .then(() => { history.push(`/songs/${songId}`) })
+      .then(() => { setShowModal(false) })
+      .then(() => { history(`/songs/${songId}`) })
       .catch((res) => {
         if (res.data && res.data.errors) setErrors(res.data.errors);
       })
@@ -173,7 +175,7 @@ const SongEditForm = ({ setShowModal }) => {
       </div>
       <div className="song-edit_buttons">
         <div className="song-edit_buttons-left">
-          <button type="submit" className="song-edit_save" onClick={editThisSong, () => setShowModal(false)}>Save</button>
+          <button type="submit" className="song-edit_save" onClick={editThisSong}>Save</button>
           <button
             type="button"
             className="song-edit_cancel"

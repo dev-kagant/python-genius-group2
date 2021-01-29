@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import parse from "html-react-parser";
-// import { useParams, useHistory } from "react-router-dom"
+import { editLyrics } from "../../store/song"
+import { useParams } from "react-router-dom"
 
 import SongEditForm from "./SongEditForm";
 import { Modal } from "../Modal/Modal";
 import "./styles/SongLyrics.css";
 
 const SongLyrics = () => {
-    // const dispatch = useDispatch();
-    // const history = useHistory();
+    const dispatch = useDispatch();
 
     const currentSong = useSelector(state => state.song.currentSong);
 
-    // const { songId } = useParams();
+    const { songId } = useParams();
     const [lyrics, setLyrics] = useState(currentSong.lyrics);
     const [showModal, setShowModal] = useState(false);
     const [hideLyrics, setHideLyrics] = useState(true)
+    const [errors, setErrors] = useState([]);
 
     const hidePageLyrics = () => {
         setHideLyrics(false)
@@ -24,6 +25,16 @@ const SongLyrics = () => {
 
     const hideEditLyrics = (e) => {
         setHideLyrics(true)
+    }
+
+    const editSongLyrics = (e) => {
+        e.preventDefault()
+        setErrors([])
+        return dispatch(editLyrics({ songId, lyrics }))
+            .then(() => hideEditLyrics())
+            .catch((res) => {
+                if (res.data && res.data.errors) setErrors(res.data.errors);
+            })
     }
 
     return (
@@ -43,13 +54,13 @@ const SongLyrics = () => {
                 </div>
                 <div className="songpage-lyrics_lyrics">{parse(currentSong.lyrics)}</div>
             </div>) : (
-                    <div className="song-lyrics_edit-container" id="Testing">
+                    <div className="songpage-lyrics_container">
                         <div>
-                            <button type="submit" className="song-lyric_save" onClick={hideEditLyrics}>Save</button>
-                            <button type="button" className="song-lyric_cancel" onClick={hideEditLyrics}>Cancel</button>
+                            <button type="submit" className="songpage-lyrics_buttons" onClick={editSongLyrics}>Save Lyrics</button>
+                            <button type="button" className="songpage-lyrics_buttons" onClick={hideEditLyrics}>Cancel</button>
                         </div>
                         <form>
-                            <input
+                            <textarea
                                 className="song-lyric_edit-box"
                                 value={lyrics}
                                 onChange={(e) => setLyrics(e.target.value)}

@@ -30,7 +30,6 @@ def add_song():
 # EDIT SONG FACTS
 @song_routes.route("/edit", methods=['PATCH'])
 def edit_song():
-    print(request.json['id'])
     song = Song.query.get(request.json['id'])
     song.artist = request.json['artist']
     song.title = request.json['title']
@@ -44,6 +43,23 @@ def edit_song():
     song.release_date = request.json['release_date']
     db.session.commit()
     return song.to_dict()
+
+#EDIT SONG LYRICS
+@song_routes.route("/edit-lyrics", methods=['PATCH'])
+def edit_lyrics():
+    song = Song.query.get(request.json['songId'])
+    song.lyrics = request.json['lyrics']
+    db.session.commit()
+    return song.to_dict()
+
+#EDIT SONG BIO
+@song_routes.route("/edit-bio", methods=['PATCH'])
+def edit_bio():
+    song = Song.query.get(request.json['songId'])
+    song.song_bio = request.json['song_bio']
+    db.session.commit()
+    return song.to_dict()
+
 
 # DELETE A SONG
 @song_routes.route("/delete", methods=['DELETE'])

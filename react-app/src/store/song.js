@@ -129,6 +129,42 @@ export const editSong = (song) => async (dispatch) => {
     }
 }
 
+// EDIT SONG LYRICS
+export const editLyrics = ({ songId, lyrics }) => async dispatch => {
+    const response = await fetch(`/api/songs/edit-lyrics`, {
+        method: "PATCH",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+            songId,
+            lyrics
+        })
+    })
+    if (response.ok) {
+        const data = await response.json()
+        return dispatch(setCurrentSong(data))
+    }
+}
+
+// EDIT SONG BIO
+export const editBio = ({ songId, song_bio }) => async dispatch => {
+    const response = await fetch(`/api/songs/edit-bio`, {
+        method: "PATCH",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+            songId,
+            song_bio
+        })
+    })
+    if (response.ok) {
+        const data = await response.json()
+        return dispatch(setCurrentSong(data))
+    }
+}
+
 // DELETE A SINGLE SONG
 export const deleteSong = (song) => async (dispatch) => {
     const response = await fetch("/api/songs/delete", {
