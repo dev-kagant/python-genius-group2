@@ -6,21 +6,17 @@
 /* --------- heading ------- */
 .songpage-bio_heading {
     font-size: 14px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(235, 235, 235);
 }
 
 .songpage-bio_bio {
     margin-bottom: 20px;
     white-space: pre-line;
-}
-
-.songpage-bio_bio p{
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+    font-size: 14px;
     line-height: 1.25em;
-    white-space: pre-line;
 }
-
 
 /* ---------- Edit Lyrics -------- */
 .song-bio_edit-box{
