@@ -27,22 +27,22 @@ const SongAddForm = () => {
         e.preventDefault();
         setErrors([]);
         return dispatch(postSong({
-            artist, 
-            title, 
-            album, 
-            song_url, 
-            lyrics, 
-            written_by, 
-            label, 
-            release_date,  
+            artist,
+            title,
+            album,
+            song_url,
+            lyrics,
+            written_by,
+            label,
+            release_date,
             media_url,
             song_icon,
             song_background_image,
-            song_bio    
-        })).then((res) => {history.push(`/songs/${res}`)})
-        .catch((res) => {
-            if (res.data && res.data.errors) setErrors(res.data.errors);
-        })
+            song_bio
+        })).then((res) => { history.push(`/songs/${res}`) })
+            .catch((res) => {
+                if (res.data && res.data.errors) setErrors(res.data.errors);
+            })
     }
 
     return (
@@ -56,7 +56,7 @@ const SongAddForm = () => {
                     </div>
                     <div className="song-add_input-container">
                         <label className="song-add_label">ARTIST *</label>
-                        <input 
+                        <input
                             className="song-add_input-box"
                             type="text"
                             value={artist}
@@ -66,7 +66,7 @@ const SongAddForm = () => {
                     </div>
                     <div className="song-add_input-container">
                         <label className="song-add_label">TITLE *</label>
-                        <input 
+                        <input
                             className="song-add_input-box"
                             type="text"
                             value={title}
@@ -76,7 +76,7 @@ const SongAddForm = () => {
                     </div>
                     <div className="song-add_input-container">
                         <label className="song-add_label">ALBUM *</label>
-                        <input 
+                        <input
                             className="song-add_input-box"
                             type="text"
                             value={album}
@@ -86,7 +86,7 @@ const SongAddForm = () => {
                     </div>
                     <div className="song-add_input-container">
                         <label className="song-add_label">AUDIO URL *</label>
-                        <input 
+                        <input
                             className="song-add_input-box"
                             type="text"
                             value={song_url}
@@ -96,7 +96,7 @@ const SongAddForm = () => {
                     </div>
                     <div className="song-add_input-container">
                         <label className="song-add_label">LYRICS *</label>
-                        <textarea 
+                        <textarea
                             className="song-add_textarea-lyrics"
                             value={lyrics}
                             onChange={(e) => setLyrics(e.target.value)}
@@ -105,12 +105,12 @@ const SongAddForm = () => {
                     </div>
                 </div>
                 <div className="song-add_right">
-                    <div className="song-add_additional-heading-container">    
+                    <div className="song-add_additional-heading-container">
                         <div className="song-add_additional">Additional info</div>
                     </div>
                     <div className="song-add_input-container">
                         <label className="song-add_label">WRITTEN BY</label>
-                        <input 
+                        <input
                             className="song-add_input-box"
                             type="text"
                             value={written_by}
@@ -119,7 +119,7 @@ const SongAddForm = () => {
                     </div>
                     <div className="song-add_input-container">
                         <label className="song-add_label">LABEL</label>
-                        <input 
+                        <input
                             className="song-add_input-box"
                             type="text"
                             value={label}
@@ -128,7 +128,7 @@ const SongAddForm = () => {
                     </div>
                     <div className="song-add_input-container">
                         <label className="song-add_label">RELEASE DATE</label>
-                        <input 
+                        <input
                             className="song-add_input-box"
                             type="date"
                             value={release_date}
@@ -137,7 +137,7 @@ const SongAddForm = () => {
                     </div>
                     <div className="song-add_input-container">
                         <label className="song-add_label">VIDEO URL</label>
-                        <input 
+                        <input
                             className="song-add_input-box"
                             type="text"
                             value={media_url}
@@ -146,7 +146,7 @@ const SongAddForm = () => {
                     </div>
                     <div className="song-add_input-container">
                         <label className="song-add_label">SONG IMAGE URL</label>
-                        <input 
+                        <input
                             className="song-add_input-box"
                             type="text"
                             value={song_icon}
@@ -155,7 +155,7 @@ const SongAddForm = () => {
                     </div>
                     <div className="song-add_input-container">
                         <label className="song-add_label">SONG BACKGROUND IMAGE URL</label>
-                        <input 
+                        <input
                             className="song-add_input-box"
                             type="text"
                             value={song_background_image}
@@ -164,7 +164,7 @@ const SongAddForm = () => {
                     </div>
                     <div className="song-add_input-container">
                         <label className="song-add_label">BIO</label>
-                        <textarea 
+                        <textarea
                             className="song-add_textarea-bio"
                             type="text"
                             value={song_bio}
@@ -172,12 +172,12 @@ const SongAddForm = () => {
                         />
                     </div>
                     <div className="song-add_buttons">
-                        <button 
-                            type="submit" 
+                        <button
+                            type="submit"
                             className="song-add_save"
                         >Save</button>
-                        <button 
-                            type="button" 
+                        <button
+                            type="button"
                             className="song-add_cancel"
                         >Cancel</button>
                     </div>

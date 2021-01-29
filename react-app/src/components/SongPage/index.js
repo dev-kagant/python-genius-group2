@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import * as songActions from "../../store/song";
@@ -16,18 +16,18 @@ import "./styles/index.css"
 
 const Song = () => {
     const dispatch = useDispatch();
-
+    const history = useHistory();
     const { songId } = useParams();
- 
     // States
     const [loaded, setLoaded] = useState(false);
-  
+    const [errors, setErrors] = useState([]);
+
 
     // Load Song
     useEffect(() => {
         dispatch(songActions.getSong(songId))
-        .then(() => setLoaded(true))
-        .catch(err => console.log(err))
+            .then(() => setLoaded(true))
+            .catch(err => console.log(err))
     }, [dispatch, songId])
 
     if (!loaded) {
@@ -47,7 +47,7 @@ const Song = () => {
                     <SongBio />
                     <SongPlayer />
                     <SongVideo />
-                </div>  
+                </div>
             </div>
         </div>
     )

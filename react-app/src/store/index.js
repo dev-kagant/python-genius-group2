@@ -3,11 +3,13 @@ import thunk from "redux-thunk";
 
 import songReducer from "./song";
 import userReducer from "./user";
+import searchReducer from "./search";
 
 // Reducer
 const rootReducer = combineReducers({
     song: songReducer,
-    user: userReducer
+    user: userReducer,
+    search: searchReducer
 })
 
 // Store Enhancer
@@ -21,7 +23,7 @@ if (process.env.NODE_ENV === "production") {
   enhancer = composeEnhancers(applyMiddleware(thunk, logger));
 }
 
-// Store Creator 
+// Store Creator
 const configureStore = (preloadedState) => {
     return createStore(rootReducer, preloadedState, enhancer);
 };
