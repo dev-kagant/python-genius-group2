@@ -15,7 +15,7 @@
     width: 50%;
     margin-left: 40px;
     margin-top: 40px;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     /* max-width: 970px;
     min-height: 100vh; */
     background-color: white;
@@ -62,9 +62,10 @@
     justify-items: column;
     width: 50%;
     /* margin-right: 0px; */
-    right: 0;
+    margin-left: 450px;
     margin-top: 40px;
-    margin-bottom: 80px;
+    /* margin-bottom: 80px; */
+
     /* width: 100%; */
     /* max-width: 970px;
     min-height: 100vh; */
