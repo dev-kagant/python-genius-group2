@@ -11,6 +11,7 @@ import SongBio from "./SongBio";
 import SongVideo from "./SongVideo";
 import SongComments from "./SongComments";
 import SongPlayer from "./SongPlayer";
+// import Annotations from '../Annotations/Annotations';
 
 import "./styles/index.css"
 
@@ -39,6 +40,7 @@ const Song = () => {
             <SongHeader />
             <div className="songpage_main">
                 <div className="songpage-main_left">
+                    {/* <Annotations/> */}
                     <SongLyrics />
                     <SongComments />
                 </div>

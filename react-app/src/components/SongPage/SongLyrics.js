@@ -8,6 +8,8 @@ import SongEditForm from "./SongEditForm";
 import { Modal } from "../Modal/Modal";
 import "./styles/SongLyrics.css";
 
+import Annotations from '../Annotations/Annotations';
+
 const SongLyrics = () => {
     const dispatch = useDispatch();
 
@@ -52,7 +54,7 @@ const SongLyrics = () => {
                         </Modal>
                     )}
                 </div>
-                <div className="songpage-lyrics_lyrics">{parse(currentSong.lyrics)}</div>
+                <div className="songpage-lyrics_lyrics" onMouseUp={Annotations}>{parse(currentSong.lyrics)}</div>
             </div>) : (
                     <div className="songpage-lyrics_container">
                         <div>
