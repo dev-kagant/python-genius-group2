@@ -37,4 +37,6 @@ class User(db.Model, UserMixin):
             "bio": self.user_bio,
             "avatar": self.user_avatar,
             "background": self.user_background,
+            "songs": [song.to_dict() for song in self.songs],
+            "annotations": [annotation.to_dict() for annotation in self.annotations]
         }
