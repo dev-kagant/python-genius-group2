@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from werkzeug.security import generate_password_hash
-from app.models import User, db
+from app.models import db, User, Song, Annotation
 from app.forms import EditUserForm
 
 
@@ -47,7 +47,7 @@ def update_user():
             user.username = form.data['username'],
             user.email = form.data['email'],
             if form.data['password']:
-                user.hashed_password =generate_password_hash(form.data['password']),
+                user.hashed_password = generate_password_hash(form.data['password']),
             user.user_avatar = form.data['avatar'],
             user.user_background = form.data['background'],
             user.user_bio = form.data['bio']

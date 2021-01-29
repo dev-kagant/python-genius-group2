@@ -66,14 +66,14 @@ function User() {
               <div className="stats-container">
                 <div className="stats-content">
                   <i className="fas fa-sticky-note stats-icon fa-2x" />
-                  <div className="stats-number">{currentViewUser.annotations.length}</div>
+                  <div className="stats-number">0</div>
                 </div>
                 <div className="stats-subtitle">ANNOTATION</div>
               </div>
               <div className="stats-container">
                 <div className="stats-content">
                   <i className="fas fa-sticky-note stats-icon fa-2x" />
-                  <div className="stats-number">{currentViewUser.songs.length}</div>
+                  <div className="stats-number">0</div>
                 </div>
                 <div className="stats-subtitle">SONGS</div>
               </div>
