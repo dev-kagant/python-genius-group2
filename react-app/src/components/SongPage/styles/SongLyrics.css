@@ -28,13 +28,9 @@
     margin-top: 24px;
     width: 90%;
     white-space: pre-line;
+    font-size: 18px;
+    line-height: 1.5em;
 }
-
-.songpage-lyrics_lyrics p {
-    margin-bottom: 20px;
-    line-height: 1.25em;
-}
-
 
 /* ---------- Edit Lyrics -------- */
 .song-lyric_edit-box{
