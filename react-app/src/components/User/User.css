@@ -110,6 +110,7 @@
     background-color: #f6e7a0;
 }
 
+/* heading */
 .user-page_stats-heading {
     width: 70%;
     text-align: center;
@@ -117,10 +118,43 @@
     border-bottom: 1px #999 solid;
 }
 
+/* outer container */
 .user-page_stats-container {
     display: flex;
-    width: 70%;
+    justify-content: space-between;
 }
+
+/* inner container */
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 10px 10px;
+}
+
+/* content */
+.stats-content {
+    display: flex;
+    align-items: center;
+}
+
+.fas {
+    color: rgb(0, 0, 0);
+    opacity: 60%;
+    margin-right: 5px;
+}
+
+.stats-number {
+    font-size: 24px;
+}
+
+/* subtitle */
+.stats-subtitle {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+
 
 /* --------- activities --------- */
 .user-page_activity-heading {

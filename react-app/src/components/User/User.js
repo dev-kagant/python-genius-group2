@@ -52,13 +52,19 @@ function User() {
           <div className="user-page_stats">
             <div className="user-page_stats-heading">STATS</div>
             <div className="user-page_stats-container">
-              <div className="user-page_stats-annotation stats-container">
-                <i className="fas fa-sticky-note stats-icon fa-3x" />
-                <div className="stats-content">0</div>
+              <div className="stats-container">
+                <div className="stats-content">
+                  <i className="fas fa-sticky-note stats-icon fa-3x" />
+                  <div className="stats-number">0</div>
+                </div>
+                <div className="stats-subtitle">ANNOTATION</div>
               </div>
-              <div className="user-page_stats-song stats-container">
-                <i className="fas fa-sticky-note stats-icon fa-3x" />
-                <div className="stats-content">0</div>
+              <div className="stats-container">
+                <div className="stats-content">
+                  <i className="fas fa-sticky-note stats-icon fa-3x" />
+                  <div className="stats-number">0</div>
+                </div>
+                <div className="stats-subtitle">SONGS</div>
               </div>
             </div>
           </div>
@@ -73,4 +79,5 @@ function User() {
     </div>
   );
 }
+
 export default User;
