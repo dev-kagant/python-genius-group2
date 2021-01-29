@@ -29,7 +29,7 @@ const setCurrentSong = (song) => ({
 // Thunk Actions
 
 //GET ALL OF THE SONGS
-export const fetchAllSongs = () => async(dispatch) => {
+export const fetchAllSongs = () => async (dispatch) => {
     const res = await csrffetch("/api/songs");
     console.log(res.data);
     dispatch(getAllSongs(res.data.songs));
@@ -47,15 +47,15 @@ export const getSong = (id) => async dispatch => {
 }
 
 export const postSong = (song) => async dispatch => {
-    const { 
-        artist, 
-        title, 
-        album, 
-        song_url, 
-        lyrics, 
-        written_by, 
-        label, 
-        release_date,  
+    const {
+        artist,
+        title,
+        album,
+        song_url,
+        lyrics,
+        written_by,
+        label,
+        release_date,
         media_url,
         song_icon,
         song_background_image,
@@ -66,16 +66,16 @@ export const postSong = (song) => async dispatch => {
         method: "POST",
         headers: {
             "Content-type": "application/json"
-        }, 
+        },
         body: JSON.stringify({
-            artist, 
-            title, 
-            album, 
-            song_url, 
-            lyrics, 
-            written_by, 
-            label, 
-            release_date,  
+            artist,
+            title,
+            album,
+            song_url,
+            lyrics,
+            written_by,
+            label,
+            release_date,
             media_url,
             song_icon,
             song_background_image,
@@ -89,9 +89,100 @@ export const postSong = (song) => async dispatch => {
     }
 }
 
+//EDIT A SONG
+export const editSong = (song) => async (dispatch) => {
+    const {
+        id,
+        artist,
+        title,
+        album,
+        song_url,
+        written_by,
+        label,
+        release_date,
+        media_url,
+        song_icon,
+        song_background_image,
+    } = song;
+    const response = await fetch(`/api/songs/edit`, {
+        method: "PATCH",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+            id,
+            artist,
+            title,
+            album,
+            song_url,
+            written_by,
+            label,
+            release_date,
+            media_url,
+            song_icon,
+            song_background_image
+        })
+    })
+    if (response.ok) {
+        const data = await response.json()
+        return dispatch(setCurrentSong(data))
+    }
+}
+
+// EDIT SONG LYRICS
+export const editLyrics = ({ songId, lyrics }) => async dispatch => {
+    const response = await fetch(`/api/songs/edit-lyrics`, {
+        method: "PATCH",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+            songId,
+            lyrics
+        })
+    })
+    if (response.ok) {
+        const data = await response.json()
+        return dispatch(setCurrentSong(data))
+    }
+}
+
+// EDIT SONG BIO
+export const editBio = ({ songId, song_bio }) => async dispatch => {
+    const response = await fetch(`/api/songs/edit-bio`, {
+        method: "PATCH",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+            songId,
+            song_bio
+        })
+    })
+    if (response.ok) {
+        const data = await response.json()
+        return dispatch(setCurrentSong(data))
+    }
+}
+
+// DELETE A SINGLE SONG
+export const deleteSong = (song) => async (dispatch) => {
+    const response = await fetch("/api/songs/delete", {
+        method: "DELETE",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+            song
+        })
+    });
+    if (response.ok) {
+        return dispatch(setCurrentSong({}))
+    }
+}
 
 // Reducer
-const songReducer = (state=initialState, action) => {
+const songReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_ALL_SONGS:
             const newSongs = {};
@@ -102,7 +193,7 @@ const songReducer = (state=initialState, action) => {
                 ...state,
                 byId: newSongs
             };
-            // return state;
+        // return state;
         case SET_CURRENT_SONG:
             return {
                 ...state,

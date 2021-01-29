@@ -9,7 +9,42 @@
     padding-bottom: 20px;
 }
 
+.songpage-bio_bio {
+    margin-bottom: 20px;
+    white-space: pre-line;
+}
+
 .songpage-bio_bio p{
     margin-bottom: 20px;
+    padding-bottom: 20px;
     line-height: 1.25em;
+    white-space: pre-line;
 }
+
+
+/* ---------- Edit Lyrics -------- */
+.song-bio_edit-box{
+    margin-top: 24px;
+    margin-bottom: 10px;
+    width: 90%;
+    height: 200px;
+    overflow: auto;
+    white-space: pre-line;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #efcc411e;
+    box-shadow: 0 0 2em  #00000054  ;
+}
+
+.song-bio_edit-box::-webkit-scrollbar {
+    width: 12px;
+  }
+
+.song-bio_edit-box::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px #EFCC41;
+  }
+
+.song-bio_edit-box::-webkit-scrollbar-thumb {
+    background-color: #efcc4173;
+    outline: 1px solid #EFCC41;
+  }
