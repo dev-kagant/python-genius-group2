@@ -15,7 +15,7 @@ const EditUserModal = ({ setShowForm }) => {
         <>
             {showModal && (
                 <Modal onClose={closeModal}>
-                    <EditUserForm /> 
+                    <EditUserForm closeModal={closeModal}/> 
                 </Modal>
             )}
         </>

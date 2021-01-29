@@ -69,7 +69,7 @@ export const signUp = (username, email, password) => async dispatch => {
         dispatch(isAuthenticated()); 
         dispatch(setLogginedUser(data));
     };
-    return data;
+    // return data;
 }
 
 export const logout = () => async dispatch => {
@@ -103,6 +103,7 @@ export const getUserById = (userId) => async dispatch => {
     if (response.ok) {
         const res = await response.json();
         dispatch(setCurrentViewUser(res));
+        return response
     }
     return response
 }
@@ -121,18 +122,21 @@ export const updateUser = (
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            username, 
+            username,
             avatar,
             background,
             bio,
-            email, 
-            password, 
+            email,
+            password
         }),
     });
+    console.log(response)
+    const data = await response.json();
+    console.log(data.errors)
     if (response.ok) {
-        const user = await response.json();
-        dispatch(setCurrentViewUser(user));
-        return user;
+        dispatch(setCurrentViewUser(data));
+    } else {
+        return data.errors
     }
 }
 

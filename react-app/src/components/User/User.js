@@ -33,16 +33,16 @@ function User() {
     <div className="user-page_container">
       {showForm && <EditUserModal setShowForm={setShowForm}/>}
       <div className="user-page_header-background">
-        { currentViewUser.user_background ?
-          <img src={currentViewUser.user_background} /> :
+        { currentViewUser.background ?
+          <img src={currentViewUser.background} /> :
           <div className="user-page_header-default-background" />
         }
       </div>
       <div className="user-page_main">
         <div className="user-page_main-left">
           <div className="user-page_header-avatar">
-            { currentViewUser.user_avatar ?
-              <img src={currentViewUser.user_avatar} /> :
+            { currentViewUser.avatar ?
+              <img src={currentViewUser.avatar} /> :
               <div className="user-page_header-default-avatar" />
             }
           </div>
@@ -56,7 +56,7 @@ function User() {
           }
           <div className="user-page_bio">
             { currentViewUser.bio ?
-              currentViewUser :
+              currentViewUser.bio :
               `${currentViewUser.username} is keeping quiet for now.`
             }
           </div>
@@ -66,14 +66,14 @@ function User() {
               <div className="stats-container">
                 <div className="stats-content">
                   <i className="fas fa-sticky-note stats-icon fa-2x" />
-                  <div className="stats-number">0</div>
+                  <div className="stats-number">{currentViewUser.annotations.length}</div>
                 </div>
                 <div className="stats-subtitle">ANNOTATION</div>
               </div>
               <div className="stats-container">
                 <div className="stats-content">
                   <i className="fas fa-sticky-note stats-icon fa-2x" />
-                  <div className="stats-number">0</div>
+                  <div className="stats-number">{currentViewUser.songs.length}</div>
                 </div>
                 <div className="stats-subtitle">SONGS</div>
               </div>
