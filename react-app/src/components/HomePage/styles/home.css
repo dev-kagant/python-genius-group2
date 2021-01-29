@@ -30,9 +30,7 @@
     flex-direction: row;
     border-bottom: 1px solid #DBD8CF;
     box-shadow: inset 0px -26px 50px -30px rgba(247,230,160,0.67);
-    /* justify-content: space-between; */
-    /* justify-content: row; */
-    /* justify-content: column; */
+    cursor: pointer;
 }
 
 .song-index{
@@ -49,11 +47,6 @@
 
 .song-title, .song-artist{
     margin-top: 25px;
-    /* margin-left: 20px; */
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-around; */
-
 }
 
 .song-title{
@@ -62,17 +55,9 @@
 }
 
 .song-artist{
-    /* display: flex;
-    justify-content: flex-end; */
-    /* text-align: right; */
-    /* margin-left: 80px; */
     margin-right: 40px;
-    /* margin-left: 0px; */
-    /* justify-self: space-between; */
     position: absolute;
     right: 0;
-    /* padding: 10px; */
-    /* align-content: flex-end; */
 }
 
 

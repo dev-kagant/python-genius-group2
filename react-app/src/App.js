@@ -11,6 +11,7 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import Song from "./components/SongPage";
 import SongAddForm from "./components/SongPage/SongAddForm";
+import SearchPage from "./components/Search/SearchPage";
 
 import { authenticate } from "./store/user";
 import SongTrends from "./components/HomePage/SongTrends";
@@ -61,6 +62,9 @@ function App() {
         <ProtectedRoute path="/add-a-song" exact={true} >
           <SongAddForm />
         </ProtectedRoute>
+        <Route path="/search">
+          <SearchPage />
+        </Route>
       </Switch>
     </BrowserRouter>
   );
