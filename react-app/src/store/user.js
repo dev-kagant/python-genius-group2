@@ -1,13 +1,15 @@
 // State
 const initialState = {
     authenticated: false,
-    loggedInUser: null
+    loggedInUser: null,
+    currentViewUser: null
 }
 
 // Action Types
 const IS_AUTHENTICATED = "user/IS_AUTHENTICATED";
 const NOT_AUTHENTICATED = "user/NOT_AUTHENTICATED";
 const SET_LOGGINED_USER = "user/SET_LOGGINED_USER";
+const SET_CURRENT_VIEW_USER = "user/SET_CURRENT_VIEW_USER";
 
 // POJO Actions
 export const isAuthenticated = () => ({
@@ -22,6 +24,11 @@ export const notAuthenticated = () => ({
 
 export const setLogginedUser = (user) => ({
     type: SET_LOGGINED_USER,
+    payload: user
+})
+
+export const setCurrentViewUser = (user) => ({
+    type: SET_CURRENT_VIEW_USER,
     payload: user
 })
 
@@ -62,7 +69,7 @@ export const signUp = (username, email, password) => async dispatch => {
         dispatch(isAuthenticated()); 
         dispatch(setLogginedUser(data));
     };
-    return data;
+    // return data;
 }
 
 export const logout = () => async dispatch => {
@@ -91,6 +98,47 @@ export const authenticate = () => async dispatch => {
     } 
 }
 
+export const getUserById = (userId) => async dispatch => {
+    const response = await fetch(`/api/users/${userId}`);
+    if (response.ok) {
+        const res = await response.json();
+        dispatch(setCurrentViewUser(res));
+        return response
+    }
+    return response
+}
+
+export const updateUser = (
+    username, 
+    avatar,
+    background,
+    bio,
+    email, 
+    password, 
+) => async dispatch => {
+    const response = await fetch("/api/users/update", {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            username,
+            avatar,
+            background,
+            bio,
+            email,
+            password
+        }),
+    });
+    console.log(response)
+    const data = await response.json();
+    console.log(data.errors)
+    if (response.ok) {
+        dispatch(setCurrentViewUser(data));
+    } else {
+        return data.errors
+    }
+}
 
 // Reducer
 const userReducer = (state=initialState, action) => {
@@ -110,6 +158,11 @@ const userReducer = (state=initialState, action) => {
                 ...state,
                 authenticated: action.payload
             };
+        case SET_CURRENT_VIEW_USER:
+            return {
+                ...state,
+                currentViewUser: action.payload
+            }
         default:
             return state;
     }

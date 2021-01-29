@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import SearchBar from '../Search/SearchBar';
 import './navbar.css';
 
 const NavBar = () => {
+  const dispatch = useDispatch();
   const authenticated = useSelector(state => state.user.authenticated);
   const loggedInUser = useSelector(state => state.user.loggedInUser);
   // const [searchKeyword, setSearchKeyword] = useState('');

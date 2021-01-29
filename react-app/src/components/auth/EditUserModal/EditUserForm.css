@@ -1,0 +1,75 @@
+.edit-user_form {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+}
+
+.edit-user_heading {
+    border-bottom: 1px #999 solid;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.edit-user_main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.edit-user_main-left {
+    width: 47%;
+}
+
+.edit-user_main-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 47%;
+}
+
+
+/* ---------- input --------- */
+.edit-user_input-container,
+.edit-user_textarea {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.edit-user_input-label,
+.edit-user_textarea-label {
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.edit-user_input-box {
+    height: 20px;
+    padding: 4px 8px;
+}
+
+.edit-user_textarea-box {
+    height: 80px;
+    padding: 4px 8px;
+}
+
+/* ---------- buttons --------- */
+.edit-user_main-right-buttons {
+    border-top: 1px #999 solid;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+.edit-user_save {
+    background-color: white;
+    border-style: none;
+    border: 2.4px black solid;
+    padding: 4px 12px;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.edit-user_cancel {
+    border-style: none;
+    background-color: transparent;
+    font-size: 16px;
+}

@@ -47,6 +47,7 @@
     font-weight: bold;
     background-color: #efcc411e;
     box-shadow: 0 0 2em  #00000054  ;
+    padding: 10px;
 }
 
 .song-lyric_edit-box::-webkit-scrollbar {

@@ -8,7 +8,7 @@ import NavBar from "./components/NavBar/NavBar";
 import LoginModal from "./components/auth/LoginModal/LoginModal";
 import SignUpModal from "./components/auth/SignUpModal/SingUpModal";
 import UsersList from "./components/UsersList";
-import User from "./components/User";
+import User from "./components/User/User";
 import Song from "./components/SongPage";
 import SongAddForm from "./components/SongPage/SongAddForm";
 import SearchPage from "./components/Search/SearchPage";
@@ -64,6 +64,9 @@ function App() {
         </ProtectedRoute>
         <Route path="/search">
           <SearchPage />
+        </Route>
+        <Route path="/404" exact={true}>
+          <h1>Sorry Page Not Found.</h1>
         </Route>
       </Switch>
     </BrowserRouter>
