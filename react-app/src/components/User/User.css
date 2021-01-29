@@ -1,0 +1,129 @@
+/* ------- container ---------*/
+.user-page_container {
+    box-sizing: border-box;
+    position: relative;
+    background-color: #E1FFC4;
+    width: 100%;
+}
+
+/* ------- background ---------*/
+.user-page_header-background {
+    position: absolute;
+    width: 100%;
+    height: 280px;
+    opacity: 85%;
+    object-fit: cover;
+}
+
+.user-page_header-default-background {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, #e1ffc4,black);
+    background-image: url("https://www.su.rhul.ac.uk/asset/Event/6001/KPop-Banner.jpg");
+}
+
+/* --------- main --------- */
+.user-page_main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 970px;
+    min-height: 100vh;
+    background-color: #fff;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 70px;
+}
+
+/* main-left */
+.user-page_main-left {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    margin-left: 30px;
+}
+
+/* main-right */
+.user-page_main-right {
+    z-index: 1;
+    width: 60%;
+    padding-top: 330px;
+    margin-right: 50px;
+}
+
+/* --------- avatar ---------*/
+.user-page_header-avatar {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+.user-page_header-avatar img {
+    object-fit: cover;
+}
+
+.user-page_header-default-avatar {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://avatarfiles.alphacoders.com/814/81468.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+/* --------- username --------- */
+.user-page_username {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* --------- edit --------- */
+.user-page_edit-button {
+    font-size: 16px;
+    background-color: white;
+    border-style: none;
+    border: 2.4px black solid;
+    width: 60px;
+    padding: 2px 6px;
+    margin-right: 5px;
+    margin-bottom: 30px;
+}
+
+/* --------- bio --------- */
+.user-page_bio {
+    width: 70%;
+    min-height: 30px;
+    padding: 20px;
+    background-color: #f6e7a0;
+    margin-bottom: 60px;
+}
+
+/* --------- stats --------- */
+.user-page_stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    padding: 20px;
+    background-color: #f6e7a0;
+}
+
+.user-page_stats-heading {
+    width: 70%;
+    text-align: center;
+    padding: 0 20px 10px 20px;
+    border-bottom: 1px #999 solid;
+}
+
+.user-page_stats-container {
+    display: flex;
+    width: 70%;
+}
+
+/* --------- activities --------- */
+.user-page_activity-heading {
+    padding-bottom: 10px;
+    border-bottom: 1px #999 solid;
+}
