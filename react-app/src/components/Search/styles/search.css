@@ -94,9 +94,11 @@
     background-color: #ffffff;
     margin-left: 10px;
     margin-right: 10px;
+    margin-top: 10px;
     width: 910px;
     height: 100px;
     overflow: scroll;
+    grid-column-gap: 20px;
 }
 
 .lyric-container{
@@ -138,7 +140,7 @@
     grid-row-start: 1;
     grid-row-end: 2;
     overflow: scroll;
-    width: 400px;
+    width: 500px;
     height: 400px;
 }
 
