@@ -32,10 +32,12 @@ function SearchPage(){
             <ul className="search-page_lyricsInfo"> Lyric Matches{
                 lyricsInfo && lyricsInfo.map((lyrics)=>(
                     <div className="search-lyrics_data" key={lyrics.lyrics} onClick={()=>history.push(`songs/${lyrics.id}`)}>
-                        <li><img className="lyrics-img" src={lyrics.song_icon} /></li>
-                        <div className="song-title"><li>{lyrics.title}</li></div>
-                        <div className="song-artist"><li>{lyrics.artist}</li></div>
-                        <div className="album-name"><li>{lyrics.album}</li></div>
+                        <div className="lyric-container">
+                            <div className="lyric-title">{lyrics.title}</div>
+                            <li><img className="lyrics-img" src={lyrics.song_icon} /></li>
+                            <div className="lyric-artist">{lyrics.artist}</div>
+                            <div className="album-name">{lyrics.album}</div>
+                        </div>
                         <div className="lyrics"><li><p>{lyrics.lyrics}</p></li></div>
                     </div>
                 ))

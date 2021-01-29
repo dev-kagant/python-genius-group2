@@ -35,7 +35,7 @@
     margin-top: 20px;
     right: 0px;
     height: 400px;
-    width: 400px;
+    width: 490px;
     position: relative;
 }
 
@@ -50,7 +50,7 @@
     margin-right: 20px;
     margin-bottom: 20px;
     height: 820px;
-    width: 882.5px;
+    width: 930px;
 }
 
 .search-song_data{
@@ -76,8 +76,13 @@
     background-color: #ffffff;
     margin-left: 10px;
     margin-right: 10px;
-    width: 380px;
+    width: 470px;
     overflow: scroll;
+}
+
+.artist-name{
+    margin-top: 30px;
+    margin-left: 90px;
 }
 
 .search-lyrics_data{
@@ -89,82 +94,59 @@
     background-color: #ffffff;
     margin-left: 10px;
     margin-right: 10px;
-    width: 815px;
-    /* overflow: scroll; */
+    width: 910px;
+    height: 100px;
+    overflow: scroll;
 }
-.song-title{
+
+.lyric-container{
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 2;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    /* display: block; */
 }
 
 .lyrics-img{
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
 }
 
-.artist-name{
-    grid-row-start: 3;
-    grid-row-start: 4;
-    grid-column-start: 1;
-    grid-column-end: 2;
+.lyric-title{
+    font-weight: bold;
+}
+
+.lyric-artist{
+    /* margin: 0 auto; */
 }
 
 .album-name{
-    grid-row-start: 4;
-    grid-row-end: 5;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    /* margin: 0 auto; */
 }
+
+
+
+
 
 .lyrics{
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 1;
-    grid-row-end: 4;
+    grid-row-end: 2;
     overflow: scroll;
     width: 400px;
     height: 400px;
 }
 
-/* .search-lyrics_data{
-    background-color: white;
-    overflow: scroll;
-    position: absolute;
-} */
 
-/* .search-page_songInfo{ */
-    /* grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    display: block;
-    justify-items: column;
-    width: 50%;
-    margin-left: 40px;
-    margin-top: 40px;
-    /* margin-bottom: 40px; */
-    /* max-width: 970px;
-    min-height: 100vh; */
-    /* background-color: white; */
-    /* margin: 0 auto; */
-    /* padding-top: 16px; */
-    /* position: relative;  */
 
-/* } */
 
-/* .search-song_data{
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid #DBD8CF;
-    box-shadow: inset 0px -26px 50px -30px rgba(247,230,160,0.67);
-    cursor: pointer;
-} */
 
-.song-img, .artist-img, .lyrics-img{
+.song-img, .artist-img{
     width: 60px;
     height: 60px;
     margin-left: 40px;
@@ -175,114 +157,3 @@
     margin-left: 30px;
     font-weight: bold;
 }
-
-.song-artist{
-    margin-right: 40px;
-    position: absolute;
-    /* right: 0; */
- }
-
-/* .search-page_artistInfo{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    /* width: 25%;
-    height: 75%; */
-    /* display: block;
-    justify-items: column; */
-    /* width: 50%; */
-    /* margin-right: 0px; */
-    /* margin-left: 450px;
-    margin-top: 40px; */
-    /* margin-bottom: 80px; */
-    /* width: 42%; */
-    /* padding-right: 16px; */
-    /* width: 100%; */
-    /* max-width: 970px;
-    min-height: 100vh; */
-    /* background-color: white; */
-    /* margin: 0 auto; */
-    /* padding-top: 16px; */
-    /* position: relative; */
-
-/* } */
-/*
-.search-artist_data{
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid #DBD8CF;
-    box-shadow: inset 0px -26px 50px -30px rgba(247,230,160,0.67);
-    cursor: pointer;
-}
-
-.artist-img{
-    width: 60px;
-    height: 60px;
-    margin-left: 40px;
-    margin-top: 10px;
-} */
-
-/* .artist-name{
-    /* margin-right: 40px; */
-    /* position: absolute;
-    /* right: 0; */
-/* }   */
-
-/* .song-title, .artist-name, .song-artist{
-    /* margin-top: 25px; */
-/* }  */
-
-/* .search-page_lyricsInfo{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    display: block;
-    justify-items: column; */
-    /* width: 100%; */
-    /* max-width: 970px;
-    min-height: 100vh; */
-    /* margin-top: 80px;
-    margin-left: 40px;
-    background-color: white; */
-    /* margin: 0 auto;
-    padding-top: 16px; */
-    /* position: relative; */
-
-/* }  */
-
-/* .search-lyrics_data{
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid #DBD8CF;
-    box-shadow: inset 0px -26px 50px -30px rgba(247,230,160,0.67);
-    cursor: pointer;
-}
-
-.song-title{
-    margin-left: 30px;
-    font-weight: bold;
-}
-
-
-.album-name{
-    margin-left: 30px;
-    font-weight: bold;
-} */
-
-/* .lyrics{
-    /* text-overflow: ellipsis; */
-    /* white-space: nowrap; */
-    /* overflow: scroll;
-    height: 300px;
-    width: 300px;
-}
-
-/* input:focus {
-    outline: none !important;
-}
-
-img {
-    outline: none !important;
-} */
