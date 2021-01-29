@@ -1,8 +1,15 @@
 .search-page_container{
+    display: grid;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
 
 }
 
 .search-page_songInfo{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
     display: block;
     justify-items: column;
     width: 100%;
@@ -42,6 +49,12 @@
 }
 
 .search-page_artistInfo{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 25%;
+    height: 75%;
     display: block;
     justify-items: column;
     width: 100%;
@@ -80,6 +93,10 @@
 }
 
 .search-page_lyricsInfo{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
     display: block;
     justify-items: column;
     width: 100%;
