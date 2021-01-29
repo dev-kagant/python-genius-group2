@@ -784,6 +784,595 @@ def seed_songs():
         user_Id= user2.id
     )
 
+    Hero = Song(
+        artist="Monsta X",
+        title="Hero",
+        album="Rush",
+        written_by="Joohoney (MONSTA X), I.M (MONSTA X), Rhymer (라이머) & Punch Sound",
+        label="Starship Entertainment",
+        song_bio='''
+
+        ''',
+        lyrics='''
+            하루 종일 널 지켜보면서 <br/>
+            발견한 유일한 문제점 yeah <br/>
+            너를 귀찮게 만드는 <br/>
+            가식뿐인 늑대 같은 남자들 <br/>
+            아니야 넌 내껀데 <br/>
+            내가 지켜야 할 의무가 있는데 <br/>
+            누가 널 절대 넘볼 수 없게 <br/>
+            내가 지켜줄게 <br/><br/>
+
+            넌 너무나 아름다워서 난 적이 많아 <br/>
+            마치 공주를 지키는 게임 같아 <br/>
+            걱정하지마 난 너만의 남자 <br/>
+            I can be your hero, I can be your hero <br/>
+            I can be your hero <br/><br/>
+
+            I can be your hero, I can be your man <br/>
+            I can be your hero, I can be your man <br/>
+            I can be your hero, I can be your man <br/>
+            I can be your hero, I can be your man <br/><br/>
+
+            I can be your hero 악당들은 뒤로 <br/>
+            나쁜 것들 포대기에 <br/>
+            싸맨 다음 트럭에 실어 <br/>
+            하나같이 다 짐승같아보여 <br/>
+            동물원에 버려 <br/>
+            전부 말들이 많어 널 가지려 <br/>
+            뱉어대는 개소리 (월월월) <br/>
+            (What?) 만만하게 날 봤다면 <br/>
+            버섯 먹고 크게 자라 <br/>
+            바지 위에 팬티를 입고 망토를 달아 <br/>
+            수트도 가끔 입고 가슴에서 빛이나 <br/>
+            빛이나 우리가 빛이나 <br/>
+            다들 고개를 bow <br/><br/>
+
+            마지막 경고할게 <br/>
+            화나면 난리나 나 무섭게 변해 <br/>
+            누가 널 절대 넘볼 수 없게 <br/>
+            내가 지켜줄게 <br/><br/>
+
+            넌 너무나 아름다워서 난 적이 많아 <br/>
+            마치 공주를 지키는 게임 같아 <br/>
+            걱정하지마 난 너만의 남자 <br/>
+            I can be your hero, I can be your hero <br/>
+            I can be your hero <br/><br/>
+
+            I can be your hero, I can be your man <br/>
+            I can be your hero, I can be your man <br/>
+            I can be your hero, I can be your man <br/>
+            I can be your hero, I can be your man <br/><br/>
+
+            Ay 난 너의 악당들을 <br/>
+            모두 하나같이 뱅 뱅 뱅 뱅 <br/>
+            하늘을 슝슝 <br/>
+            그냥 막 하늘을 날아다녀 슈퍼맨 <br/>
+            너의 입꼬리위에 매달려 웃음짓게 <br/>
+            만들어낼게 배트맨 <br/>
+            널 울게 만드는 그 어떤 악당들 <br/>
+            이제는 싹 다 꺼지라 할게요 <br/><br/>
+
+            I can be your hero <br/><br/>
+
+            I can be your hero, I can be your man <br/>
+            I can be your hero, I can be your man <br/>
+            I can be your hero, I can be your man <br/>
+            I can be your hero, I can be your man <br/><br/>
+        ''',
+        song_url="https://soundcloud.com/sisa-macikova/monsta-x-hero",
+        media_url="https://www.youtube.com/watch?v=FZ9lJ5ctd0s",
+        song_icon="https://t2.genius.com/unsafe/220x220/https%3A%2F%2Fimages.genius.com%2F7768f98750e4ac97b8864c4fdf41e1cf.600x600x1.jpg",
+        song_background_image="https://t2.genius.com/unsafe/1470x280/https%3A%2F%2Fimages.rapgenius.com%2Fad43486e8c15fea53d55d7f3b20b7a0c.1000x666x1.jpg",
+        release_date="2015-09-07",
+        user_Id= user2.id
+    )
+
+    JustRight = Song(
+        artist="GOT7",
+        title="딱 좋아 (Just Right)",
+        album="Just Right",
+        written_by="Chizzy, Jay Dmuchowski, C-Minor, Gavin Jones, Steven Battey & Carlos Battey",
+        label="KT Music & JYP Entertainment",
+        song_bio='''“Just Right” is the title track of GOT7’s third EP of the same name. The track went viral for its inspirational lyrics that convey that one is “just right” as they are. The song also gave way to the _#JustRight_ Project that earned GOT7 the title of “Healing-dols,” inspiring fans and non-fans alike to learn to accept and love themselves.
+        ''',
+        lyrics='''
+            [Intro]<br/>
+            Baby, you are just<br/>
+            Just right<br/><br/>
+
+            [Verse 1]<br/>
+            거울아 거울아 제발 좀 말해주려무나<br/>
+            저울아 너도 말해주려무나<br/>
+            아무것도 바꿀 필요 없이 예쁘다고<br/>
+            지금 그 모습 그대로 완벽하다고<br/>
+            마냥 행복하면 돼 걱정 없이<br/>
+            부족한 점이 뭔지 찾기 없기<br/>
+            거울 대신 그냥 내 눈 빛을 바라봐<br/>
+            저울 대신 내 등 위에 올라타봐 봐<br/><br/>
+
+            [Pre-Hook]<br/>
+            아무리 널 뜯어봐도<br/>
+            보고 또 보고 또 봐도<br/>
+            니가 말하는 안 예쁜 부분이 어딘지<br/>
+            그게 어딘지 찾을 수가 없어 난<br/><br/>
+
+            [Hook]<br/>
+            지금처럼 만만만만만 만<br/>
+            있어주면 난난난난난<br/>
+            바랄게 없으니 넌 아무것도<br/>
+            바꾸지 마마마마마<br/>
+            아무 걱정마마마마마마<br/>
+            너의 모든게 다다다다<br/>
+            다 좋으니까 너는 아무것도<br/>
+            바꾸지 마마마마마<br/><br/>
+
+            [Bridge]<br/>
+            이대로 (지금 이대로) 오 (그냥 이대로)<br/>
+            오 (지금 이대로) 오오오 있으면 돼<br/><br/>
+
+            [Verse 2]<br/>
+            딱 좋아 너의 모든 게 그러니 네 맘<br/>
+            놓아 아무 걱정하지 마 이 말<br/>
+            백 퍼센트 다 그대로 믿어도 돼<br/>
+            모든 걱정 백 퍼센트 다 지워도 돼<br/><br/>
+
+            [Pre-Hook]<br/>
+            아무리 널 뜯어봐도<br/>
+            보고 또 보고 또 봐도<br/>
+            니가 말하는 안 예쁜 부분이 어딘지<br/>
+            그게 어딘지 찾을 수가 없어 난<br/><br/>
+
+            [Hook]<br/>
+            지금처럼 만만만만만 만<br/>
+            있어주면 난난난난난<br/>
+            바랄게 없으니 넌 아무것도<br/>
+            바꾸지 마마마마마<br/>
+            아무 걱정마마마마마마<br/>
+            너의 모든게 다다다다<br/>
+            다 좋으니까 너는 아무것도<br/>
+            바꾸지 마마마마마<br/><br/>
+
+            [Bridge]<br/>
+            이대로 (지금 이대로) 오 (그냥 이대로)<br/>
+            오 (지금 이대로) 오오오 있으면 돼<br/><br/>
+
+            [Verse 3]<br/>
+            옥에 티도 티가 나야 찾는 거지 원<br/>
+            눈부시게 빛나 빈틈이 없지 넌<br/>
+            내 눈에 얼마나 예쁜지 I want you<br/>
+            지금 이대로 you’re the only one<br/>
+            옥에 티도 티가 나야 찾는 거지 원<br/>
+            눈부시게 빛나 빈틈이 없지 넌<br/>
+            내 눈에 얼마나 예쁜지 I want you<br/>
+            지금 이대로 you’re the only one<br/><br/>
+
+            [Hook]<br/>
+            지금처럼 만만만만만 만<br/>
+            있어주면 난난난난난<br/>
+            바랄게 없으니 넌 아무것도<br/>
+            바꾸지 마마마마마<br/>
+            아무 걱정마마마마마마<br/>
+            너의 모든게 다다다다다<br/>
+            다 좋으니까 너는 아무것도<br/>
+            바꾸지 마마마마마<br/><br/>
+            ''',
+        song_url="https://soundcloud.com/user-91556499/sets/got7-just-right",
+        media_url="https://www.youtube.com/watch?v=vrdk3IGcau8",
+        song_icon="https://t2.genius.com/unsafe/220x220/https%3A%2F%2Fimages.genius.com%2F089bc1fd53b0cf16b236d7651da1c1f7.1000x1000x1.jpg",
+        song_background_image="https://t2.genius.com/unsafe/1470x280/https%3A%2F%2Fimages.genius.com%2Fb9b289c38dcfdefe258eac0b0f983613.1000x670x1.png",
+        release_date="2015-07-15",
+        user_Id= user2.id
+    )
+
+    AgustD = Song(
+        artist="Agust D",
+        title="Agust D",
+        album="Agust D",
+        written_by="Agust D",
+        label="BigHit Entertainment",
+        song_bio='''“Agust D” is the title track for Agust D’s self titled mixtape. The track features intense rap over an old-school-hip-hop-influenced beat, and it samples James Brown’s 1966 hit “It’s a Man’s Man’s Man’s World”.
+        ''',
+        lyrics='''
+            [Sample]<br/><br/>
+
+            [Verse 1]<br/>
+            They call me new thang<br/>
+            신병 왔다 짐을 받어<br/>
+            Whole world, concert<br/>
+            꽤 먹히는 Asiana Asia<br/>
+            You could be my new thang<br/>
+            근무태만 형들 과는 달러<br/>
+            유명인의 하극상 damn<br/>
+            쎈 놈만 덤벼<br/>
+            어떤 이는 내가 이 자릴 쉽게 앉았다고 해<br/>
+            Fuck you 난 성공과<br/>
+            거리가 먼 형들 사이 눈엣가시네<br/>
+            솔직히 싸이하누월 쪽팔려<br/>
+            이제 일년에 50만장 팔어<br/>
+            K-pop 이란 카테고리<br/>
+            날 담기에는 사이즈가 달러 whoo<br/>
+            그래 앞서<br/>
+            가고 싶다면 first class 예약해봐<br/>
+            My seat is business<br/>
+            넌 이코노미 평생 내 뒤지 kissing my ass<br/>
+            다음 목표는 Billboard<br/>
+            Brazil to New York<br/>
+            꽤 쉴 틈 없는 내 passport<br/><br/>
+
+            [Chorus]<br/>
+            A to the G to the U to the STD<br/>
+            I'm d boy because I'm from D<br/>
+            난 미친놈 비트 위의 lunatic<br/>
+            랩으로 홍콩을 보내는<br/>
+            My tongue technology<br/>
+            A to the G to the U to the STD<br/>
+            A to the G to the U to the STD<br/>
+            A to the G to the U to the STD<br/>
+            홍콩을 보내는<br/>
+            My tongue technology<br/><br/>
+
+            [Verse 2]
+            난 베끼는 걸 베끼는 놈을 잡아다가<br/>
+            후배든 선배든 제끼는 놈<br/>
+            놈팽이든 내가 wack 이든 fack<br/>
+            이든 역사를 바닥에 새기는 놈<br/>
+            또 재미도 없는 랩퍼들 사이에서<br/>
+            늘 남들보다 더 챙기는 몫<br/>
+            잘나가는 덕에 밥그릇 뺏길<br/>
+            형들의 시기 질투 덕에 생기는 소음<br/>
+            Hey ho 난 좆도 상관 안 해<br/>
+            니가 개 삽질할 때<br/>
+            간단하게 니가 판 무덤에<br/>
+            널 생매장하네<br/>
+            Hey ho 너넨 나 감당 안 돼<br/>
+            약질하는 다수의 랩퍼들<br/>
+            내가 아이돌이란 것에 감사하길<br/><br/>
+
+            [Verse 3]<br/>
+            Cause I'm busy I'm busy 24/7 쉬긴 뭘 쉬니<br/>
+            이미 시길 놓친 이 끼리 끼리 놀아주길<br/>
+            시기와 치기만 남은<br/>
+            자들의 곡성 뭣이 중헌지를 몰라<br/>
+            Paris to New York, damn<br/>
+            쉴 틈 없는 내 스케줄<br/><br/>
+
+            [Chorus]<br/>
+            A to the G to the U to the STD<br/>
+            I'm d boy because I'm from D<br/>
+            난 미친놈 비트 위의 루나틱<br/>
+            랩으로 홍콩을 보내는<br/>
+            My tongue technology
+            A to the G to the U to the STD<br/>
+            A to the G to the U to the STD<br/>
+            A to the G to the U to the STD<br/>
+            홍콩을 보내는<br/>
+            My tongue technology<br/><br/>
+
+            [Bridge]<br/>
+            I'm sorry 진심이야 미안해<br/>
+            니 밥그릇 뺏은 게 나라서 나 미안해 boy<br/>
+            I'm sorry 분노는 지양해<br/>
+            유일한 자산 건강 잃으면<br/>
+            니 엄마 속상하셔<br/>
+            I'm sorry 직업을 전향해<br/>
+            삽질하는 게 예삿<br/>
+            폼이 아냐 전향해 boy<br/>
+            I'm sorry 진심야 미안해<br/>
+            니 랩퍼가 나 보다 못하는 것에 대해<br/><br/>
+
+            [Chorus]<br/>
+            A to the G to the U to the STD<br/>
+            I'm d boy because I'm from D<br/>
+            난 미친놈 비트위의 루나틱<br/>
+            랩으로 홍콩을 보내는<br/>
+            My tongue technology<br/>
+            A to the G to the U to the STD<br/>
+            A to the G to the U to the STD<br/>
+            A to the G to the U to the STD<br/>
+            홍콩을 보내는<br/>
+            My tongue technology<br/><br/>
+
+            [Outro]<br/>
+            A to the G to the U to the STD<br/>
+            I'm d boy because I'm from D<br/>
+            난 미친놈 비트 위의 루나틱<br/>
+            랩으로 홍콩을 보내는<br/>
+            My tongue technology<br/>
+            A to the G to the U to the STD<br/>
+            A to the G to the U to the STD<br/>
+            A to the G to the U to the STD<br/>
+            홍콩을 보내는<br/>
+            My tongue technology<br/><br/>
+        ''',
+        song_url="https://soundcloud.com/user-91556499/sets/got7-just-right",
+        media_url="https://www.youtube.com/watch?v=vrdk3IGcau8",
+        song_icon="https://t2.genius.com/unsafe/220x220/https%3A%2F%2Fimages.genius.com%2F9563cf7190f5e146573c087144b156e9.500x500x1.jpg",
+        song_background_image="https://t2.genius.com/unsafe/1470x280/https%3A%2F%2Fimages.genius.com%2F9563cf7190f5e146573c087144b156e9.500x500x1.jpg",
+        release_date="2016-08-15",
+        user_Id= user2.id
+    )
+    
+    BadBoy = Song(
+        artist="Red Velvet",
+        title="Bad Boy",
+        album="The Perfect Red Velvet",
+        written_by="Moon Hye Yun (문희연) & JQ ",
+        label="SM Entertainment",
+        song_bio='''Bad Boy is the lead single from Red Velvet’s 2nd album repackage, The Perfect Red Velvet. Both sonically and lyrically, the track represents the group’s “velvet” side.
+        ''',
+        lyrics='''
+            [Verse 1: Irene, Seulgi]<br/>
+            Who dat who dat who dat boy<br/>
+            수많은 사람 속 눈에 띈<br/>
+            무심한 그 표정 I like that<br/>
+            내 호기심을 자극하지<br/><br/>
+
+            [Refrain 1: Yeri, Joy]<br/>
+            Oh 시크한 스타일은 덤<br/>
+            입은 옷은 신경 쓴 듯 안 쓴 듯<br/>
+            관심 없는 말투 I like that<br/>
+            외면해 봐도 끌려<br/><br/>
+
+            [Pre-Chorus: Wendy]<br/>
+            달라 도도한 날 웃게 하잖아<br/>
+            알잖아 요즘 내가 Hot ah ah<br/>
+            날 보는 시선 너도 느껴봐<br/><br/>
+
+            [Chorus: Joy, All]<br/>
+            홀린 듯 날 따라와<br/>
+            모두 환호해 너도 곧 Ooh ooh (Oh-eh-oh-eh-oh)<br/>
+            아닌 척해도 넌 Ooh ooh (Oh-eh-oh-eh-oh)<br/>
+            한 번 내기를 해볼까<br/><br/>
+
+            [Post-Chorus: Seulgi, All, Irene]<br/>
+            너무 쉽겐 오지 마<br/>
+            재미없잖아 거기서 Ooh ooh (Oh-eh-oh-eh-oh)<br/>
+            밀고 당겨볼까 Ooh ooh (Oh-eh-oh-eh-oh)<br/>
+            시작할게 Bad boy down<br/><br/>
+
+            [Hook: All, Wendy]<br/>
+            Whoa whoa<br/>
+            지금부터 Bad boy down<br/>
+            Whoa whoa<br/><br/>
+
+            [Verse 2: Yeri, Wendy]<br/>
+            잠깐 이리 와봐 너에게만 할 말이 있어<br/>
+            가까이 좀 와 고갤 숙여 키를 낮춰봐<br/>
+            다른 건 신경 쓰지 마<br/>
+            내 목소리에 집중해<br/><br/>
+
+            [Refrain 2: Irene, Joy, Seulgi]<br/>
+            상황은 좀 달라져<br/>
+            주위를 맴도는 내가 궁금해<br/>
+            너도 알게 될 거야 (뭘까?) 알 거야 (말해)<br/>
+            이미 늦어버렸단 걸<br/><br/>
+
+            [Pre-Chorus: Seulgi]<br/>
+            맞아 사실 꽤나 자신 있어 난<br/>
+            지는 게임 하진 않아 Ha ah ah<br/>
+            벌써 반쯤은 넘어왔잖아<br/><br/>
+
+            [Chorus: Joy, All]<br/>
+            홀린 듯 날 따라와<br/>
+            모두 환호해 너도 곧 Ooh ooh (Oh-eh-oh-eh-oh)<br/>
+            아닌 척해도 넌 Ooh ooh (Oh-eh-oh-eh-oh)<br/>
+            한 번 내기를 해볼까<br/><br/>
+
+            [Post-Chorus: Joy, All]<br/>
+            너무 쉽겐 오지 마<br/>
+            재미없잖아 거기서 Ooh ooh (Oh-eh-oh-eh-oh)<br/>
+            밀고 당겨볼까 Ooh ooh (Oh-eh-oh-eh-oh)<br/>
+            시작할게 Bad boy down<br/><br/>
+
+            [Bridge: Wendy, Joy, Seulgi, Irene]<br/>
+            혼란스런 맘이겠지 상상조차 못할 거야<br/>
+            헤어나려 노력해도 어떤 작은 틈도 없어<br/>
+            정답은 정해져 있어 자연스럽게 넌 따라와<br/>
+            난 널 선택해 난 널 선택했어 이미<br/><br/>
+
+            [Chorus: Joy, All]<br/>
+            홀린 듯 날 따라와<br/>
+            모두 환호해 말했지 Ooh ooh (Oh-eh-oh-eh-oh)<br/>
+            결관 항상 같아 Ooh ooh (Oh-eh-oh-eh-oh)<br/>
+            거봐 내가 또 이겼어<br/><br/>
+
+            [Post-Chorus: Joy, All]<br/>
+            너무 쉽겐 오지 마<br/>
+            재미없잖아 이제 넌 Ooh ooh (Oh-eh-oh-eh-oh)<br/>
+            벗어날 수 없어 Ooh ooh (Oh-eh-oh-eh-oh)<br/>
+            내겐 쉽지 Bad boy down<br/><br/>
+        ''',
+        song_url="https://soundcloud.com/l2share66/red-velvet-bad-boy-all-right-time-to-love-moonlight-melody",
+        media_url="https://www.youtube.com/watch?v=J_CFBjAyPWE&feature=emb_title",
+        song_icon="https://t2.genius.com/unsafe/220x220/https%3A%2F%2Fimages.genius.com%2Fff0468257a1ee27af89d195c3a6f3d9e.640x640x1.png",
+        song_background_image="https://t2.genius.com/unsafe/980x280/https%3A%2F%2Fimages.genius.com%2Fff0468257a1ee27af89d195c3a6f3d9e.640x640x1.png",
+        release_date="2018-01-29",
+        user_Id= user2.id
+    )
+
+    Spoiler = Song(
+        artist="Epik High",
+        title="Spoiler",
+        album="신발장 (Shoebox)",
+        written_by="Tablo",
+        label="YG Entertainment",
+        song_bio='''“Don’t Hate Me”와 같은 시기에 만든 곡이지만 분위기가 맞지 않아 앨범에서 빠졌다고 한다. 이후 타블로의 솔로 2집에 수록할 계획이었으나 결국 에픽 하이의 음악으로 빛을 보게 되었다.
+        ''',
+        lyrics='''
+            [Chorus: Tablo]<br/>
+            너의 차가운 눈빛과 말투가 spoiler<br/>
+            너의 모든 행동 속에 우리의 끝이 보여<br/>
+            아니라고 말해도 느껴지는 spoiler<br/>
+            끝까지 봐야 할까? 지금 떠나야 할까?<br/>
+            반전이 있을까봐<br/><br/>
+
+            [Verse 1: Tablo & Mithra Jin]<br/>
+            무슨 생각해? 두 번 묻자 날 봐<br/>
+            또 대답 아닌 대답을 해, "내일 비가 오려나 봐"<br/>
+            다시 창 밖을 보는 너, 요즘 자주 보는 너의 옆모습<br/>
+            넌 한숨을 쉬고 넘쳐 솟는 정적에 잠기는 나<br/>
+            빠져들면 안 되는 망상, I know, 내 직감은 위험해<br/>
+            한 번 발 들이면 deep 해질 놈, 내 예민함은 심해<br/>
+            난 알지 왜 뜻 모를 한 숨이 잦아지는지<br/>
+            떠나가는 마음은 한숨 한숨씩 자릴 비우지<br/><br/>
+
+            [Verse 2: Mithra Jin]<br/>
+            왠지 예전보다 바쁜 생활<br/>
+            연락이 드문 날들과 마지못해 하는 대화<br/>
+            그 썼다 지우는 말들, 다 복선이겠지<br/>
+            우연인지 몰라도 요즘은 시계를<br/>
+            볼 때마다 등진 분침과 시침<br/>
+            둘이 잠시 보여주는 미래, 전부 cliché<br/>
+            수백 번은 본 듯한 이 뻔한 장면들인데<br/>
+            왜 난 가슴을 졸이는지<br/>
+            우리 시작에 했던 많은 약속들 바빠서 잊은 건지<br/>
+            아님 벌써 잊기 바쁜 건지<br/><br/>
+
+            [Chorus: Tablo]<br/>
+            너의 차가운 눈빛과 말투가 spoiler<br/>
+            너의 모든 행동 속에 우리의 끝이 보여<br/>
+            아니라고 말해도 느껴지는 spoiler<br/>
+            끝까지 봐야 할까? 지금 떠나야 할까?<br/>
+            반전이 있을까봐, I can't let you go<br/><br/>
+
+            [Verse 3: Mithra Jin & Tablo]<br/>
+            난 크게 들려, 하지 않은 말도<br/>
+            애써 아닌 척 하지만 난 알고 있어<br/>
+            갈수록 내 숨통을 쥐는 이 망할 촉<br/>
+            어쩌면 내가 내 헛된 fantasy에 널 가둬둔 건지도<br/>
+            맞지 않는 배역에 너 역시 내게 맞춰준 건지도<br/>
+            버릇처럼 사랑한다고 말할 때도 늘 딴 생각<br/>
+            대사와는 다른 표정, 어긋난 자막<br/><br/>
+
+            [Verse 4: Tablo]<br/>
+            영화 같은 사랑을 하고 싶던 내게 걸맞은 벌인 걸까?<br/>
+            끝내 너의 맘을 물어도 대답은 언제나 열린 결말<br/>
+            그래, 우리 늘 반전에 반전이었고 숨 막히는 장면의 연속<br/>
+            그 뜨거웠던 지옥보다 못한 이 식어버린 감정의 연옥<br/>
+            난 끝이 보여, 상상, 그 영사기를 끄지 못해, 입에 술이 고여<br/>
+            Film 끊길 때 그나마 숨이 놓여<br/>
+            Just cut me out or kill me out, happy ending은 됐어<br/>
+            Don’t let me fade out<br/><br/>
+
+            [Chorus: Tablo]<br/>
+            너의 차가운 눈빛과 말투가 spoiler<br/>
+            너의 모든 행동 속에 우리의 끝이 보여<br/>
+            아니라고 말해도 느껴지는 spoiler<br/>
+            끝까지 봐야 할까? 지금 떠나야 할까?<br/>
+            반전이 있을까봐, I can't let you go<br/><br/>
+
+            [Bridge: Tablo & Mithra Jin]<br/>
+            어쩌면 너와 난 첫 frame부터 결말이 예정된<br/>
+            미친 Charade<br/>
+            어쩌면 너와 난 첫 scene부터 마지막을 향해 행진<br/>
+            This is our last parade<br/><br/>
+
+            [Chorus: Tablo]<br/>
+            너의 차가운 눈빛과 말투가 spoiler<br/>
+            너의 모든 행동 속에 우리의 끝이 보여<br/>
+            아니라고 말해도 느껴지는 spoiler<br/>
+            끝까지 봐야 할까? 지금 떠나야 할까?<br/>
+            반전이 있을까봐, I can't let you go<br/><br/>
+
+            [Outro: Tablo]<br/>
+            끝이 보이지만 baby don’t let go<br/>
+            단 한 장면이라도 놓칠까봐 girl I can’t let go<br/>
+            I can't let you go<br/>
+            끝이 보이지만 baby don’t let go<br/>
+            단 한 장면이라도 놓칠까 봐 girl I can’t let go<br/>
+            The end?<br/><br/>
+        ''',
+        song_url="https://soundcloud.com/chopplanet18/epik-high-spoiler",
+        media_url="https://www.youtube.com/watch?v=M8GUlNNXBVg&feature=emb_title",
+        song_icon="https://t2.genius.com/unsafe/220x220/https%3A%2F%2Fimages.genius.com%2F810c37065c3b8daaa11895069c0aa916.600x600x1.png",
+        song_background_image="https://t2.genius.com/unsafe/800x191/https%3A%2F%2Fimages.genius.com%2F810c37065c3b8daaa11895069c0aa916.600x600x1.png",
+        release_date="2014-10-21",
+        user_Id= user2.id
+    )
+
+    BloodSweatAndTears = Song(
+        artist="BTS",
+        title="피 땀 눈물 (Blood Sweat & Tears) ",
+        album="WINGS",
+        written_by=" ”hitman” Bang, SUGA (BTS), Kim Do Hoon (김도훈), j-hope, RM & Pdogg",
+        label="BigHit Entertainment",
+        song_bio='''“Blood Sweat & Tears” is the title track of South Korean boy band BTS' second studio album, WINGS. The music video for this track was released on October 10, 12 PM KST, 4 days after the music video teaser was released by BigHit Entertainment. The mv was viewed 3 million times on YouTube over the course of 12 hours, and 6.3 million times over 24 hours. Blood Sweat & Tears also broke records by being the fastest K-Pop boy band music video to be viewed 20 million times.
+        ''',
+        lyrics='''
+            방탄소년단의 피 땀 눈물 가사<br/><br/>
+
+            [Hook: Jimin, Jungkook]<br/>
+            내 피 땀 눈물 내 마지막 춤을 다 가져가, 가<br/>
+            내 피 땀 눈물 내 차가운 숨을 다 가져가, 가<br/>
+            내 피 땀 눈물<br/><br/>
+
+            [Verse 1: Suga, RM, J-Hope]<br/>
+            내 피 땀 눈물도<br/>
+            내 몸 마음 영혼도<br/>
+            너의 것인 걸 잘 알고 있어<br/>
+            이건 나를 벌받게 할 주문
+            Peaches and cream, sweeter than sweet<br/>
+            Chocolate cheeks and chocolate wings<br/>
+            But 너의 날개는 악마의 것<br/>
+            너의 그 sweet 앞엔 bitter bitter<br/>
+            Kiss me 아파도 돼 어서 날 조여줘<br/>
+            더 이상 아플 수도 없게<br/>
+            Baby 취해도 돼 이제 널 들이켜<br/>
+            목 깊숙이 너란 위스키<br/><br/>
+
+            [Chorus: V, Jungkook, J-Hope]<br/>
+            내 피 땀 눈물 내 마지막 춤을<br/>
+            다 가져가, 가<br/>
+            내 피 땀 눈물 내 차가운 숨을<br/>
+            다 가져가, 가<br/>
+            원해 많이 많이 많이 많이<br/>
+            원해 많이 많이 많이 많이<br/>
+            원해 많이 많이, 많이 많이<br/>
+            원해 많이 많이, 많이 많이<br/>
+            원해 많이 많이, 많이 많이<br/>
+            원해 많이 많이, 많이 많이<br/><br/>
+
+            [Verse 2: J-Hope, Suga]<br/>
+            아파도 돼 날 묶어줘 내가 도망칠 수 없게 (쉿)<br/>
+            꽉 쥐고 날 흔들어줘 내가 정신 못 차리게<br/>
+            Kiss me on the lips, lips<br/>
+            둘만의 비밀 너란 감옥에 중독돼 깊이<br/>
+            니가 아닌 다른 사람 섬기지 못해<br/>
+            알면서도 삼켜버린 독이 든 성배<br/><br/>
+
+            [Chorus: V, Jimin, J-Hope]<br/>
+            내 피 땀 눈물 내 마지막 춤을<br/>
+            다 가져가, 가<br/>
+            내 피 땀 눈물 내 차가운 숨을<br/>
+            다 가져가, 가<br/>
+            원해 많이 많이, 많이 많이<br/>
+            원해 많이 많이, 많이 많이<br/>
+            원해 많이 많이 많이 많이<br/>
+            원해 많이 많이 많이 많이<br/><br/>
+
+            [Bridge: V, Jungkook, Jin]<br/>
+            나를 부드럽게 죽여줘<br/>
+            너의 손길로 눈 감겨줘<br/>
+            어차피 거부할 수조차 없어<br/>
+            더는 도망갈 수조차 없어<br/>
+            니가 너무 달콤해 너무 달콤해 너무 달콤해서<br/><br/>
+
+            [Interlude: Narration]<br/>
+            He too was a tempter; he, too, was a link to the second, the evil world with which I no longer wanted to have anything to do<br/><br/>
+
+            [Hook: Jimin]<br/>
+            내 피 땀 눈물<br/>
+            내 피 땀 눈물<br/><br/>
+        ''',
+        song_url="https://soundcloud.com/captain_law-kun/bts-blood-sweat-and-tears-mv1-hour-loop-1",
+        media_url="https://youtu.be/hmE9f-TEutc",
+        song_icon="https://t2.genius.com/unsafe/220x220/https%3A%2F%2Fimages.genius.com%2F0a8d560bb0f258ab739e710bbd7ac3e4.500x500x1.jpg",
+        song_background_image="https://t2.genius.com/unsafe/1500x280/https%3A%2F%2Fimages.genius.com%2Fd504c44c6c99f130795dc22fdbda78d5.500x200x1.png",
+        release_date="2016-10-10",
+        user_Id= user2.id
+    )
+
     # BigBang = Song(
     #     artist="",
     #     title="",
@@ -812,6 +1401,12 @@ def seed_songs():
     db.session.add(EXO)
     db.session.add(BEST)
     db.session.add(CherryBomb)
+    db.session.add(JustRight)
+    db.session.add(Hero)
+    db.session.add(AgustD)
+    db.session.add(BadBoy)
+    db.session.add(Spoiler)
+    db.session.add(BloodSweatAndTears)
 
     db.session.commit()
 
