@@ -61,6 +61,9 @@ function App() {
         <ProtectedRoute path="/add-a-song" exact={true} >
           <SongAddForm />
         </ProtectedRoute>
+        <Route path="/404" exact={true}>
+          <h1>Sorry Page Not Found.</h1>
+        </Route>
       </Switch>
     </BrowserRouter>
   );

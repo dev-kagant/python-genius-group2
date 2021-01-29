@@ -101,8 +101,38 @@ export const authenticate = () => async dispatch => {
 export const getUserById = (userId) => async dispatch => {
     const response = await fetch(`/api/users/${userId}`);
     if (response.ok) {
+        const res = await response.json();
+        dispatch(setCurrentViewUser(res));
+    }
+    return response
+}
+
+export const updateUser = (
+    username, 
+    avatar,
+    background,
+    bio,
+    email, 
+    password, 
+) => async dispatch => {
+    const response = await fetch("/api/users/update", {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            username, 
+            avatar,
+            background,
+            bio,
+            email, 
+            password, 
+        }),
+    });
+    if (response.ok) {
         const user = await response.json();
         dispatch(setCurrentViewUser(user));
+        return user;
     }
 }
 

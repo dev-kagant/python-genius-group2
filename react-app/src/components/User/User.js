@@ -1,23 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
+import EditUserModal from "../auth/EditUserModal/EditUserModal";
 import { getUserById } from "../../store/user";
 import "./User.css";
 
 function User() {
   const dispatch = useDispatch();
+  const history = useHistory();
   // Notice we use useParams here instead of getting the params
   // From props.
   const { userId }  = useParams();
   const [loaded, setLoaded] = useState(false);
+  const [showForm, setShowForm] = useState(false);
   const currentViewUser = useSelector(state => state.user.currentViewUser);
+  const loggedInUser = useSelector(state => state.user.loggedInUser);
 
   useEffect(() => {
     (async () => {
       if (!userId) return;
-      await dispatch(getUserById(userId))
-      .then(() => setLoaded(true));
+      const res = await dispatch(getUserById(userId))
+      res.ok ? setLoaded(true) : history.push("/404");
     })()
   }, [userId, dispatch]);
 
@@ -27,6 +31,7 @@ function User() {
 
   return (
     <div className="user-page_container">
+      {showForm && <EditUserModal setShowForm={setShowForm}/>}
       <div className="user-page_header-background">
         { currentViewUser.user_background ?
           <img src={currentViewUser.user_background} /> :
@@ -42,7 +47,13 @@ function User() {
             }
           </div>
           <div className="user-page_username">@{currentViewUser.username}</div>
-          <button className="user-page_edit-button">Edit</button>
+          { userId == loggedInUser.id ?
+            <button 
+              className="user-page_edit-button" 
+              onClick={() => setShowForm(true)}
+            >Edit</button> :
+            <></>
+          }
           <div className="user-page_bio">
             { currentViewUser.bio ?
               currentViewUser :
@@ -54,14 +65,14 @@ function User() {
             <div className="user-page_stats-container">
               <div className="stats-container">
                 <div className="stats-content">
-                  <i className="fas fa-sticky-note stats-icon fa-3x" />
+                  <i className="fas fa-sticky-note stats-icon fa-2x" />
                   <div className="stats-number">0</div>
                 </div>
                 <div className="stats-subtitle">ANNOTATION</div>
               </div>
               <div className="stats-container">
                 <div className="stats-content">
-                  <i className="fas fa-sticky-note stats-icon fa-3x" />
+                  <i className="fas fa-sticky-note stats-icon fa-2x" />
                   <div className="stats-number">0</div>
                 </div>
                 <div className="stats-subtitle">SONGS</div>
