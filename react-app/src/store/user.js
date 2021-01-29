@@ -46,7 +46,7 @@ export const login = (email, password) => async dispatch => {
     });
     const data = await response.json();
     if (response.ok) {
-        dispatch(isAuthenticated()); 
+        dispatch(isAuthenticated());
         dispatch(setLogginedUser(data));
     };
     return data;
@@ -66,7 +66,7 @@ export const signUp = (username, email, password) => async dispatch => {
     });
     const data = await response.json();
     if (response.ok) {
-        dispatch(isAuthenticated()); 
+        dispatch(isAuthenticated());
         dispatch(setLogginedUser(data));
     };
     // return data;
@@ -79,23 +79,23 @@ export const logout = () => async dispatch => {
         }
     });
     if (response.ok) {
-        dispatch(notAuthenticated()); 
+        dispatch(notAuthenticated());
         dispatch(setLogginedUser(null));
     };
 };
 
 export const authenticate = () => async dispatch => {
-    const response = await fetch('/api/auth/',{
+    const response = await fetch('/api/auth/', {
         headers: {
             'Content-Type': 'application/json'
         }
     });
     if (response.ok) {
         const data = await response.json();
-        dispatch(isAuthenticated()); 
+        dispatch(isAuthenticated());
         dispatch(setLogginedUser(data));
         return data;
-    } 
+    }
 }
 
 export const getUserById = (userId) => async dispatch => {
@@ -109,12 +109,12 @@ export const getUserById = (userId) => async dispatch => {
 }
 
 export const updateUser = (
-    username, 
+    username,
     avatar,
     background,
     bio,
-    email, 
-    password, 
+    email,
+    password,
 ) => async dispatch => {
     const response = await fetch("/api/users/update", {
         method: "PATCH",
@@ -130,9 +130,7 @@ export const updateUser = (
             password
         }),
     });
-    console.log(response)
     const data = await response.json();
-    console.log(data.errors)
     if (response.ok) {
         dispatch(setCurrentViewUser(data));
     } else {
@@ -141,7 +139,7 @@ export const updateUser = (
 }
 
 // Reducer
-const userReducer = (state=initialState, action) => {
+const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_LOGGINED_USER:
             return {

@@ -31,7 +31,6 @@ const setCurrentSong = (song) => ({
 //GET ALL OF THE SONGS
 export const fetchAllSongs = () => async (dispatch) => {
     const res = await csrffetch("/api/songs");
-    console.log(res.data);
     dispatch(getAllSongs(res.data.songs));
 }
 
