@@ -8,7 +8,8 @@ import UserBackground from "./UserBackground";
 import UserAvatar from "./UserAvatar";
 import UserBio from "./UserBio";
 import UserStats from "./UserStats";
-import UserActivityEntry from "./UserActivityEntry";
+import UserActivitySongEntry from "./UserActivitySongEntry";
+import UserActivityAnnotationEntry from "./UserActivityAnnotationEntry";
 import "./User.css";
 
 function User() {
@@ -19,8 +20,11 @@ function User() {
   const { userId }  = useParams();
   const [loaded, setLoaded] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [showSongActivity, setShowSongActivity] = useState(true); 
   const currentViewUser = useSelector(state => state.user.currentViewUser);
   const loggedInUser = useSelector(state => state.user.loggedInUser);
+
+  console.log(showSongActivity)
 
   useEffect(() => {
     (async () => {
@@ -53,15 +57,31 @@ function User() {
           <div className="user-page_stats">
             <div className="user-page_stats-heading">STATS</div>
             <div className="user-page_stats-container">
-              <UserStats fa="fa-sticky-note" category={currentViewUser.annotations.length} subtittle="ANNOTATIONS"/>
-              <UserStats fa="fa-sticky-note" category={currentViewUser.songs.length} subtittle="SONGS"/>
+              <UserStats 
+                fa="fa-sticky-note" 
+                category={currentViewUser.annotations.length} 
+                subtittle="ANNOTATIONS"
+                setShowSongActivity={setShowSongActivity}
+              />
+              <UserStats 
+                fa="fa-sticky-note" 
+                category={currentViewUser.songs.length} 
+                subtittle="SONGS"
+                setShowSongActivity={setShowSongActivity}
+              />
             </div>
           </div>
         </div>
         <div className="user-page_main-right">
           <div className="user-page_activities">
             <div className="user-page_activity-heading">ACTIVITIES</div>
-            <UserActivityEntry />
+            { showSongActivity ?  
+              currentViewUser.songs.map(song => {
+                return <UserActivitySongEntry song={song}/>
+              }) :
+              currentViewUser.annotations.map(annotation => {
+                return <UserActivityAnnotationEntry annotation={annotation}/>
+              })}
           </div>
         </div>
       </div>
