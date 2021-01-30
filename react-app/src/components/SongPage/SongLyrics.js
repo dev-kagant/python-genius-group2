@@ -22,7 +22,7 @@ const SongLyrics = () => {
     const [hideLyrics, setHideLyrics] = useState(true)
     const [errors, setErrors] = useState([]);
 
-    console.log(currentSong.user_Id)
+
 
     const hidePageLyrics = () => {
         setHideLyrics(false)
