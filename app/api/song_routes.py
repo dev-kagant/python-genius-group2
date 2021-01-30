@@ -12,7 +12,7 @@ def song(id):
 
 
 # GET ALL SONGS IN DATABASE
-@song_routes.route("/", methods=['GET'])
+@song_routes.route("", methods=['GET'])
 def songs():
     songs = Song.query.all()
     return {"songs": [song.to_dict() for song in songs]}
