@@ -1,0 +1,25 @@
+.annotation_container {
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    width: 387px;
+    padding: 30px 20px;
+    background-color: #e1ffc4;
+}
+
+.highlight {
+    background-color: #f7e6a0;
+}
+
+.annotation_lyrics {
+    font-size: 22px;
+    white-space: pre-line;
+    line-height: 1.25em;
+    margin-bottom: 15px;
+}
+
+.annotation_input {
+    width: 96%;
+    height: 100px;
+}
+
