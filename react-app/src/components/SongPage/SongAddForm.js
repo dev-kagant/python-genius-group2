@@ -45,6 +45,10 @@ const SongAddForm = () => {
             })
     }
 
+    const stopAddingSong = () => {
+        history.push("/")
+    }
+
     return (
         <div className="song-add_container">
             <div className="song-add_heading">Add Song</div>
@@ -179,6 +183,7 @@ const SongAddForm = () => {
                         <button
                             type="button"
                             className="song-add_cancel"
+                            onClick={stopAddingSong}
                         >Cancel</button>
                     </div>
                 </div>
