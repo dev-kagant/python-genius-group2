@@ -1,0 +1,33 @@
+.comments_container {
+    width: 80%;
+    background-color:  #efcc411e;
+    padding: 20px;
+}
+.comments-container_heading {
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+}
+.comments-container_comments {
+
+}
+
+/* ---------- Individual Comment ---------- */
+.solo-comment_container {
+    border-top: 1px solid black
+
+}
+.solo-comment_header {
+
+}
+.solo-comment_comment {
+
+}
+.solo-comment_votes {
+
+}
+
+/* --------- Vote Counter Container --------- */
+.comments_being-viewed {
+
+}
