@@ -132,6 +132,7 @@ export const updateUser = (
     });
     const data = await response.json();
     if (response.ok) {
+        dispatch(setLogginedUser(data));
         dispatch(setCurrentViewUser(data));
     } else {
         return data.errors

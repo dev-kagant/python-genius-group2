@@ -21,7 +21,13 @@ function SongTrends(){
                 {songs && songs.map((song, index = 1) =>
                 <div className="song-data" key={song.title} onClick={()=> history.push(`songs/${song.id}`)}>
                     <div className="song-index">{index + 1}</div>
-                    <li><img className="song-img" src={song.song_icon} alt={song.title}/></li>
+                    <li>
+                        {   song.song_icon ? 
+                            <img className="song-img" src={song.song_icon} alt={song.title}/> :
+                            <div className="default-song-img" />
+                        }
+                        
+                    </li>
                     <div className="song-title"><li>{song.title}</li></div>
                     <div className="song-artist"><li>{song.artist}</li></div>
 

@@ -16,7 +16,7 @@ const SongAddForm = () => {
     const [lyrics, setLyrics] = useState("");
     const [written_by, setWritten_by] = useState("");
     const [label, setLabel] = useState("");
-    const [release_date, setRelease_date] = useState("");
+    const [release_date, setRelease_date] = useState(null);
     const [media_url, setMedia_url] = useState("");
     const [song_icon, setSong_icon] = useState("");
     const [song_background_image, setSong_background_image] = useState("");

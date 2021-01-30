@@ -68,6 +68,9 @@ function App() {
         <Route path="/404" exact={true}>
           <h1>Sorry Page Not Found.</h1>
         </Route>
+        <Route>
+          <h1>Sorry Page Not Found.</h1>
+        </Route>
       </Switch>
     </BrowserRouter>
   );

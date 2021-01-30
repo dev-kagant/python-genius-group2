@@ -45,6 +45,16 @@
     margin-top: 10px;
 }
 
+.default-song-img {
+    width: 60px;
+    height: 60px;
+    margin-left: 40px;
+    margin-top: 10px;
+    background-image: url("https://i.pinimg.com/564x/5f/62/52/5f62521afc849378e1582beb5b0a884e.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
 .song-title, .song-artist{
     margin-top: 25px;
 }

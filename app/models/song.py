@@ -39,5 +39,8 @@ class Song(db.Model):
             "media_url": self.media_url,
             "song_icon": self.song_icon,
             "song_background_image": self.song_background_image,
-            "release_date": self.release_date
+            "release_date": self.release_date,
+            "user_Id": self.user_Id,
+            "created": self.created,
+            "updated": self.updated
         }
