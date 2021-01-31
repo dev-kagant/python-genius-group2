@@ -39,6 +39,7 @@ export const login = async (email, password) => {
   return await response.json();
 }
 ```
+![Login](./readme-resources/login.gif)
 
 Charts:
 ![Song chart](./readme-resources/charts.png)
