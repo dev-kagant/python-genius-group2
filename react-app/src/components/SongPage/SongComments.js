@@ -33,9 +33,9 @@ const Comments = () => {
             user_comment: comment,
             user_Id: currentLoggedInUser.id,
             song_Id: currentSong.id,
-        })).then(() => setUserCommentBox(true))
+        }))
+            .then(() => setUserCommentBox(true))
             .then(() => history(`/songs/${currentSong.id}`))
-            .then(() => { dispatch(getSongComments(currentSong.id)) })
             .catch((res) => {
                 if (res.data && res.data.errors) setErrors(res.data.errors);
             })

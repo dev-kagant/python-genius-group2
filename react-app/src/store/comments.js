@@ -38,6 +38,11 @@ export const addNewComment = ({ user_comment, user_Id, song_Id }) => async (disp
             song_Id
         })
     });
+    if (response.ok) {
+        const comment = await response.json()
+        console.log(comment)
+        await dispatch(addComment(comment))
+    }
 }
 
 
@@ -52,9 +57,11 @@ const commentReducer = (state = initialState, action) => {
                 comments: [action.comments]
             };
         case ADD_COMMENT:
+            const newComments = [...state.comments]
+            newComments[0].push(action.comment)
             return {
                 ...state,
-                comments: [[...state.comments, action.comment]]
+                comments: newComments
             }
         default:
             return state;
