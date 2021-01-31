@@ -41,6 +41,8 @@ class Song(db.Model):
             "song_background_image": self.song_background_image,
             "release_date": self.release_date,
             "user_Id": self.user_Id,
+            "annotations": [annotation.to_dict()
+                            for annotation in self.annotations],
             "created": self.created,
             "updated": self.updated
         }

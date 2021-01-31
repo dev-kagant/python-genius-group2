@@ -1,28 +1,29 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import parse from "html-react-parser";
-import { editLyrics } from "../../store/song"
 import { useParams } from "react-router-dom"
+import parse from "html-react-parser";
 
 import SongEditForm from "./SongEditForm";
 import { Modal } from "../Modal/Modal";
+import { editLyrics } from "../../store/song"
+
 import "./styles/SongLyrics.css";
 
-import Annotations from '../Annotations/Annotations';
-
-const SongLyrics = () => {
+const SongLyrics = ({ addAnnotation, lyricRef, setRef }) => {
     const dispatch = useDispatch();
+    const { songId } = useParams();
 
     const currentSong = useSelector(state => state.song.currentSong);
     const loggedInUser = useSelector(state => state.user.loggedInUser);
-
-    const { songId } = useParams();
-    const [lyrics, setLyrics] = useState(currentSong.lyrics);
-    const [showModal, setShowModal] = useState(false);
-    const [hideLyrics, setHideLyrics] = useState(true)
     const [errors, setErrors] = useState([]);
+    const [showModal, setShowModal] = useState(false);
+    const [lyrics, setLyrics] = useState(currentSong.lyrics);
+    const [hideLyrics, setHideLyrics] = useState(true)
 
-
+    // SET REF NODE
+    useEffect(() => {
+        setRef(lyricRef.current);
+    }, [songId])
 
     const hidePageLyrics = () => {
         setHideLyrics(false)
@@ -41,6 +42,7 @@ const SongLyrics = () => {
                 if (res.data && res.data.errors) setErrors(res.data.errors);
             })
     }
+
 
     return (
         <>
@@ -61,7 +63,13 @@ const SongLyrics = () => {
                             </Modal>
                         )}
                     </div>
-                    <div className="songpage-lyrics_lyrics" onMouseUp={Annotations}>{parse(currentSong.lyrics)}</div>
+                    <div 
+                        className="songpage-lyrics_lyrics" 
+                        onMouseUp={addAnnotation}
+                        ref={lyricRef}
+                    >
+                        {parse(currentSong.lyrics)}
+                    </div>
             </div>) : (
                 <div className="songpage-lyrics_container">
                     <div>

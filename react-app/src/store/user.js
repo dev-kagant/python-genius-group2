@@ -32,7 +32,9 @@ export const setCurrentViewUser = (user) => ({
     payload: user
 })
 
-// Thunk Actions
+//--------------------- Thunk Actions ---------------------
+
+// LOG IN
 export const login = (email, password) => async dispatch => {
     const response = await fetch('/api/auth/login', {
         method: 'POST',
@@ -52,6 +54,7 @@ export const login = (email, password) => async dispatch => {
     return data;
 }
 
+// SIGN UP
 export const signUp = (username, email, password) => async dispatch => {
     const response = await fetch("/api/auth/signup", {
         method: "POST",
@@ -72,6 +75,7 @@ export const signUp = (username, email, password) => async dispatch => {
     // return data;
 }
 
+// LOG OUT
 export const logout = () => async dispatch => {
     const response = await fetch("/api/auth/logout", {
         headers: {
@@ -84,6 +88,7 @@ export const logout = () => async dispatch => {
     };
 };
 
+// AUTHENTICATE
 export const authenticate = () => async dispatch => {
     const response = await fetch('/api/auth/', {
         headers: {
@@ -98,6 +103,7 @@ export const authenticate = () => async dispatch => {
     }
 }
 
+// GET USER BY ID
 export const getUserById = (userId) => async dispatch => {
     const response = await fetch(`/api/users/${userId}`);
     if (response.ok) {
@@ -108,6 +114,7 @@ export const getUserById = (userId) => async dispatch => {
     return response
 }
 
+// UPDATE USER INFO
 export const updateUser = (
     username,
     avatar,
@@ -139,7 +146,7 @@ export const updateUser = (
     }
 }
 
-// Reducer
+//--------------------- Reducer ---------------------
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_LOGGINED_USER:
