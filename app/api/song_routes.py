@@ -4,7 +4,8 @@ from app.models import db, Song
 
 song_routes = Blueprint("songs", __name__)
 
-#GET A SINGLE SONG
+
+# GET A SINGLE SONG
 @song_routes.route("/<int:id>")
 def song(id):
     song = Song.query.get(id)
@@ -44,7 +45,8 @@ def edit_song():
     db.session.commit()
     return song.to_dict()
 
-#EDIT SONG LYRICS
+
+# EDIT SONG LYRICS
 @song_routes.route("/edit-lyrics", methods=['PATCH'])
 def edit_lyrics():
     song = Song.query.get(request.json['songId'])
@@ -52,7 +54,8 @@ def edit_lyrics():
     db.session.commit()
     return song.to_dict()
 
-#EDIT SONG BIO
+
+# EDIT SONG BIO
 @song_routes.route("/edit-bio", methods=['PATCH'])
 def edit_bio():
     song = Song.query.get(request.json['songId'])

@@ -58,3 +58,8 @@
     background-color: #efcc4173;
     outline: 1px solid #EFCC41;
   }
+
+/* ---------- Highlight Lyrics -------- */
+.highlight {
+    background-color: #EFCC41;
+}

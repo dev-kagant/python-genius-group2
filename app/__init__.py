@@ -10,7 +10,11 @@ from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.song_routes import song_routes
 from .api.search_routes import search_routes
+<<<<<<< HEAD
 from .api.comment_routes import comment_routes
+=======
+from .api.annotation_routes import annotation_routes
+>>>>>>> main
 
 from .seeds import seed_commands
 
@@ -37,6 +41,8 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(song_routes, url_prefix='/api/songs')
 app.register_blueprint(search_routes, url_prefix="/api/search")
 app.register_blueprint(comment_routes, url_prefix="/api/comments")
+app.register_blueprint(annotation_routes, url_prefix="/api/annotations")
+
 db.init_app(app)
 Migrate(app, db)
 

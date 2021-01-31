@@ -15,7 +15,7 @@ const UserActivityAnnotationEntry = ({ annotation }) => {
                     <div className="activity_date">{annotation.created}</div>
                 </div>
                 <div className="user-page_activity-content">
-                    {annotation.song_facts}
+                    {annotation.annotation}
                 </div>
             </div>
         </div>

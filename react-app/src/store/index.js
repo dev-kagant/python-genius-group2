@@ -5,13 +5,15 @@ import songReducer from "./song";
 import userReducer from "./user";
 import searchReducer from "./search";
 import commentReducer from "./comments";
+import annotationReducer from "./annotation";
 
 // Reducer
 const rootReducer = combineReducers({
   song: songReducer,
   user: userReducer,
   search: searchReducer,
-  comment: commentReducer
+  comment: commentReducer,
+  annotation: annotationReducer
 })
 
 // Store Enhancer
