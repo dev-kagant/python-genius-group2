@@ -2,28 +2,27 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { postAnnotation } from "../../store/annotation";
-import "./Annotation.css";
+import "./styles/Annotation.css";
 
-const Annotation = ({ lyrics, range, setShowAnnotation }) => {
+const Annotation = ({ selectedlyrics, range, setShowAnnotation }) => {
     const dispatch = useDispatch();
     const song = useSelector(state => state.song.currentSong);
-    const [error, setErrors] = useState(null);
+    const [errors, setErrors] = useState(null);
     const [input, setInput] = useState("");
-
 
     // Submit Event Handler
     const onSave = async (e) => {
-        e.preventDefault();
-
-        const song_Id = song.id;
-        const annotation = input;
-        const start = range.startOffset;
-        const end = range.endOffset;
-
-        const res = await dispatch(postAnnotation(song_Id, annotation, start, end))
-        
+        // e.preventDefault();
+        const newAnnotation = {
+            song_Id: song.id,
+            annotation: input,
+            start: range.startOffset,
+            end: range.endOffset,
+            lyrics: selectedlyrics
+        }
+        const res = await dispatch(postAnnotation(newAnnotation))
         if (res.ok) {
-            setShowAnnotation(false);
+            setShowAnnotation(false)
         } else {
             const data = await res.json();
             setErrors(data);
@@ -32,8 +31,8 @@ const Annotation = ({ lyrics, range, setShowAnnotation }) => {
 
     return (
         <div className="annotation_container">
-            <div className="annotation_lyrics">{lyrics}</div>
-            {error && (<div>{error}</div>)}
+            <div className="annotation_lyrics">{selectedlyrics}</div>
+            {errors && <div>{errors}</div>}
             <form onSubmit={onSave}>
                 <textarea 
                     className="annotation_input"

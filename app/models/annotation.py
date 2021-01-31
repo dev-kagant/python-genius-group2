@@ -8,6 +8,7 @@ class Annotation(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     updated = db.Column(db.DateTime, onupdate=datetime.utcnow)
+    lyrics = db.Column(db.String(1000), nullable=False)
     annotation = db.Column(db.Text, nullable=False)
     start = db.Column(db.Integer, nullable=False)
     end = db.Column(db.Integer, nullable=False)
@@ -19,6 +20,7 @@ class Annotation(db.Model):
             "id": self.id,
             "created": self.created,
             "updated": self.updated,
+            "lyrics": self.lyrics,
             "annotation": self.annotation,
             "start": self.start,
             "end": self.end,
