@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { format } from "date-fns";
 import { useSelector, useDispatch } from "react-redux";
-import { render } from 'react-dom'
-import { useParams, useHistory, useRouteMatch } from "react-router-dom"
+import { useParams, useHistory } from "react-router-dom"
 import { deleteSong, editSong } from "../../store/song";
-import SongFacts from "./SongFacts"
-import SongHeader from "./SongHeader"
 
 import "./styles/SongEditForm.css";
 

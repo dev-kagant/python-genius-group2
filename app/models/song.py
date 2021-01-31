@@ -23,7 +23,7 @@ class Song(db.Model):
     user_Id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     annotations = db.relationship('Annotation', backref='song', lazy=True)
     comments = db.relationship('Comment', backref='song', lazy=True)
-    votes = db.relationship('Vote', backref='song', lazy=True)
+    votes = db.relationship('Song_Vote', backref='song', lazy=True)
 
     def to_dict(self):
         return {
@@ -41,6 +41,9 @@ class Song(db.Model):
             "song_background_image": self.song_background_image,
             "release_date": self.release_date,
             "user_Id": self.user_Id,
+            "annotations": [annotation.to_dict() for annotation in self.annotations],
+            "comments": [comment.to_dict() for comment in self.comments],
+            "votes": [vote.to_dict().user_Id for vote in self.votes],
             "created": self.created,
             "updated": self.updated
         }
