@@ -3,6 +3,7 @@ from app.models import Song
 
 search_routes = Blueprint("search", __name__)
 
+
 @search_routes.route("/")
 def search():
     term = request.args.get('term')

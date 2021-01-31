@@ -26,16 +26,16 @@ const setCurrentSong = (song) => ({
     payload: song
 })
 
-// Thunk Actions
+//--------------------- Thunk Actions ---------------------
 
-//GET ALL OF THE SONGS
+// GET ALL OF THE SONGS
 export const fetchAllSongs = () => async (dispatch) => {
     const res = await csrffetch("/api/songs");
     dispatch(getAllSongs(res.data.songs));
 }
 
 
-//GET SONG BY ID
+// GET SONG BY ID
 export const getSong = (id) => async dispatch => {
     const res = await fetch(`/api/songs/${id}`);
     if (res.ok) {
@@ -45,6 +45,7 @@ export const getSong = (id) => async dispatch => {
     // return res.data;
 }
 
+// CREATE NEW SONG
 export const postSong = (song) => async dispatch => {
     const {
         artist,
@@ -88,7 +89,7 @@ export const postSong = (song) => async dispatch => {
     }
 }
 
-//EDIT A SONG
+// EDIT A SONG
 export const editSong = (song) => async (dispatch) => {
     const {
         id,
@@ -180,7 +181,7 @@ export const deleteSong = (song) => async (dispatch) => {
     }
 }
 
-// Reducer
+// --------------------- Reducer ---------------------
 const songReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_ALL_SONGS:

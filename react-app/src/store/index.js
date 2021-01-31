@@ -4,12 +4,14 @@ import thunk from "redux-thunk";
 import songReducer from "./song";
 import userReducer from "./user";
 import searchReducer from "./search";
+import annotationReducer from "./annotation";
 
 // Reducer
 const rootReducer = combineReducers({
     song: songReducer,
     user: userReducer,
-    search: searchReducer
+    search: searchReducer,
+    annotation: annotationReducer
 })
 
 // Store Enhancer

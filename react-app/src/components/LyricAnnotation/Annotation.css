@@ -1,6 +1,7 @@
 .annotation_container {
     position: fixed;
     z-index: 10;
+    top: 40%;
     left: 50%;
     width: 387px;
     padding: 30px 20px;

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom"
 import parse from "html-react-parser";
@@ -9,18 +9,21 @@ import { editLyrics } from "../../store/song"
 
 import "./styles/SongLyrics.css";
 
-const SongLyrics = ({ addAnnotation, lyricRef }) => {
+const SongLyrics = ({ addAnnotation, lyricRef, setRef }) => {
     const dispatch = useDispatch();
     const { songId } = useParams();
 
     const currentSong = useSelector(state => state.song.currentSong);
     const loggedInUser = useSelector(state => state.user.loggedInUser);
-
     const [errors, setErrors] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [lyrics, setLyrics] = useState(currentSong.lyrics);
     const [hideLyrics, setHideLyrics] = useState(true)
 
+    // SET REF NODE
+    useEffect(() => {
+        setRef(lyricRef.current);
+    }, [songId])
 
     const hidePageLyrics = () => {
         setHideLyrics(false)
@@ -39,7 +42,6 @@ const SongLyrics = ({ addAnnotation, lyricRef }) => {
                 if (res.data && res.data.errors) setErrors(res.data.errors);
             })
     }
-
 
 
     return (
