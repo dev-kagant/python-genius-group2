@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useSelector } from "react-redux"
 import "./styles/SongComments.css";
 
 const Comments = () => {
+    const currentLoggedInUser = useSelector(state => state.user.loggedInUser);
 
     const [userComments, setUserComments] = useState(true)
-
+    console.log(currentLoggedInUser)
 
     const commenting = () => {
         setUserComments(false)
@@ -19,17 +21,23 @@ const Comments = () => {
     return (
         <div className="comments_container">
             {(userComments) ? (<div className="comments-container_heading">
-                <div>User Id</div>
+                { currentLoggedInUser.avatar ?
+                    <img src={currentLoggedInUser.avatar} /> :
+                    <div className="comments_header-default-avatar" />
+                }
                 <input
                     placeholder="Add a comment"
                     onClick={commenting}
                 />
             </div>) : (
-                    <div className="comments-container_heading">
+                    <div className="comments-header_commenting">
                         <textarea
                             placeholder="Add a comment"
                         />
-                        <button type="submit" onSubmit={postComment} onClick={doneCommenting}>Submit</button>
+                        <div className="comments-header_button-box">
+                            <button type="submit" onSubmit={postComment} className="comments_submit-button">Submit</button>
+                            <button type="button" onClick={doneCommenting} className="comments_cancel-button">Cancel</button>
+                        </div>
                     </div>)}
             <div className="comments-container_comments">
                 <ul>
