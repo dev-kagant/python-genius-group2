@@ -1,0 +1,98 @@
+.comments_container {
+    width: 80%;
+    background-color:  #efcc411e;
+    margin-bottom: 40px;
+    padding: 15px;
+}
+
+.comments-container_heading {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.comments-container_heading input{
+    margin-left: 15px;
+    height: 2em;
+    width: 30em;
+    border: 2px solid #efcc41d3;
+}
+
+.comments_header-default-avatar {
+    width: 30px;
+    height: 30px;
+    background-image: url("https://avatarfiles.alphacoders.com/814/81468.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.comments-header_commenting{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.comments-header_commenting textarea{
+    overflow: hidden;
+    min-height: 50px;
+    max-width: 100%;
+    margin-bottom: 10px;
+    border: 2px solid #efcc41d3;
+    outline: none;
+    resize: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14pt;
+}
+.comments-header_commenting textarea::placeholder{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14pt;
+    padding: 5px;
+}
+
+.comments_cancel-button{
+    background-color:  #efcc4100;
+    color:#c9a209;
+    font-weight: bold;
+    border: none;
+    text-decoration-line: underline;
+}
+
+.comments_submit-button{
+    background-color:  #efcc4100;
+    /* color:#4a8f0a; */
+    color:#68d800;
+    font-weight: bold;
+    border: 2px solid #68d800;
+    padding: 7.5px;
+    font-size: 12pt;
+}
+
+.comments-header_button-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comments-container_comments {
+
+}
+
+/* ---------- Individual Comment ---------- */
+.solo-comment_container {
+    border-top: 1px solid black
+
+}
+.solo-comment_header {
+
+}
+.solo-comment_comment {
+
+}
+.solo-comment_votes {
+
+}
+
+/* --------- Vote Counter Container --------- */
+.comments_being-viewed {
+
+}
