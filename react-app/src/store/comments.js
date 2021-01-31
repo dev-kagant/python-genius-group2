@@ -1,19 +1,18 @@
+// Initial States
+const initialState = { 
+    comments: [] 
+}
 
-//Action types
-const ADD_COMMENT = 'ADD_COMMENT';
+// Action types
 const GET_COMMENTS = 'GET_COMMENTS';
 
-//POJO Actions
+// POJO Actions
 const getComments = (comments) => ({
     type: GET_COMMENTS,
-    comments
+    payload: comments
 })
-const addComment = (comment) => ({
-    type: ADD_COMMENT,
-    comment
-});
 
-//Thunk Actions
+// Thunk Actions
 export const getSongComments = (songId) => async (dispatch) => {
     const response = await fetch(`/api/comments/${songId}`, {
         method: "GET",
@@ -40,22 +39,14 @@ export const addNewComment = ({ user_comment, user_Id, song_Id }) => async (disp
     });
 }
 
-
-
-const initialState = { comments: [] }
-
+// Reducer
 const commentReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_COMMENTS:
             return {
                 ...state,
-                comments: [action.comments]
+                comments: action.payload
             };
-        case ADD_COMMENT:
-            return {
-                ...state,
-                comments: [[...state.comments, action.comment]]
-            }
         default:
             return state;
     }

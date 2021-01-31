@@ -6,18 +6,18 @@ import "./styles/SongComments.css";
 
 const Comments = () => {
     const dispatch = useDispatch();
-    const history = useHistory();
     const currentSong = useSelector(state => state.song.currentSong);
     const currentLoggedInUser = useSelector(state => state.user.loggedInUser);
+    const currentSongComments = useSelector(state => state.comment.comments);
 
     const [userCommentBox, setUserCommentBox] = useState(true);
-    const [songComments, setSongComments] = useState([]);
     const [comment, setComment] = useState("");
     const [errors, setErrors] = useState([]);
 
     useEffect(async () => {
-        setSongComments(await dispatch(getSongComments(currentSong.id)))
-    }, [dispatch])
+        if (!currentSong) return;
+        await dispatch(getSongComments(currentSong.id));
+    }, [])
 
     const commenting = () => {
         setUserCommentBox(false)
@@ -29,30 +29,35 @@ const Comments = () => {
     const postComment = (e) => {
         e.preventDefault();
         setErrors([]);
-        return dispatch(addNewComment({
+        dispatch(addNewComment({
             user_comment: comment,
             user_Id: currentLoggedInUser.id,
             song_Id: currentSong.id,
-        })).then(() => setUserCommentBox(true))
-            .then(() => history(`/songs/${currentSong.id}`))
-            .then(() => { dispatch(getSongComments(currentSong.id)) })
-            .catch((res) => {
-                if (res.data && res.data.errors) setErrors(res.data.errors);
-            })
+        }))
+        .then(() => setUserCommentBox(true))
+        .then(() => dispatch(getSongComments(currentSong.id)))
+        .catch((res) => {
+            if (res.data && res.data.errors) setErrors(res.data.errors);
+        })
     }
 
     return (
         <div className="comments_container">
-            {(userCommentBox) ? (<div className="comments-container_heading">
-                { currentLoggedInUser.avatar ?
-                    <img src={currentLoggedInUser.avatar} /> :
-                    <div className="comments_header-default-avatar" />
-                }
-                <input
-                    placeholder="Add a comment"
-                    onClick={commenting}
-                />
-            </div>) : (
+            {   
+                (userCommentBox) ? 
+                (   
+                    <div className="comments-container_heading">
+                        { currentLoggedInUser.avatar ?
+                            <img src={currentLoggedInUser.avatar} /> :
+                            <div className="comments_header-default-avatar" />
+                        }
+                        <input
+                            placeholder="Add a comment"
+                            onClick={commenting}
+                        />
+                    </div>
+                ) : 
+                (
                     <div className="comments-header_commenting">
                         <textarea
                             type="text"
@@ -63,10 +68,12 @@ const Comments = () => {
                             <button type="submit" onClick={postComment} className="comments_submit-button">Submit</button>
                             <button type="button" onClick={doneCommenting} className="comments_cancel-button">Cancel</button>
                         </div>
-                    </div>)}
+                    </div>
+                )
+            }
             <div className="comments-container_comments">
                 <ul>
-                    {songComments.map(comment => (
+                    {currentSongComments.map(comment => (
                         <li className="solo-comment_container">
                             <div className="solo-comment_header">
                                 <div className="solo-comment_user">{currentLoggedInUser.username}</div>
@@ -87,7 +94,7 @@ const Comments = () => {
             <div className="comments_being-viewed">
                 <button>SHOW MORE (45)</button>
             </div>
-        </div >
+        </div>
     )
 }
 
