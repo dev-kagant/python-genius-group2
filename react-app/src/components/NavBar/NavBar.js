@@ -9,7 +9,6 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const authenticated = useSelector(state => state.user.authenticated);
   const loggedInUser = useSelector(state => state.user.loggedInUser);
-  // const [searchKeyword, setSearchKeyword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,19 +19,6 @@ const NavBar = () => {
       <div className="navbar_top">
         <div className='navbar_search-container'>
             <SearchBar />
-          {/* <form className="nav-search__form" onSubmit={handleSubmit}>
-            <input
-              className="nav-search__input"
-              placeholder="Search"
-              type="text"
-              name="term"
-              onChange={(e) => setSearchKeyword(e.target.value)}
-              value={searchKeyword}
-            />
-            <button className="nav-search__submit" type="submit">
-              <i className="fas fa-search fa-lg"></i>
-            </button>
-          </form> */}
         </div>
         <div className="navbar_logo-container">
           <NavLink
