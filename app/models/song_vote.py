@@ -2,8 +2,8 @@ from .db import db
 from datetime import datetime
 
 
-class Vote(db.Model):
-    __tablename__ = "votes"
+class Song_Vote(db.Model):
+    __tablename__ = "song_votes"
 
     id = db.Column(db.Integer, primary_key=True)
     created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
@@ -11,3 +11,14 @@ class Vote(db.Model):
     votes = db.Column(db.Integer, nullable=False)
     user_Id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     song_Id = db.Column(db.Integer, db.ForeignKey('songs.id'), nullable=False)
+
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "created": self.created,
+            "updated": self.updated,
+            "votes": self.votes,
+            "user_Id": self.user_Id,
+            "song_Id": self.song_Id,
+        }

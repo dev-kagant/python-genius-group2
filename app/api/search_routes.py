@@ -7,7 +7,6 @@ search_routes = Blueprint("search", __name__)
 @search_routes.route("")
 def search():
     term = request.args.get('term')
-    print(term)
     try:
         song_titles = Song.query.filter(Song.title.ilike(f'%{term}%'))
         song_artists = Song.query.filter(Song.artist.ilike(f'%{term}%'))

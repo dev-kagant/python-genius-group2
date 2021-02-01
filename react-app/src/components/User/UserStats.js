@@ -3,14 +3,14 @@ import React from "react";
 const UserStats = ({ fa, category, subtittle, setShowSongActivity }) => {
 
     const toggleActivity = () => {
-        if (subtittle == "SONGS") {
+        if (subtittle === "SONGS") {
             setShowSongActivity(true)
         } else {
             setShowSongActivity(false)
         }
     }
 
-    return ( 
+    return (
         <div className="stats-container" onClick={toggleActivity}>
             <div className="stats-content">
                 <i className={`fas stats-icon fa-2x ${fa}`} />

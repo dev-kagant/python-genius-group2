@@ -4,14 +4,16 @@ import thunk from "redux-thunk";
 import songReducer from "./song";
 import userReducer from "./user";
 import searchReducer from "./search";
+import commentReducer from "./comments";
 import annotationReducer from "./annotation";
 
 // Reducer
 const rootReducer = combineReducers({
-    song: songReducer,
-    user: userReducer,
-    search: searchReducer,
-    annotation: annotationReducer
+  song: songReducer,
+  user: userReducer,
+  search: searchReducer,
+  comment: commentReducer,
+  annotation: annotationReducer
 })
 
 // Store Enhancer
@@ -27,7 +29,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Store Creator
 const configureStore = (preloadedState) => {
-    return createStore(rootReducer, preloadedState, enhancer);
+  return createStore(rootReducer, preloadedState, enhancer);
 };
 
 export default configureStore;

@@ -34,11 +34,11 @@ const Song = () => {
     const [loaded, setLoaded] = useState(false);
     const [showAnnotation, setShowAnnotation] = useState(false);
     const [showEditAnnotation, setShowEditAnnotation] = useState(false);
-    const [selectedLyrics, setSelectedLyrics] = useState(""); 
+    const [selectedLyrics, setSelectedLyrics] = useState("");
     const [range, setRange] = useState();
 
-    console.log(currentSong.id)
-    console.log(songAnnotations)
+    // console.log(currentSong.id)
+    // console.log(songAnnotations)
 
     // Load Song
     useEffect(() => {
@@ -98,14 +98,14 @@ const Song = () => {
             setShowEditAnnotation(false);
         }
 
-        if(lyrics.length > 1) {
-            setRange (range);
+        if (lyrics.length > 1) {
+            setRange(range);
             setSelectedLyrics(lyrics);
             setShowAnnotation(true);
         }
     }
 
-    
+
 
     if (!loaded) {
         return null;
@@ -116,29 +116,29 @@ const Song = () => {
             <SongHeader />
             <div className="songpage_main">
                 <div className="songpage-main_left">
-                    <SongLyrics 
-                        addAnnotation={addAnnotation} 
+                    <SongLyrics
+                        addAnnotation={addAnnotation}
                         lyricRef={lyricRef}
                         setRef={setRef}
                     />
                     <SongComments />
                 </div>
-                {   
-                    showEditAnnotation && 
-                    <EditAnnotation 
+                {
+                    showEditAnnotation &&
+                    <EditAnnotation
                         setShowEditAnnotation={setShowEditAnnotation}
                     />
                 }
-                {   
-                    showAnnotation &&  
-                    <Annotation 
-                        selectedlyrics={selectedLyrics} 
+                {
+                    showAnnotation &&
+                    <Annotation
+                        selectedlyrics={selectedLyrics}
                         range={range}
                         setShowAnnotation={setShowAnnotation}
                     />}
-                {   
-                    !showAnnotation && 
-                    !showEditAnnotation && 
+                {
+                    !showAnnotation &&
+                    !showEditAnnotation &&
                     <div className="songpage-main_right">
                         <SongFacts />
                         <SongBio />

@@ -19,7 +19,8 @@ class User(db.Model, UserMixin):
     songs = db.relationship('Song', backref='user', lazy=True)
     annotations = db.relationship('Annotation', backref='user', lazy=True)
     comments = db.relationship('Comment', backref='user', lazy=True)
-    votes = db.relationship('Vote', backref='user', lazy=True)
+    song_votes = db.relationship('Song_Vote', backref='user', lazy=True)
+    comment_votes = db.relationship('Comment_Vote', backref='user', lazy=True)
 
     @property
     def password(self):
@@ -41,6 +42,8 @@ class User(db.Model, UserMixin):
             "avatar": self.user_avatar,
             "background": self.user_background,
             "songs": [song.to_dict() for song in self.songs],
-            "annotations": [annotation.to_dict()
-                            for annotation in self.annotations]
+            "annotations": [annotation.to_dict() for annotation in self.annotations],
+            "comments": [comment.to_dict() for comment in self.comments],
+            "song-votes": self.song_votes,
+            "comment-votes": self.comment_votes,
         }
