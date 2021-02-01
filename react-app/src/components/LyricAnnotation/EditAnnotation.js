@@ -69,7 +69,7 @@ const EditAnnotation = ({ setShowEditAnnotation }) => {
                             type="button"
                             onClick={() => setShowEditAnnotation(false)}
                         >Cancel</button>
-                        {loggedInUser.id == song.user_Id && <button type="button" onClick={onDelete}>Delete</button>}
+                        {currentAnnotation && loggedInUser.id == currentAnnotation.user_Id && <button type="button" onClick={onDelete}>Delete</button>}
                     </>
                 )}
                 {!loggedInUser && <button onClick={() => setShowEditAnnotation(false)}>Close</button>}

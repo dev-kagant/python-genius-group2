@@ -16,8 +16,9 @@ const Comments = () => {
     const [deleteButton, setDeleteButton] = useState(false)
     const [errors, setErrors] = useState([]);
 
-    useEffect(async () => {
+    useEffect(() => {(async()=>{
         setSongComments(await dispatch(getSongComments(currentSong.id)))
+    })()
     }, [dispatch])
 
     const commenting = () => {
@@ -63,7 +64,7 @@ const Comments = () => {
     return (
         <div className="comments_container">
             {(userCommentBox) ? (<div className="comments-container_heading">
-                { currentLoggedInUser.avatar ?
+                { currentLoggedInUser && currentLoggedInUser.avatar ?
                     <img src={currentLoggedInUser.avatar} /> :
                     <div className="comments_header-default-avatar" />
                 }

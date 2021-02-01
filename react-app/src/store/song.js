@@ -13,7 +13,7 @@ const GET_ALL_SONGS = "song/GET_ALL_SONGS";
 const SET_CURRENT_SONG = "song/SET_CURRENT_SONG";
 
 // POJO Actions
-const getAllSongs = (songs) => ({
+export const getAllSongs = (songs) => ({
     type: GET_ALL_SONGS,
     payload: songs
 })
@@ -21,7 +21,7 @@ const getAllSongs = (songs) => ({
 
 
 
-const setCurrentSong = (song) => ({
+export const setCurrentSong = (song) => ({
     type: SET_CURRENT_SONG,
     payload: song
 })
