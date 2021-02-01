@@ -24,7 +24,7 @@ export const setCurrentAnnotation = (annotation) => ({
 // POST NEW ANNOTATION
 export const postAnnotation = (newAnnotation) => async dispatch => {
     const { song_Id, annotation, start, end, lyrics } = newAnnotation;
-    console.log(lyrics)
+    // console.log(lyrics)
     const response = await fetch("/api/annotations/create", {
         method: "POST",
         headers: {
@@ -43,12 +43,12 @@ export const postAnnotation = (newAnnotation) => async dispatch => {
 
 // EDIT ANNOTATION
 export const editAnnotation = (editedAnnotation, id) => async dispatch => {
-    const response = await fetch (`/api/annotations/patch/${id}`, {
+    const response = await fetch(`/api/annotations/patch/${id}`, {
         method: "PATCH",
         headers: {
             "content-type": "application/json"
         },
-        body: JSON.stringify({"annotation": editedAnnotation})
+        body: JSON.stringify({ "annotation": editedAnnotation })
     })
     if (response.ok) {
         const data = await response.json();

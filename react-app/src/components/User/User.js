@@ -17,14 +17,14 @@ function User() {
   const history = useHistory();
   // Notice we use useParams here instead of getting the params
   // From props.
-  const { userId }  = useParams();
+  const { userId } = useParams();
   const [loaded, setLoaded] = useState(false);
   const [showForm, setShowForm] = useState(false);
-  const [showSongActivity, setShowSongActivity] = useState(true); 
+  const [showSongActivity, setShowSongActivity] = useState(true);
   const currentViewUser = useSelector(state => state.user.currentViewUser);
   const loggedInUser = useSelector(state => state.user.loggedInUser);
 
-  console.log(showSongActivity)
+  // console.log(showSongActivity)
 
   useEffect(() => {
     (async () => {
@@ -40,15 +40,15 @@ function User() {
 
   return (
     <div className="user-page_container">
-      {showForm && <EditUserModal setShowForm={setShowForm}/>}
+      {showForm && <EditUserModal setShowForm={setShowForm} />}
       <UserBackground />
       <div className="user-page_main">
         <div className="user-page_main-left">
           <UserAvatar />
           <div className="user-page_username">@{currentViewUser.username}</div>
-          { userId == loggedInUser.id ?
-            <button 
-              className="user-page_edit-button" 
+          {userId == loggedInUser.id ?
+            <button
+              className="user-page_edit-button"
               onClick={() => setShowForm(true)}
             >Edit</button> :
             null
@@ -57,15 +57,15 @@ function User() {
           <div className="user-page_stats">
             <div className="user-page_stats-heading">STATS</div>
             <div className="user-page_stats-container">
-              <UserStats 
-                fa="fa-sticky-note" 
-                category={currentViewUser.annotations.length} 
+              <UserStats
+                fa="fa-sticky-note"
+                category={currentViewUser.annotations.length}
                 subtittle="ANNOTATIONS"
                 setShowSongActivity={setShowSongActivity}
               />
-              <UserStats 
-                fa="fa-sticky-note" 
-                category={currentViewUser.songs.length} 
+              <UserStats
+                fa="fa-sticky-note"
+                category={currentViewUser.songs.length}
                 subtittle="SONGS"
                 setShowSongActivity={setShowSongActivity}
               />
@@ -75,12 +75,12 @@ function User() {
         <div className="user-page_main-right">
           <div className="user-page_activities">
             <div className="user-page_activity-heading">ACTIVITIES</div>
-            { showSongActivity ?  
+            {showSongActivity ?
               currentViewUser.songs.map(song => {
-                return <UserActivitySongEntry song={song}/>
+                return <UserActivitySongEntry song={song} />
               }) :
               currentViewUser.annotations.map(annotation => {
-                return <UserActivityAnnotationEntry annotation={annotation}/>
+                return <UserActivityAnnotationEntry annotation={annotation} />
               })}
           </div>
         </div>

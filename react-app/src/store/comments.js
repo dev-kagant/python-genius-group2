@@ -2,6 +2,7 @@
 //Action types
 const ADD_COMMENT = 'ADD_COMMENT';
 const GET_COMMENTS = 'GET_COMMENTS';
+const DELETE_COMMENT = 'DELETE_COMMENT';
 
 //POJO Actions
 const getComments = (comments) => ({
@@ -12,6 +13,10 @@ const addComment = (comment) => ({
     type: ADD_COMMENT,
     comment
 });
+const deleteComment = (commentId) => ({
+    type: DELETE_COMMENT,
+    commentId
+})
 
 //Thunk Actions
 export const getSongComments = (songId) => async (dispatch) => {
@@ -21,12 +26,19 @@ export const getSongComments = (songId) => async (dispatch) => {
     if (response.ok) {
         const song = await response.json();
         dispatch(getComments(song.comments))
-        console.log(song.comments)
         return song.comments
     }
 }
 
 export const addNewComment = ({ user_comment, user_Id, song_Id }) => async (dispatch) => {
+    const res = await fetch(`/api/users/${user_Id}`, {
+        method: 'GET'
+    });
+    let username;
+    if (res.ok) {
+        const data = await res.json()
+        username = data.username
+    }
     const response = await fetch("/api/comments/new_comment", {
         method: "POST",
         headers: {
@@ -34,17 +46,27 @@ export const addNewComment = ({ user_comment, user_Id, song_Id }) => async (disp
         },
         body: JSON.stringify({
             user_comment,
+            username,
             user_Id,
             song_Id
         })
     });
     if (response.ok) {
         const comment = await response.json()
-        console.log(comment)
         await dispatch(addComment(comment))
     }
 }
 
+export const deleteThisComment = (deletions) => async dispatch => {
+    const { commentId, songId } = deletions
+    const res = await fetch(`/api/comments/delete/${commentId}`, {
+        method: "DELETE"
+    });
+    if (res.ok) {
+        const newComments = await dispatch(getSongComments(songId))
+        return newComments
+    }
+}
 
 
 const initialState = { comments: [] }
@@ -62,7 +84,7 @@ const commentReducer = (state = initialState, action) => {
             return {
                 ...state,
                 comments: newComments
-            }
+            };
         default:
             return state;
     }

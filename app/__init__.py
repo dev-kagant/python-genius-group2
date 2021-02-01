@@ -10,11 +10,8 @@ from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.song_routes import song_routes
 from .api.search_routes import search_routes
-<<<<<<< HEAD
 from .api.comment_routes import comment_routes
-=======
 from .api.annotation_routes import annotation_routes
->>>>>>> main
 
 from .seeds import seed_commands
 

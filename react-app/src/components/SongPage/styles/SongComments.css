@@ -90,6 +90,7 @@
     border-top: 1px solid #EFCC41;
     padding-top: 10px;
     padding-bottom: 10px;
+    position: relative-absolute;
 }
 
 .solo-comment_header {
@@ -121,6 +122,51 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.solo-comment_buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.solo-comment_delete-button{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    outline: none;
+    padding-left: 70px;
+}
+
+.fa-chevron-down{
+    color: #EFCC41;
+    font-size: 20px;
+    position: relative-fixed;
+    margin-top: 15px;
+}
+
+.solo-comments_transfer{
+    border: 3px solid #EFCC41;
+    background-color: white;
+    min-width: 100px;
+}
+
+.solo-comment_show-button{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 12pt;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #EFCC41;
+}
+
+.solo-comment-chevron {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    max-height: 30px;
+}
+
 
 .comment-vote_icon-left {
     margin-right: 2.5px;

@@ -28,8 +28,8 @@ const EditAnnotation = ({ setShowEditAnnotation }) => {
         const editedAnnotation = input;
         const annoId = currentAnnotation.id;
 
-        console.log(annoId)
-        console.log(input)
+        // console.log(annoId)
+        // console.log(input)
 
         const res = await dispatch(editAnnotation(editedAnnotation, annoId))
         if (res.ok) {
@@ -49,14 +49,14 @@ const EditAnnotation = ({ setShowEditAnnotation }) => {
         document.location.reload();
     }
 
-    if(!loaded) return null;
+    if (!loaded) return null;
 
     return (
         <div className="annotation_container">
             {currentAnnotation && <div className="annotation_lyrics">{currentAnnotation.lyrics}</div>}
             {error && (<div>{error}</div>)}
             <form className="annotation_form" onSubmit={onSave}>
-                <textarea 
+                <textarea
                     className="annotation_input"
                     placeholder="Add your annotations"
                     value={input}
@@ -65,7 +65,7 @@ const EditAnnotation = ({ setShowEditAnnotation }) => {
                 {loggedInUser && (
                     <>
                         <button type="submit">Save</button>
-                        <button 
+                        <button
                             type="button"
                             onClick={() => setShowEditAnnotation(false)}
                         >Cancel</button>
@@ -73,7 +73,7 @@ const EditAnnotation = ({ setShowEditAnnotation }) => {
                     </>
                 )}
                 {!loggedInUser && <button onClick={() => setShowEditAnnotation(false)}>Close</button>}
-               
+
             </form>
         </div>
     )
