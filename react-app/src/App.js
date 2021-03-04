@@ -12,6 +12,7 @@ import User from "./components/User/User";
 import Song from "./components/SongPage";
 import SongAddForm from "./components/SongPage/SongAddForm";
 import SearchPage from "./components/Search/SearchPage";
+import Footer from './components/Footer/Footer';
 
 import { authenticate } from "./store/user";
 import SongTrends from "./components/HomePage/SongTrends";
@@ -72,6 +73,7 @@ function App() {
           <h1>Sorry Page Not Found.</h1>
         </Route>
       </Switch>
+      <Footer/>
     </BrowserRouter>
   );
 }
