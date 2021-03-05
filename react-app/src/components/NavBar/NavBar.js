@@ -1,76 +1,73 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import SearchBar from '../Search/SearchBar';
 import './navbar.css';
 
 const NavBar = () => {
-  const dispatch = useDispatch();
   const authenticated = useSelector(state => state.user.authenticated);
   const loggedInUser = useSelector(state => state.user.loggedInUser);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  }
-
   return (
-    <nav className='navbar_container'>
-      <div className="navbar_top">
-        <div className='navbar_search-container'>
-            <SearchBar />
+    <nav className='navbar__container'>
+      <div className='navbar__top'>
+        <div className='navbar__search-container'>
+          <SearchBar />
         </div>
-        <div className="navbar_logo-container">
+        <div className='navbar__logo-container'>
           <NavLink
-            to="/"
-            exact={true}
-            activeClassName="active"
-            className="home-link navbar_links"
+            to='/'
+            exact
+            activeClassName='active'
+            className='home-link'
           >
             천재
           </NavLink>
         </div>
-        <div className="navbar_buttons-container">
-          {
-            !authenticated ?
+        <div className='navbar__buttons-container'>
+          {authenticated && loggedInUser && (
             <>
-              <NavLink to="/login" exact={true} className="login-link navbar_links"> Login </NavLink>
-              <NavLink to="/sign-up" exact={true} className="signup-link navbar_links"> Sign Up </NavLink>
-            </> :
-            <>
-              {loggedInUser &&
-                <NavLink
-                  to={`/users/${loggedInUser.id}`}
-                  exact={true}
-                  className="users-link navbar_links"
-                >
-                  {loggedInUser.username}
-                </NavLink>
-              }
+              <NavLink
+                to={`/users/${loggedInUser.id}`}
+                className='auth-link'
+                exact
+              >
+                {loggedInUser.username}
+              </NavLink>
               <LogoutButton className='logout' />
             </>
-          }
+          )}
+          {!authenticated && (
+            <>
+              <NavLink to='/login' exact className='auth-link'> Login </NavLink>
+              <NavLink to='/sign-up' exact className='auth-link'> SignUp </NavLink>
+            </>
+          )}
         </div>
       </div>
-      <div className='navbar_bottom'>
-        <NavLink
-          to="/charts"
-          className="navbar_bottom-links navbar-charts navbar_links"
-          exact={true}
-          activeClassName="active navbar_links"
-        >
-          Charts
-        </NavLink>
-        <NavLink
-          to="/add-a-song"
-          className="navbar_bottom-links navbar-add-a-song navbar_links"
-          exact={true}
-        >
-          Add A Song
-        </NavLink>
+      <div className='navbar__bottom'>
+        <div className='navbar__bottom-buttons'>
+          <NavLink
+            to='/charts'
+            className='navbar__bottom-links navbar__chart-link'
+            activeClassName='active'
+            exact
+          >
+            CHARTS
+          </NavLink>
+          <NavLink
+            to='/add-a-song'
+            className='navbar__bottom-links navbar__add-song-link'
+            exact
+          >
+            ADD A SONG
+          </NavLink>
+        </div>
+
       </div>
     </nav>
   );
-}
+};
 
 export default NavBar;

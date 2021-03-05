@@ -50,3 +50,6 @@ table {
 
 
 /* Any other styles needed go below */
+a {
+	text-decoration: none;
+}  
