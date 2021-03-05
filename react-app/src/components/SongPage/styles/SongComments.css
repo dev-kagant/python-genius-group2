@@ -28,6 +28,7 @@
     background-image: url("https://avatarfiles.alphacoders.com/814/81468.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
+    border-radius: 50%;
 }
 
 .comments-header_commenting{
@@ -82,10 +83,6 @@
 
 
 /* ---------- Individual Comment ---------- */
-.comments-container_comments {
-
-}
-
 .solo-comment_container {
     border-top: 1px solid #EFCC41;
     padding-top: 10px;
