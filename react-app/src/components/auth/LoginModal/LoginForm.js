@@ -21,6 +21,13 @@ const LoginForm = () => {
     }
   };
 
+  const onDemoLogin = async () => {
+    const user = await dispatch(login("demo@aa.io", "password"));
+     if (user.errors) {
+      setErrors(user.errors);
+    }
+  }
+
   const updateEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -64,6 +71,7 @@ const LoginForm = () => {
         />
       </div>
       <button type="submit" className="login-form_submit">Log In</button>
+      <button type="button" className="login-form_submit" onClick={onDemoLogin}>Demo Login</button>
       <Link to="/sign-up" className="login-form_redirect">CREATE AN ACCOUNT</Link>
     </form>
   );
