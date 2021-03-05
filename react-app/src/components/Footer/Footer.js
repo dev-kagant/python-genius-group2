@@ -20,7 +20,7 @@ function Footer() {
                 </a>
             </div>
             <div className='safiya-links'>
-                <a className='about-link' href='' rel="noreferrer" target="_blank">
+                <a className='about-link' href='https://angel.co/u/safiya-cain' rel="noreferrer" target="_blank">
                     <img src={angellist} alt='angellist' />
                 </a>
                 <a className='safiya-link' href='https://github.com/Scain3' rel="noreferrer" target="_blank">
@@ -31,7 +31,7 @@ function Footer() {
                 </a>
             </div>
             <div className='kimi-links'>
-                <a className='about-link' href='' rel="noreferrer" target="_blank">
+                <a className='about-link' href='https://angel.co/u/kimi-zou' rel="noreferrer" target="_blank">
                     <img src={angellist} alt='angellist' />
                 </a>
                 <a className='kimi-link' href='https://github.com/Kimi-Zou' rel="noreferrer" target="_blank">
