@@ -1,39 +1,84 @@
+/* structure */
 .footer-container {
     display: flex;
-    justify-content: space-between;
-    bottom: 0;
-    position: fixed;
-    height: 60px;
     width: 100%;
-    margin-top: 60px;
-    background-color: #f7e6a0;
-    font-size: 12px;
-    box-shadow: 0 8px 8px 0 rgba(33, 39, 56, 0.2);
-    z-index: 1;
+    background-color: #111;
+    margin-top: 50px;
+    color: white;
 }
 
-.about-link:hover {
-    transition: all 1s ease-out;
+/* ------left------ */
+.footer__left {
+    width: 45%;
+    margin-right: 5%;
+    padding: 50px 50px 50px 100px;
+}
+
+.footer__about {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 70px;
+}
+
+.footer__copyright {
+    font-size: 12px;
+}
+
+/* ------right------ */
+.footer__team {
+    display: flex;
+    width: 45%;
+    padding: 50px 50px;
+}
+
+.footer__team-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+}
+
+
+/* ========== Member ========== */
+/* name */
+.member__name {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+/* links */
+.member__links {
+    display: flex;
+}
+
+/* link container */
+.member__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background-color: #f7e6a0;
+    border-radius: 5px;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+.member__link:hover {
+    transition: all 0.2s ease-out;
     filter: invert(100%);
 }
 
-.damien-link,
-.safiya-link,
-.ashley-link,
-.kimi-link {
-    font-family: 'Josefin Sans', sans-serif;
-    text-decoration: none;
-    font-size: x-large;
-    color: black;
+/* link icon */
+.member__link-icon {
+    color: #222;
+    font-size: 18px;
 }
 
-.damien-link:hover,
-.safiya-link:hover,
-.ashley-link:hover,
-.kimi-link:hover {
+.member__link-icon:hover {
     -webkit-mask-image: linear-gradient(-75deg, rgba(255, 255, 255, 0.6) 30%, #e1ffc4 50%, rgba(255,255,255,.6) 70%);
     -webkit-mask-size: 200%;
-    animation: shine 2s infinite;
+    animation: shine 0.5s infinite;
 }
 
 @-webkit-keyframes shine {
@@ -43,12 +88,4 @@
     to {
         -webkit-mask-position: -50%;
     }
-}
-
-.damien-links,
-.safiya-links,
-.ashley-links,
-.kimi-links {
-    display: flex;
-    align-items: center;
 }
