@@ -72,7 +72,7 @@
     border-radius: 50%;
 }
 
-.user-page_header-default-avatar {
+.user-page_header--avatar {
     width: 100%;
     height: 100%;
     background-image: url("https://avatarfiles.alphacoders.com/814/81468.png");
