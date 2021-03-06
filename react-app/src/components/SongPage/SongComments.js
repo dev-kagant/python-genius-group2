@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { format } from 'date-fns';
 import { addNewComment, getSongComments, deleteThisComment } from '../../store/comments';
 import './styles/SongComments.css';
 
@@ -81,9 +82,10 @@ const Comments = () => {
             <div className='comments-header_commenting'>
               <textarea
                 type='text'
+                autoFocus
                 placeholder='Add a comment'
                 onChange={(e) => setComment(e.target.value)}
-              />
+              /> 
               <div className='comments-header_button-box'>
                 <button type='submit' onClick={postComment} className='comments_submit-button'>Submit</button>
                 <button type='button' onClick={doneCommenting} className='comments_cancel-button'>Cancel</button>
@@ -97,7 +99,7 @@ const Comments = () => {
             <li className='solo-comment_container' key={comment.id}>
               <div className='solo-comment_header'>
                 <div className='solo-comment_user'>{comment.username}</div>
-                <div className='solo-comment_posted'>Posted {comment.created}</div>
+                <div className='solo-comment_posted'>Posted {format(new Date(comment.created), "yyyy-MM-dd HH:mm")}</div>
               </div>
               <div className='solo-comment_comment'>
                 <p>{comment.user_comment}</p>
@@ -147,9 +149,9 @@ const Comments = () => {
           ))}
         </ul>
       </div>
-      <div className='comments_being-viewed'>
+      {/* <div className='comments_being-viewed'>
         <button>SHOW MORE (45)</button>
-      </div>
+      </div> */}
     </div>
   );
 };
