@@ -104,7 +104,7 @@
     width: 70%;
     min-height: 30px;
     padding: 20px;
-    background-color: #f6e7a0;
+    background-color: rgb(247, 247, 247);
     margin-bottom: 60px;
 }
 
@@ -116,7 +116,7 @@
     justify-content: center;
     width: 70%;
     padding: 20px;
-    background-color: #f6e7a0;
+    background-color: rgb(247, 247, 247);
 }
 
 /* heading */
@@ -125,7 +125,7 @@
     text-align: center;
     padding: 0 20px 10px 20px;
     margin-bottom: 15px;
-    border-bottom: 1px #999 solid;
+    border-bottom: 1px rgb(247, 247, 247) solid;
 }
 
 /* outer container */
@@ -174,20 +174,20 @@
 /* --------- activities --------- */
 .user-page_activity-heading {
     padding-bottom: 10px;
-    border-bottom: 1px #999 solid;
+    border-bottom: 1px rgb(247, 247, 247) solid;
     margin-bottom: 30px;
 }
 
 /* container */
 .user-page_activity-container {
     display: flex;
-    background-color: #f6e7a0;
-    padding: 15px;
-    margin-bottom: 15px;
+    background-color: rgb(247, 247, 247);
+    padding: 20px 15px;
+    cursor: pointer;
 }
 
 .user-page_activity-container:hover {
-    cursor: pointer;
+    background-color: rgb(235, 235, 235)
 }
 
 /* icon */
