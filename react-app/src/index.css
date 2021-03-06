@@ -50,6 +50,11 @@ table {
 
 
 /* Any other styles needed go below */
+body {
+	background-color: #E1FFC4;
+}
+
 a {
 	text-decoration: none;
 }  
+

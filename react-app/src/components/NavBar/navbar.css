@@ -10,7 +10,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: #E1FFC4;
-    padding: 18px 35px;
+    padding: 10px 35px;
 }
 
 
@@ -37,6 +37,11 @@
     text-decoration: none;
 }
 
+.home-link:hover {
+    color: black;
+    text-shadow: -1px 0 #F7E6A0, 0 3px #F7E6A0, 1px 0 #F7E6A0, 0 -1px #F7E6A0;
+}
+
 /* links */
 .navbar__buttons-container {
     display: flex;
@@ -47,9 +52,20 @@
 
 /* signup, login */
 .auth-link {
-    margin-right: 28px;
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    margin-right: 15px;
     font-size: 15px;
     font-weight: 600;
+    color: black;
+}
+
+.auth-link:hover {
+    background-color: #222;
+    color: #F7E6A0;
+    border-radius: 5px;
+    padding: 8px 0;
 }
 
 /* logout */
@@ -75,7 +91,7 @@
     align-items: center;
     justify-content: center;
     background-color: #000000;
-    padding: 15px;
+    padding: 10px;
 }
 
 /* buttons container */
