@@ -110,7 +110,7 @@ const Comments = () => {
                 </div>
                 <div className='solo-comment-chevron'>
                   {
-                    comment.user_Id === currentLoggedInUser.id
+                    currentLoggedInUser && comment.user_Id === currentLoggedInUser.id
                       ? (
                         <div>
                           {
