@@ -67,7 +67,7 @@
 
 .user-page_header-avatar img {
     object-fit: cover;
-    width: 100%;
+    width: 100%; 
     height: 100%;
     border-radius: 50%;
 }
@@ -78,6 +78,15 @@
     background-image: url("https://avatarfiles.alphacoders.com/814/81468.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
+}
+
+.user-page_header-default-avatar {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://avatarfiles.alphacoders.com/814/81468.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    border-radius: 50%;
 }
 
 /* --------- username --------- */
