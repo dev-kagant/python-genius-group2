@@ -1,0 +1,68 @@
+.charts__list-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  width: 100%;
+  max-width: 970px;
+  padding: 0 0 40px 0;
+  font-size: 20px;
+}
+
+/* ------individual song------ */
+/* outer wrapper */
+.song__outer-wrapper {
+  width: 100%;
+  padding-top: 15px;
+  cursor: pointer;
+}
+
+.song__outer-wrapper:hover {
+  background-color: #e1ffc44f;
+}
+
+/* inner wrapper */
+.song__wrapper {
+  display: flex;
+  align-items: center;
+  margin: 5px 5% 0 5%;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+/* index */
+.song__index{
+  display: flex;
+  justify-content: center;
+  width: 5%;
+}
+
+/* cover */
+.song__cover-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+}
+
+.song__cover {
+  width: 60px;
+  height: 60px;
+}
+
+.song__default-cover {
+  width: 60px;
+  height: 60px;
+  background-image: url("https://i.pinimg.com/564x/5f/62/52/5f62521afc849378e1582beb5b0a884e.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+/* title */
+.song__text-info {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+}
+
+

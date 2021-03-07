@@ -1,161 +1,207 @@
-.search-page_container{
-    display: grid;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    background-color: white;
-    max-width: 970px;
-    min-height: 100vh;
-    width: 100%;
-    margin: 0 auto;
-
+.search-page__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 970px;
+  margin: 0 auto;
+  padding-top: 50px;
+  font-size: 15px;
 }
 
-.search-page_songInfo{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    display: block;
-    background-color: #C2FF88;
-    margin-left: 20px;
-    margin-top: 20px;
-    height: 400px;
-    width: 400px;
-
+/* page heading */
+.search-page__heading {
+  width: 23%;
+  text-align: center;
+  margin-bottom: 50px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #222;
+  font-size: 25px;
+  font-weight: 600;
 }
 
-.search-page_artistInfo{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    display: block;
-    background-color: #C2FF88;
-    /* margin-right: 20px; */
-    margin-top: 20px;
-    right: 0px;
-    height: 400px;
-    width: 490px;
-    position: relative;
+/* top */
+.search-page__top {
+  display: flex;
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 70px;
 }
 
-.search-page_lyricsInfo{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    display: block;
-    background-color: #C2FF88;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    height: 820px;
-    width: 930px;
-}
-
-.search-song_data{
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid #DBD8CF;
-    box-shadow: inset 0px -26px 50px -30px rgba(247,230,160,0.67);
-    cursor: pointer;
-    position: absolute;
-    background-color: #ffffff;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 380px;
-    overflow: scroll;
-}
-
-.search-artist_data{
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid #DBD8CF;
-    box-shadow: inset 0px -26px 50px -30px rgba(247,230,160,0.67);
-    cursor: pointer;
-    background-color: #ffffff;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 470px;
-    overflow: scroll;
-}
-
-.artist-name{
-    margin-top: 30px;
-    margin-left: 90px;
-}
-
-.search-lyrics_data{
-    display: grid;
-    border-bottom: 1px solid #DBD8CF;
-    box-shadow: inset 0px -26px 50px -30px rgba(247,230,160,0.67);
-    cursor: pointer;
-    position: absolute;
-    background-color: #ffffff;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    width: 910px;
-    height: 100px;
-    overflow: scroll;
-    grid-column-gap: 20px;
-}
-
-.lyric-container{
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    /* display: block; */
-}
-
-.lyrics-img{
-    width: 60px;
-    height: 60px;
-    margin: 0 auto;
-}
-
-.lyric-title{
-    font-weight: bold;
-}
-
-.lyric-artist{
-    /* margin: 0 auto; */
-}
-
-.album-name{
-    /* margin: 0 auto; */
+/* bottom */
+.search-page__bottom {
+  width: 100%;
+  min-height: 100px;
 }
 
 
 
 
+/* ========== common ========== */
+/* individual search result */
+.search-page__individual {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: white;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
 
-.lyrics{
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    overflow: scroll;
-    width: 500px;
-    height: 400px;
+.search-page__individual:hover {
+  background-color: rgb(243, 243, 243);
 }
 
 
 
 
-
-.song-img, .artist-img{
-    width: 60px;
-    height: 60px;
-    margin-left: 40px;
-    margin-top: 10px;
+/* ========== songs ========== */
+/* session wrapper */
+.search-page__songs-session-wrapper {
+  width: 56%;
+  margin-right: 4%;
 }
 
-.song-title{
-    margin-left: 30px;
-    font-weight: bold;
+/* session heading */
+.search-page__songs-heading {
+  margin-bottom: 10px;
+}
+
+/* songs wrapper */
+.search-page__songs-wrapper {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* cover */
+.search-page__song-cover {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.search-page__default-song-cover {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 15px;
+  background-image: url("https://i.pinimg.com/564x/5f/62/52/5f62521afc849378e1582beb5b0a884e.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+/* title, artist */
+.search-page__song-text-info {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+}
+
+
+
+/* ========== artists ========== */
+/* session */
+.search-page__artists-session-wrapper {
+  width: 40%;
+}
+
+.search-page__artists-heading {
+  margin-bottom: 10px;
+}
+
+/* artists wrapper */
+.search-page__artists-wrapper {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* individual artist */
+.search-page__artist-wrapper {
+  padding: 12px;
+}
+
+/* cover */
+.search-page__artist-cover {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.search-page__artist-default-cover {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  margin-right: 30px;
+  background-image: url("https://avatarfiles.alphacoders.com/814/81468.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+
+
+/* ========== lyrics ========== */
+.search-page__lyrics-session-wrapper {
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.search-page__lyrics-heading {
+  margin-bottom: 10px;
+}
+
+.search-page__lyrics-wrapper {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* cover */
+.search-page__lyric-cover {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.search-page__default-lyric-cover {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 15px;
+  background-image: url("https://i.pinimg.com/564x/5f/62/52/5f62521afc849378e1582beb5b0a884e.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+/* info */
+.search-page__lyric-album-info {
+  width: 40%;
+}
+
+.search-page__lyric-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.search-page__lyric-artist {
+  margin-bottom: 20px;
+}
+
+.search-page__lyric-album-name {
+  color: #444;
+}
+
+/* lyrics */
+.search-page__lyric {
+  width: 50%;
+  color: #666;
+}
+
+.search-page__lyric-inner-container {
+  height: 75px;
+  overflow-y: auto;
+  white-space: pre-line;
 }

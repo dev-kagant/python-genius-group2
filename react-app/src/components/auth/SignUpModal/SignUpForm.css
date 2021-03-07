@@ -36,6 +36,11 @@
 
 }
 
+.signup-form_submit:hover {
+    background-color: #444;
+    color: white;
+}
+
 .signup-form_redirect {
     display: block;
     width: 68%;
