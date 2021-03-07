@@ -28,9 +28,6 @@ const EditAnnotation = ({ setShowEditAnnotation }) => {
         const editedAnnotation = input;
         const annoId = currentAnnotation.id;
 
-        // console.log(annoId)
-        // console.log(input)
-
         const res = await dispatch(editAnnotation(editedAnnotation, annoId))
         if (res.ok) {
             setShowEditAnnotation(false);

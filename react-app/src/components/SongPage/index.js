@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import * as songActions from "../../store/song";
@@ -16,20 +16,15 @@ import Annotation from "../LyricAnnotation/Annotation";
 import EditAnnotation from "../LyricAnnotation/EditAnnotation";
 
 import "./styles/index.css"
-import { remove } from "js-cookie";
 
 const Song = () => {
     const dispatch = useDispatch();
-    const history = useHistory();
     const lyricRef = useRef();
     const { songId } = useParams();
 
     // States
     const loggedInUser = useSelector(state => state.user.loggedInUser);
     const songAnnotations = useSelector(state => state.annotation.currentSongAnnotations.annotations);
-    const currentAnnotation = useSelector(state => state.annotation.currentAnnotation);
-    const currentSong = useSelector(state => state.song.currentSong);
-    const [errors, setErrors] = useState([]);
     const [ref, setRef] = useState();
     const [loaded, setLoaded] = useState(false);
     const [showAnnotation, setShowAnnotation] = useState(false);
@@ -37,13 +32,10 @@ const Song = () => {
     const [selectedLyrics, setSelectedLyrics] = useState("");
     const [range, setRange] = useState();
 
-    // console.log(currentSong.id)
-    // console.log(songAnnotations)
-
     // Load Song
     useEffect(() => {
-        dispatch(getCurrentSongAnnotations(songId))
         dispatch(songActions.getSong(songId))
+            .then(() => dispatch(getCurrentSongAnnotations(songId)))
             .then(() => setLoaded(true))
             .catch(err => console.log(err))
     }, [dispatch, songId])
@@ -56,7 +48,7 @@ const Song = () => {
             displayAnnotation(ref, songAnnotations[i], index);
             index += 2;
         }
-    }, [songAnnotations, ref])
+    }, [songAnnotations, ref, songId])
 
     const displayAnnotation = (ref, annotation, index) => {
         // get text node

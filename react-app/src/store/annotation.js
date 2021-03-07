@@ -24,7 +24,6 @@ export const setCurrentAnnotation = (annotation) => ({
 // POST NEW ANNOTATION
 export const postAnnotation = (newAnnotation) => async dispatch => {
     const { song_Id, annotation, start, end, lyrics } = newAnnotation;
-    // console.log(lyrics)
     const response = await fetch("/api/annotations/create", {
         method: "POST",
         headers: {
