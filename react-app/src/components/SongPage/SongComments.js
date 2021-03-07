@@ -106,9 +106,9 @@ const Comments = () => {
               </div>
               <div className='solo-comment_buttons'>
                 <div className='solo-comment_votes'>
-                  <button className='comment-vote_icon-left'><i class='far fa-thumbs-up' /></button>
+                  <button className='comment-vote_icon-left'><i className='far fa-thumbs-up' /></button>
                   <div>+Votes</div>
-                  <button className='comment-vote_icon-right fa-flip-horizontal'><i class='far fa-thumbs-down' /></button>
+                  <button className='comment-vote_icon-right fa-flip-horizontal'><i className='far fa-thumbs-down' /></button>
                 </div>
                 <div className='solo-comment-chevron'>
                   {
@@ -121,7 +121,7 @@ const Comments = () => {
                                 <div>
                                   <div>
                                     <button className='solo-comment_delete-button' type='button' onClick={unShowDelete}>
-                                      <i class='fas fa-chevron-down' />
+                                      <i className='fas fa-chevron-down' />
                                     </button>
                                   </div>
                                   <div className='solo-comments_transfer'>
@@ -132,7 +132,7 @@ const Comments = () => {
                               : (
                                 <div>
                                   <button className='solo-comment_delete-button' type='button' onClick={showDelete}>
-                                    <i class='fas fa-chevron-down' />
+                                    <i className='fas fa-chevron-down' />
                                   </button>
                                 </div>
                                 )

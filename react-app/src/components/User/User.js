@@ -24,8 +24,6 @@ function User() {
   const currentViewUser = useSelector(state => state.user.currentViewUser);
   const loggedInUser = useSelector(state => state.user.loggedInUser);
 
-  // console.log(showSongActivity)
-
   useEffect(() => {
     (async () => {
       if (!userId) return;

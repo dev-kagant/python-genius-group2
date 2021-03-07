@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom"
 import parse from "html-react-parser";
@@ -12,17 +12,16 @@ import "./styles/SongLyrics.css";
 const SongLyrics = ({ addAnnotation, lyricRef, setRef }) => {
     const dispatch = useDispatch();
     const { songId } = useParams();
-
     const currentSong = useSelector(state => state.song.currentSong);
     const loggedInUser = useSelector(state => state.user.loggedInUser);
-    const [errors, setErrors] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [lyrics, setLyrics] = useState(currentSong.lyrics);
     const [hideLyrics, setHideLyrics] = useState(true)
+    const [errors, setErrors] = useState([]);
 
     // SET REF NODE
     useEffect(() => {
-        setRef(lyricRef.current);
+        if (Number(songId) === currentSong.id) setRef(lyricRef.current);
     }, [songId])
 
     const hidePageLyrics = () => {
